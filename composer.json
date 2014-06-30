@@ -1,0 +1,18 @@
+{
+	"name": "themosis/themosis",
+	"description": "The Themosis framework. A framework for WordPress developers.",
+	"keywords": ["themosis", "framework", "WordPress"],
+	"license": "GPL-2.0+",
+	"authors": [
+		{
+			"name": "Julien Lambé",
+			"email": "julien@themosis.com",
+			"homepage": "http://www.themosis.com/"
+		}
+	],
+	"type": "project",
+	"require": {
+        "themosis/plugin": "0.9-beta1",
+        "themosis/theme": "0.9-beta1"
+    }
+}
