@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Themosis framework
 ------------------
 
@@ -16,3 +17,9 @@ All issues and pull requests should be filled on the [themosis/plugin](https://g
 ### License
 
 The Themosis framework is open-source software licensed under [GPL-2+ license](http://www.gnu.org/licenses/gpl-2.0.html).
+=======
+themosis
+========
+
+The Themosis framework. Latest WordPress version bundled with Themosis framework plugin and theme.
+>>>>>>> origin/master
