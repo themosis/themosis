@@ -14,5 +14,11 @@
 	"require": {
         "themosis/plugin": "0.9-beta1",
         "themosis/theme": "0.9-beta1"
+    },
+    "extra":{
+        "installer-paths":{
+            "wp-content/plugins/themosis-{$name}/": ["type:wordpress-plugin"],
+            "wp-content/themes/themosis-{$name}/": ["type:wordpress-theme"]
+        }
     }
 }
