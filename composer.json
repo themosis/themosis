@@ -12,6 +12,7 @@
 	],
 	"type": "project",
 	"require": {
+		"php": ">=5.3.3",
         "themosis/plugin": "0.9.0",
         "themosis/theme": "0.9.0"
     },
