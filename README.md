@@ -1,7 +1,7 @@
 Themosis framework
 ------------------
 
-Themosis framework is a tool to help you develop websites and web applications faster using [WordPress](http://wordpress.org). With an elegant and simple code syntax, Themosis framework helps you structure and organize your code and allows you to better manage and scale your WordPress websites and applications.
+Themosis framework is a tool to help you develop websites and web applications faster using [WordPress](http://wordpress.org). Using an elegant and simple code syntax, Themosis framework helps you structure and organize your code and allows you to better manage and scale your WordPress websites and applications.
 
 Themosis framework uses “modern” PHP features like anonymous functions, namespaces, is [Composer](https://getcomposer.org/) ready and is a mix between WordPress best practices and let’s say a typical MVC framework.
 

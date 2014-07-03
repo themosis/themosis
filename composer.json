@@ -21,5 +21,10 @@
             "wp-content/plugins/themosis-{$name}/": ["type:wordpress-plugin"],
             "wp-content/themes/themosis-{$name}/": ["type:wordpress-theme"]
         }
+    },
+    "scripts": {
+    	"pre-install-cmd": [
+    		"wp core download"
+    	]
     }
 }
