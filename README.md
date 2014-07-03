@@ -5,6 +5,14 @@ Themosis framework is a tool to help you develop websites and web applications f
 
 Themosis framework uses “modern” PHP features like anonymous functions, namespaces, is [Composer](https://getcomposer.org/) ready and is a mix between WordPress best practices and let’s say a typical MVC framework.
 
+The Themosis framework is born to give WordPress developers the development joy found in the [Laravel](http://laravel.com/) framework to WordPress development. As WordPress developers, you are happy by definition. Now with the Themosis framework you'll be happier and you'll be able to provide more features to your projects in less time.
+
+## Official documentation
+
+The documentation is available on the Themosis framework website.
+
+---
+
 ### Development
 
 The framework was created by [Julien Lambé](http://www.themosis.com/), who continues to lead the development.
