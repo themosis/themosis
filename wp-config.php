@@ -87,7 +87,10 @@ if ( !defined('ABSPATH') )
 	define('ABSPATH', dirname(__FILE__) . '/');
 
 /** Class autoloading */
-require_once(ABSPATH . 'vendor/autoload.php');
+if(file_exists($autoload = ABSPATH . 'vendor/autoload.php'))
+{
+	require_once($autoload);
+}
 
 /** Sets up WordPress vars and included files. */
 require_once(ABSPATH . 'wp-settings.php');
