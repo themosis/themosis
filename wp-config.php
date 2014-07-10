@@ -89,6 +89,7 @@ if ( !defined('ABSPATH') )
 /** Class autoloading */
 if(file_exists($autoload = ABSPATH . 'vendor/autoload.php'))
 {
+	define('THEMOSIS_AUTOLOAD', true);
 	require_once($autoload);
 }
 
