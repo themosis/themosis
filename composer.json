@@ -13,8 +13,8 @@
 	"type": "project",
 	"require": {
 		"php": ">=5.3.3",
-        "themosis/plugin": "0.9.2",
-        "themosis/theme": "0.9.2"
+        "themosis/plugin": "0.9.3",
+        "themosis/theme": "0.9.3"
     },
     "extra":{
         "installer-paths":{
