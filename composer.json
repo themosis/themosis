@@ -26,5 +26,8 @@
     	"pre-install-cmd": [
     		"wp core download"
     	]
-    }
+    },
+    "config": {
+		"preferred-install": "dist"
+	}
 }
