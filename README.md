@@ -19,7 +19,7 @@ The framework was created by [Julien Lambé](http://www.themosis.com/), who cont
 
 ### Contributing to Themosis
 
-All issues and pull requests should be filled on the [themosis/plugin](https://github.com/themosis/plugin/issues) repository.
+All issues and pull requests should be filled on the [themosis/framework](https://github.com/themosis/framework/issues) repository.
 
 ### License
 
