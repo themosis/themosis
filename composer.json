@@ -11,23 +11,48 @@
 		}
 	],
 	"type": "project",
+	"autoload": {
+		"psr-0": {
+			"Thms": "library"
+		}
+	},
+	"repositories": [
+		{
+			"type": "composer",
+			"url": "http://wpackagist.org"
+		},
+		{
+			"type": "package",
+			"package": {
+				"name": "wordpress/wordpress",
+				"version": "3.9.2",
+				"type": "webroot",
+				"dist": {
+					"type": "zip",
+					"url": "https://wordpress.org/wordpress-3.9.2.zip"
+				},
+			"require" : {
+				"fancyguy/webroot-installer": "1.1.0"
+				}
+			}
+		}
+	],
+	"config": {
+		"preferred-install": "dist"
+	},
 	"require": {
 		"php": ">=5.3.3",
+		"wordpress/wordpress": "3.9.2",
+		"fancyguy/webroot-installer": "1.1.0",
         "themosis/framework": "0.9.*",
         "themosis/theme": "0.9.*"
     },
     "extra":{
         "installer-paths":{
-            "wp-content/plugins/themosis-{$name}/": ["type:wordpress-plugin"],
-            "wp-content/themes/themosis-{$name}/": ["type:wordpress-theme"]
-        }
-    },
-    "scripts": {
-    	"pre-install-cmd": [
-    		"wp core download"
-    	]
-    },
-    "config": {
-		"preferred-install": "dist"
-	}
+            "htdocs/content/plugins/themosis-{$name}/": ["type:wordpress-plugin"],
+            "htdocs/content/themes/themosis-{$name}/": ["type:wordpress-theme"]
+        },
+        "webroot-dir": "htdocs/cms",
+    	"webroot-package": "wordpress/wordpress"
+    }
 }

@@ -1,4 +1,9 @@
+### Miscellaneous
 .DS_Store
 Thumbs.db
+
+### Composer
 composer.lock
-/.idea
+
+### IDE
+.idea/
