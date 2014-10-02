@@ -25,11 +25,11 @@
 			"type": "package",
 			"package": {
 				"name": "wordpress/wordpress",
-				"version": "3.9.2",
+				"version": "4.0",
 				"type": "webroot",
 				"dist": {
 					"type": "zip",
-					"url": "https://wordpress.org/wordpress-3.9.2.zip"
+					"url": "https://wordpress.org/wordpress-4.0.zip"
 				},
 			"require" : {
 				"fancyguy/webroot-installer": "1.1.0"
@@ -42,10 +42,10 @@
 	},
 	"require": {
 		"php": ">=5.3.3",
-		"wordpress/wordpress": "3.9.2",
+		"wordpress/wordpress": "4.0",
 		"fancyguy/webroot-installer": "1.1.0",
-        "themosis/framework": "0.9.*",
-        "themosis/theme": "0.9.*"
+        "themosis/framework": "1.*.*",
+        "themosis/theme": "1.*.*"
     },
     "extra":{
         "installer-paths":{
