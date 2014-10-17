@@ -5,24 +5,24 @@ class Environment
 {
 	/**
 	 * Root path where files are located.
-	 * 
+	 *
 	 * @var string
 	 */
 	protected $path;
 
 	/**
 	 * Environments locations.
-	 * 
+	 *
 	 * @var array
 	 */
 	protected $locations = array();
 
 	/**
 	 * Init the Environment class.
-	 * 
+	 *
 	 * @param string $path The root path where environments files are located.
 	 * @param array $locations Environments locations: 'local' - 'production'... and hostnames.
-	 */ 
+	 */
 	public function __construct($path, array $locations)
 	{
 		$this->path = $path;
@@ -31,7 +31,7 @@ class Environment
 
 	/**
 	 * Find which environment we are.
-	 * 
+	 *
 	 * @return string
 	 */
 	public function which()
@@ -49,7 +49,7 @@ class Environment
 
 	/**
 	 * Load the .env.{$location}.php file.
-	 * 
+	 *
 	 * @param string $location
 	 * @return array
 	 */
@@ -67,7 +67,7 @@ class Environment
 
 	/**
 	 * Check required values.
-	 * 
+	 *
 	 * @param array $required The required values to check.
 	 * @param array $values
 	 * @return bool
@@ -87,7 +87,7 @@ class Environment
 
 	/**
 	 * Populate environment vars.
-	 * 
+	 *
 	 * @param array $vars The loaded environments vars.
 	 * @return void
 	 */
@@ -106,7 +106,7 @@ class Environment
 
 	/**
 	 * Return the .env file path.
-	 * 
+	 *
 	 * @param string $location
 	 * @return string
 	 */
