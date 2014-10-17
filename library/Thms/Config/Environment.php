@@ -98,7 +98,6 @@ class Environment
 			if (false === getenv($key))
 			{
 				$_ENV[$key] = $value;
-				$_SERVER[$key] = $value;
 				putenv("{$key}={$value}");
 			}
 		}
