@@ -50,7 +50,7 @@
     "extra":{
         "installer-paths":{
             "htdocs/content/plugins/themosis-{$name}/": ["type:wordpress-plugin"],
-            "htdocs/content/themes/themosis-{$name}/": ["type:wordpress-theme"]
+			"htdocs/content/themes/{$name}/": ["type:wordpress-theme"]
         },
         "webroot-dir": "htdocs/cms",
     	"webroot-package": "wordpress/wordpress"
