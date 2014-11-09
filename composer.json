@@ -16,34 +16,12 @@
 			"Thms": "library"
 		}
 	},
-	"repositories": [
-		{
-			"type": "composer",
-			"url": "http://wpackagist.org"
-		},
-		{
-			"type": "package",
-			"package": {
-				"name": "wordpress/wordpress",
-				"version": "4.0",
-				"type": "webroot",
-				"dist": {
-					"type": "zip",
-					"url": "https://wordpress.org/wordpress-4.0.zip"
-				},
-			"require" : {
-				"fancyguy/webroot-installer": "1.1.0"
-				}
-			}
-		}
-	],
 	"config": {
 		"preferred-install": "dist"
 	},
 	"require": {
 		"php": ">=5.3.3",
-		"wordpress/wordpress": "4.0",
-		"fancyguy/webroot-installer": "1.1.0",
+		"johnpbloch/wordpress": ">=4.0",
         "themosis/framework": "1.0.*",
         "themosis/theme": "1.0.*"
     },
@@ -52,7 +30,6 @@
             "htdocs/content/plugins/themosis-{$name}/": ["type:wordpress-plugin"],
             "htdocs/content/themes/themosis-{$name}/": ["type:wordpress-theme"]
         },
-        "webroot-dir": "htdocs/cms",
-    	"webroot-package": "wordpress/wordpress"
+        "wordpress-install-dir": "htdocs/cms"
     }
 }
