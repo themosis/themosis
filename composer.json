@@ -28,8 +28,8 @@
     "extra":{
         "installer-paths":{
             "htdocs/content/plugins/themosis-{$name}/": ["themosis/framework"],
-            "htdocs/content/themes/themosis-{$name}/": ["type:wordpress-theme"],
-			"htdocs/content/plugins/{$name}/": ["type:wordpress-plugin"]
+			"htdocs/content/plugins/{$name}/": ["type:wordpress-plugin"],
+            "htdocs/content/themes/themosis-{$name}/": ["type:wordpress-theme"]
         },
         "wordpress-install-dir": "htdocs/cms"
     }
