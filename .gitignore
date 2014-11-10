@@ -4,6 +4,17 @@ Thumbs.db
 
 ### Composer
 composer.lock
+/vendor/*
 
 ### IDE
 .idea/
+
+### Wordpress
+/htdocs/cms/*
+!/htdocs/cms/.gitkeep
+/htdocs/content/*
+!/htdocs/themes/*
+
+### Environment Credentials
+.env.*.php
+!.env.example.php
