@@ -29,7 +29,8 @@
         "installer-paths":{
             "htdocs/content/plugins/themosis-{$name}/": ["themosis/framework"],
 			"htdocs/content/plugins/{$name}/": ["type:wordpress-plugin"],
-            "htdocs/content/themes/themosis-{$name}/": ["type:wordpress-theme"]
+            "htdocs/content/themes/themosis-{$name}/": ["themosis/theme"],
+            "htdocs/content/themes/{$name}/": ["type:wordpress-theme"]
         },
         "wordpress-install-dir": "htdocs/cms"
     }
