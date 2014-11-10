@@ -40,7 +40,12 @@ $env = new Thms\Config\Environment($root_path.DS, $environments);
 // Load .env file
 /*----------------------------------------------------*/
 $location = $env->which();
+
+if (empty($location)) printf('<h1>%s</h1>', 'Unable to define the environment. Make sure to define your hostname.');
+
 $loaded = $env->load($location);
+
+if (empty($loaded)) printf('<h1>%s</h1>', 'Unable to locate your environment file.');
 
 /*----------------------------------------------------*/
 // Check required vars.

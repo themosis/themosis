@@ -45,6 +45,8 @@ class Environment
 				return $location;
 			}
 		}
+
+        return '';
 	}
 
 	/**
@@ -55,14 +57,12 @@ class Environment
 	 */
 	public function load($location)
 	{
-		if (!file_exists($path = $this->getFile($location)))
+		if (file_exists($path = $this->getFile($location)))
 		{
-			return array();
+            return require_once($path);
 		}
-		else
-		{
-			return require_once($path);
-		}
+
+		return array();
 	}
 
 	/**
