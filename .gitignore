@@ -4,7 +4,7 @@ Thumbs.db
 
 ### Composer
 composer.lock
-/vendor/*
+/vendor/
 
 ### IDE
 .idea/
@@ -13,8 +13,8 @@ composer.lock
 /htdocs/cms/*
 !/htdocs/cms/.gitkeep
 /htdocs/content/*
-!/htdocs/themes/*
+!/htdocs/content/themes/*
 
 ### Environment Credentials
 .env.*.php
-!.env.example.php
+!.env.local.php
