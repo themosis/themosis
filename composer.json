@@ -21,13 +21,13 @@
 	},
 	"require": {
 		"php": ">=5.4",
-		"johnpbloch/wordpress": ">=4.0",
-        "themosis/framework": "1.0.*",
-        "themosis/theme": "1.0.*"
+		"johnpbloch/wordpress": ">=4.0.1",
+        "themosis/framework": "dev-master",
+        "themosis/theme": "dev-master"
     },
     "extra":{
         "installer-paths":{
-            "htdocs/content/plugins/themosis-{$name}/": ["themosis/framework"],
+            "htdocs/content/mu-plugins/themosis-{$name}/": ["themosis/framework"],
 			"htdocs/content/plugins/{$name}/": ["type:wordpress-plugin"],
             "htdocs/content/themes/themosis-{$name}/": ["themosis/theme"],
             "htdocs/content/themes/{$name}/": ["type:wordpress-theme"]
