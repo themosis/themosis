@@ -25,7 +25,7 @@ if (file_exists($file = $root_path.DS.'config'.DS.'environment.php'))
 }
 
 // Check if there are environment values
-if (empty($environments) || !is_array($environments))
+if (empty($environments) || (!is_array($environments) && !$environments instanceof Closure))
 {
 	printf('<h1>%s</h1>', 'Unable to load environment data. Please define your environments.');
 }
