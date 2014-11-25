@@ -1,6 +1,8 @@
 <?php
 namespace Thms\Config;
 
+use Closure;
+
 class Environment
 {
     /**
@@ -18,15 +20,26 @@ class Environment
     protected $locations = array();
 
     /**
+     * Use closure for environment detection
+     *
+     * @var boolean
+     */
+    protected $closure = false;
+
+    /**
 	 * Init the Environment class.
 	 *
 	 * @param string $path The root path where environments files are located.
 	 * @param array $locations Environments locations: 'local' - 'production'... and hostnames.
 	 */
-    public function __construct($path, array $locations)
+    public function __construct($path, $locations)
     {
         $this->path = $path;
         $this->locations = $locations;
+
+        if ($locations instanceof Closure) {
+        	$this->closure = true;
+        }
     }
 
     /**
@@ -36,6 +49,11 @@ class Environment
 	 */
     public function which()
     {
+    	if ($this->closure) {
+    		$environment = $this->locations;
+    		return $environment();
+    	}
+
         $hostname = gethostname();
 
         foreach ($this->locations as $location => $name) {
