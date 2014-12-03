@@ -5,11 +5,11 @@
 /*----------------------------------------------------*/
 return array(
 
-    'DB_NAME'       => 'database_name_here',
-    'DB_USER'       => 'database_user',
-    'DB_PASSWORD'   => 'database_password',
+    'DB_NAME'       => 'themosis-themosis',
+    'DB_USER'       => 'wpWrite',
+    'DB_PASSWORD'   => 'orlenka',
     'DB_HOST'       => 'localhost',
-    'WP_HOME'       => 'http://example.com',
-    'WP_SITEURL'    => 'http://example.com/cms'
+    'WP_HOME'       => 'http://themosis.dev',
+    'WP_SITEURL'    => 'http://themosis.dev/cms'
 
 );

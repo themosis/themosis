@@ -12,8 +12,11 @@ composer.lock
 ### Wordpress
 /htdocs/cms/*
 !/htdocs/cms/.gitkeep
-/htdocs/content/*
-!/htdocs/content/themes/*
+/htdocs/content/mu-plugins/themosis-framework/
+/htdocs/content/themes/themosis-theme/
+/htdocs/content/uploads/
+/htdocs/content/upgrade/
+
 
 ### Environment Credentials
 .env.*.php

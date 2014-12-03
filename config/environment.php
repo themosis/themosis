@@ -5,7 +5,7 @@
 /*----------------------------------------------------*/
 return array(
 
-    'local'             => 'your machine hostname',
+    'local'             => 'julienlmbesimac.home',
     'production'        => 'remote machine hostname'
 
 );
