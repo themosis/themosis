@@ -11,6 +11,12 @@
 		}
 	],
 	"type": "project",
+    "repositories":[
+        {
+            "type": "composer",
+            "url": "http://wpackagist.org"
+        }
+    ],
 	"autoload": {
 		"psr-0": {
 			"Thms": "library"
