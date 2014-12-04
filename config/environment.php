@@ -3,9 +3,7 @@
 /*----------------------------------------------------*/
 // Define your environments
 /*----------------------------------------------------*/
-return array(
-
-    'local'             => 'julienlmbesimac.home',
-    'production'        => 'remote machine hostname'
-
-);
+return function()
+{
+    return ('apache_local' === getenv('APP_ENV')) ? 'local': 'production';
+};

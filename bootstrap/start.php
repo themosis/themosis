@@ -25,7 +25,7 @@ if (file_exists($file = $root_path.DS.'config'.DS.'environment.php'))
 }
 
 // Check if there are environment values
-if (empty($environments) || !is_array($environments))
+if (empty($environments) || (!is_array($environments) && !$environments instanceof \Closure))
 {
 	printf('<h1>%s</h1>', 'Unable to load environment data. Please define your environments.');
 }
@@ -41,11 +41,11 @@ $env = new Thms\Config\Environment($root_path.DS, $environments);
 /*----------------------------------------------------*/
 $location = $env->which();
 
-if (empty($location)) printf('<h1>%s</h1>', 'Unable to define the environment. Make sure to define your hostname.');
+if (empty($location)) printf('<h1>%s</h1>', 'Unable to define the environment.');
 
 $loaded = $env->load($location);
 
-if (empty($loaded)) printf('<h1>%s</h1>', 'Unable to locate your environment file.');
+if (empty($loaded)) printf('<h1>%s</h1>', 'Unable to locate your environment configuration file.');
 
 /*----------------------------------------------------*/
 // Check required vars.
