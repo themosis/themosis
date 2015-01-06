@@ -28,8 +28,8 @@
 	"require": {
 		"php": ">=5.4",
 		"johnpbloch/wordpress": ">=4.1",
-        "themosis/framework": "dev-master",
-        "themosis/theme": "dev-master"
+        "themosis/framework": "1.1.x",
+        "themosis/theme": "1.1.x"
     },
     "extra":{
         "installer-paths":{
