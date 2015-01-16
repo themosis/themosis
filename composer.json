@@ -11,12 +11,12 @@
 		}
 	],
 	"type": "project",
-    "repositories":[
-        {
-            "type": "composer",
-            "url": "http://wpackagist.org"
-        }
-    ],
+	"repositories":[
+		{
+			"type": "composer",
+			"url": "http://wpackagist.org"
+		}
+	],
 	"autoload": {
 		"psr-0": {
 			"Thms": "library"
@@ -28,16 +28,16 @@
 	"require": {
 		"php": ">=5.4",
 		"johnpbloch/wordpress": ">=4.1",
-        "themosis/framework": "1.1.x",
-        "themosis/theme": "1.1.x"
-    },
-    "extra":{
-        "installer-paths":{
-            "htdocs/content/mu-plugins/themosis-{$name}/": ["themosis/framework"],
+		"themosis/framework": "1.1.*",
+		"themosis/theme": "1.1.*"
+	},
+	"extra":{
+		"installer-paths":{
+			"htdocs/content/mu-plugins/themosis-{$name}/": ["themosis/framework"],
 			"htdocs/content/plugins/{$name}/": ["type:wordpress-plugin"],
-            "htdocs/content/themes/themosis-{$name}/": ["themosis/theme"],
-            "htdocs/content/themes/{$name}/": ["type:wordpress-theme"]
-        },
-        "wordpress-install-dir": "htdocs/cms"
-    }
+			"htdocs/content/themes/themosis-{$name}/": ["themosis/theme"],
+			"htdocs/content/themes/{$name}/": ["type:wordpress-theme"]
+		},
+		"wordpress-install-dir": "htdocs/cms"
+	}
 }
