@@ -52,8 +52,8 @@ class Environment
 
 		foreach ($this->locations as $location => $name)
 		{
-			if ($hostname === $name)
-			{
+			$name = is_array( $name ) ? $name : [ $name ];
+			if (in_array( $hostname, $name )) {
 				return $location;
 			}
 		}
