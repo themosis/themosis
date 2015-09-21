@@ -52,7 +52,9 @@ class Environment
 
 		foreach ($this->locations as $location => $name)
 		{
-			if ($hostname === $name)
+			$pattern = ($name !== "/") ? str_replace('*', '(.*)', $name) . '\z' : '^/$';;
+
+			if ((bool) preg_match('#' . $pattern . '#', $hostname))
 			{
 				return $location;
 			}
