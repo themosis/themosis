@@ -73,6 +73,11 @@ if (file_exists($config = $root_path.DS.'config'.DS.'environments'.DS.$location.
 }
 
 /*----------------------------------------------------*/
+// Storage directory
+/*----------------------------------------------------*/
+define('THEMOSIS_STORAGE', $root_path.DS.'storage');
+
+/*----------------------------------------------------*/
 // Content directory
 /*----------------------------------------------------*/
 define('CONTENT_DIR', 'content');
