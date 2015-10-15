@@ -52,8 +52,9 @@ class Environment
 
 		foreach ($this->locations as $location => $name)
 		{
-			$name = is_array( $name ) ? $name : [ $name ];
-			if (in_array( $hostname, $name )) {
+			$name = is_array($name) ? $name : [$name];
+			if (in_array($hostname, $name))
+			{
 				return $location;
 			}
 		}
@@ -74,7 +75,7 @@ class Environment
             return require_once($path);
 		}
 
-		return array();
+		return [];
 	}
 
 	/**
