@@ -16,7 +16,7 @@ if (file_exists($autoload = $root_path.DS.'vendor'.DS.'autoload.php'))
 /*----------------------------------------------------*/
 // Load environment configuration
 /*----------------------------------------------------*/
-$environments = array();
+$environments = [];
 
 // Return array of environment data
 if (file_exists($file = $root_path.DS.'config'.DS.'environment.php'))
@@ -50,7 +50,7 @@ if (empty($loaded)) printf('<h1>%s</h1>', 'Unable to locate your environment con
 /*----------------------------------------------------*/
 // Check required vars.
 /*----------------------------------------------------*/
-$check = $env->check(array('DB_NAME', 'DB_USER', 'DB_PASSWORD', 'DB_HOST', 'WP_HOME', 'WP_SITEURL'), $loaded);
+$check = $env->check(['DB_NAME', 'DB_USER', 'DB_PASSWORD', 'DB_HOST', 'WP_HOME', 'WP_SITEURL'], $loaded);
 
 /*----------------------------------------------------*/
 // Populate environment vars

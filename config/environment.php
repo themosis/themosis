@@ -3,9 +3,9 @@
 /*----------------------------------------------------*/
 // Define your environments
 /*----------------------------------------------------*/
-return array(
+return [
 
     'local'         => 'your-local-hostname',
     'production'    => 'your-production-hostname'
 
-);
+];

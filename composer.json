@@ -27,7 +27,7 @@
 	},
 	"require": {
 		"php": ">=5.4",
-		"johnpbloch/wordpress": ">=4.1",
+		"johnpbloch/wordpress": ">=4.3",
 		"themosis/framework": "1.1.*",
 		"themosis/theme": "1.1.*"
 	},

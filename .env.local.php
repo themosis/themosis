@@ -3,7 +3,7 @@
 /*----------------------------------------------------*/
 // Local environment vars
 /*----------------------------------------------------*/
-return array(
+return [
 
     'DB_NAME'       => 'database-name',
     'DB_USER'       => 'database-user',
@@ -12,4 +12,4 @@ return array(
     'WP_HOME'       => 'http://domain.tld',
     'WP_SITEURL'    => 'http://domain.tld/cms'
 
-);
+];

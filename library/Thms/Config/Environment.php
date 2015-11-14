@@ -17,7 +17,7 @@ class Environment
 	 * 
 	 * @var array|Closure
 	 */
-	protected $locations = array();
+	protected $locations = [];
 
 	/**
 	 * Init the Environment class.
