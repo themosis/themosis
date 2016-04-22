@@ -22,6 +22,7 @@ define('WP_DEBUG_DISPLAY', false);
 define('SCRIPT_DEBUG', false);
 
 // Themosis framework
+define('THEMOSIS_ERROR', false);
 define('THEMOSIS_ERROR_DISPLAY', false);
 define('THEMOSIS_ERROR_SHUTDOWN', false);
 define('THEMOSIS_ERROR_REPORT', 0);

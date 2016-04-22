@@ -26,6 +26,7 @@ define('WP_DEBUG_DISPLAY', true);
 define('SCRIPT_DEBUG', true);
 
 // Themosis framework
+define('THEMOSIS_ERROR', true);
 define('THEMOSIS_ERROR_DISPLAY', true);
 define('THEMOSIS_ERROR_SHUTDOWN', true);
 define('THEMOSIS_ERROR_REPORT', -1);

@@ -56,6 +56,15 @@ if (file_exists($shared = $rootPath.DS.'config'.DS.'shared.php')) {
 }
 
 /*----------------------------------------------------*/
+// Error handling
+/*----------------------------------------------------*/
+if (defined('THEMOSIS_ERROR') && THEMOSIS_ERROR) {
+    $whoops = new \Whoops\Run();
+    $whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler());
+    $whoops->register();
+}
+
+/*----------------------------------------------------*/
 // Constants
 /*----------------------------------------------------*/
 define('THEMOSIS_STORAGE', $rootPath.DS.'storage');

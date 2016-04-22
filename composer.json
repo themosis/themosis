@@ -31,7 +31,8 @@
     "themosis/framework": "dev-master",
     "themosis/theme": "dev-master",
     "illuminate/container": "^5.2",
-    "vlucas/phpdotenv": "^2.2"
+    "vlucas/phpdotenv": "^2.2",
+    "filp/whoops": "^2.1"
   },
   "require-dev": {
     "phpunit/phpunit": "5.3.*"
