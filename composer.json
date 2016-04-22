@@ -30,7 +30,6 @@
     "johnpbloch/wordpress": "^4.5",
     "themosis/framework": "dev-master",
     "themosis/theme": "dev-master",
-    "illuminate/container": "^5.2",
     "vlucas/phpdotenv": "^2.2",
     "filp/whoops": "^2.1"
   },
