@@ -13,6 +13,9 @@ define('DB_HOST', getenv('DB_HOST') ? getenv('DB_HOST') : 'localhost');
 define('WP_HOME', getenv('WP_HOME'));
 define('WP_SITEURL', getenv('WP_SITEURL'));
 
+// Jetpack
+define('JETPACK_DEV_DEBUG', true);
+
 // Encoding
 define('THEMOSIS_CHARSET', 'UTF-8');
 

@@ -1,11 +1,6 @@
 <?php
 
 /*----------------------------------------------------*/
-// Define your environments
+// Define environment type
 /*----------------------------------------------------*/
-return [
-
-    'local'         => 'your-local-hostname',
-    'production'    => 'your-production-hostname'
-
-];
+return '';

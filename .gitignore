@@ -19,5 +19,5 @@ vendor/
 
 
 ### Environment Credentials
-.env.*.php
-!.env.local.php
+.env
+!.env.local

@@ -5,39 +5,31 @@ use Closure;
 
 class Environment
 {
-	/**
-	 * Root path where files are located.
-	 * 
-	 * @var string
-	 */
-	protected $path;
+    /**
+     * Environment locations.
+     *
+     * @var array|Closure
+     */
+    protected $locations = [];
 
-	/**
-	 * Environments locations.
-	 * 
-	 * @var array|Closure
-	 */
-	protected $locations = [];
+    /**
+     * Init the Environment class.
+     *
+     * @param array|Closure $locations Environment locations - Detection.
+     */
+    public function __construct($locations)
+    {
+        $this->locations = $locations;
+    }
 
-	/**
-	 * Init the Environment class.
-	 * 
-	 * @param string $path The root path where environments files are located.
-	 * @param array|Closure $locations Environment locations - Detection.
-	 */ 
-	public function __construct($path, $locations)
-	{
-		$this->path = $path;
-		$this->locations = $locations;
-	}
-
-	/**
-	 * Find which environment we are.
-	 * 
-	 * @return string
-	 */
-	public function which()
-	{
+    /**
+     * Find in which environment we are.
+     *
+     * @param string $hostname The hostname to compare with.
+     * @return string
+     */
+    public function which($hostname = '')
+    {
         // Check if $locations is a closure.
         // This means we're checking for environment variables through the closure.
         if ($this->locations instanceof Closure)
@@ -47,84 +39,22 @@ class Environment
         }
 
         // If not using closure, we're using the default detection
-        // by comparing the hostname.
-		$hostname = gethostname();
+        // by comparing the given hostnames from an array.
+        if (is_array($this->locations) && !empty($this->locations)) {
+            foreach ($this->locations as $location => $host)
+            {
+                $host = is_array($host) ? $host : [$host];
+                if (in_array($hostname, $host))
+                {
+                    return $location;
+                }
+            }
+        }
 
-		foreach ($this->locations as $location => $name)
-		{
-			$name = is_array($name) ? $name : [$name];
-			if (in_array($hostname, $name))
-			{
-				return $location;
-			}
-		}
+        // If not using array, a single string is provided to define the
+        // environment.
+        if (is_string($this->locations)) return $this->locations;
 
         return '';
-	}
-
-	/**
-	 * Load the .env.{$location}.php file.
-	 * 
-	 * @param string $location
-	 * @return array
-	 */
-	public function load($location)
-	{
-		if (file_exists($path = $this->getFile($location)))
-		{
-            return require_once($path);
-		}
-
-		return [];
-	}
-
-	/**
-	 * Check required values.
-	 * 
-	 * @param array $required The required values to check.
-	 * @param array $values
-	 * @return bool
-	 */
-	public function check(array $required, array $values)
-	{
-		foreach ($required as $key)
-		{
-			if (!array_key_exists($key, $values))
-			{
-				return false;
-			}
-		}
-
-		return true;
-	}
-
-	/**
-	 * Populate environment vars.
-	 * 
-	 * @param array $vars The loaded environments vars.
-	 * @return void
-	 */
-	public function populate(array $vars)
-	{
-		foreach ($vars as $key => $value)
-		{
-			if (false === getenv($key))
-			{
-				$_ENV[$key] = $value;
-				$_SERVER[$key] = $value;
-				putenv("{$key}={$value}");
-			}
-		}
-	}
-
-	/**
-	 * Return the .env file path.
-	 * 
-	 * @param string $location
-	 * @return string
-	 */
-	protected function getFile($location)
-	{
-		return $this->path.'.env.'.$location.'.php';
-	}
+    }
 }
