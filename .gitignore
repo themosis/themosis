@@ -9,6 +9,9 @@ vendor/
 ### IDE
 .idea/
 
+### PHPCS
+cs_fixer*
+
 ### Wordpress
 /htdocs/cms/*
 !/htdocs/cms/.gitkeep

@@ -8,8 +8,8 @@ class TestEnvironment extends PHPUnit_Framework_TestCase
     public function testWhichEnvironmentDefault()
     {
         $locations = [
-            'local'         => ['local-hostname', 'another-host', 'team-localhost'],
-            'production'    => 'prod-hostname'
+            'local' => ['local-hostname', 'another-host', 'team-localhost'],
+            'production' => 'prod-hostname',
         ];
 
         // If nothing is found - Should return empty string.
@@ -26,20 +26,17 @@ class TestEnvironment extends PHPUnit_Framework_TestCase
      */
     public function testWhichEnvironmentWithClosure()
     {
-        $locations = function()
-        {
+        $locations = function () {
             return 'local';
         };
 
         $env = new Thms\Config\Environment($locations);
         $this->assertEquals('local', $env->which('some-host'));
 
-        $locations = function()
-        {
+        $locations = function () {
             $host = null;
 
-            if (true)
-            {
+            if (true) {
                 $host = 'local';
             }
         };

@@ -10,7 +10,7 @@ $table_prefix = getenv('DB_PREFIX') ? getenv('DB_PREFIX') : 'wp_';
 /*----------------------------------------------------*/
 // Authentication unique keys and salts
 /*----------------------------------------------------*/
-/**
+/*
  * @link https://api.wordpress.org/secret-key/1.1/salt/ WordPress.org secret-key service 
  */
 define('AUTH_KEY',         'put your unique phrase here');
