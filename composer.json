@@ -26,9 +26,9 @@
     "preferred-install": "dist"
   },
   "require": {
-    "php": ">=5.6.4",
+    "php": ">=5.6",
     "johnpbloch/wordpress": "^4.5",
-    "themosis/framework": "dev-dev",
+    "themosis/framework": "dev-master",
     "themosis/theme": "dev-dev",
     "vlucas/phpdotenv": "^2.2",
     "filp/whoops": "^2.1"
