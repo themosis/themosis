@@ -27,5 +27,6 @@ define('NONCE_SALT',       'put your unique phrase here');
 /*----------------------------------------------------*/
 define('WP_AUTO_UPDATE_CORE', false);
 define('DISALLOW_FILE_EDIT', true);
+define('WP_DEFAULT_THEME', 'themosis-theme');
 
 /* That's all, stop editing! Happy blogging. */
