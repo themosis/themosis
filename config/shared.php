@@ -1,11 +1,28 @@
 <?php
 
 /*----------------------------------------------------*/
-// Database
+// WordPress database
 /*----------------------------------------------------*/
-define('DB_CHARSET', 'utf8');
-define('DB_COLLATE', '');
+define('DB_CHARSET', 'utf8mb4');
+define('DB_COLLATE', 'utf8mb4_unicode_ci');
 $table_prefix = getenv('DB_PREFIX') ? getenv('DB_PREFIX') : 'wp_';
+
+/*----------------------------------------------------*/
+// Illuminate database
+/*----------------------------------------------------*/
+$capsule = new Illuminate\Database\Capsule\Manager();
+$capsule->addConnection([
+    'driver'    => 'mysql',
+    'host'      => DB_HOST,
+    'database'  => DB_NAME,
+    'username'  => DB_USER,
+    'password'  => DB_PASSWORD,
+    'charset'   => DB_CHARSET,
+    'collation' => DB_COLLATE,
+    'prefix'    => $table_prefix
+]);
+$capsule->setAsGlobal();
+$capsule->bootEloquent();
 
 /*----------------------------------------------------*/
 // Authentication unique keys and salts
