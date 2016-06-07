@@ -23,6 +23,7 @@ $capsule->addConnection([
 ]);
 $capsule->setAsGlobal();
 $capsule->bootEloquent();
+$GLOBALS['themosis.capsule'] = $capsule;
 
 /*----------------------------------------------------*/
 // Authentication unique keys and salts
