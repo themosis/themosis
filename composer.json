@@ -1,6 +1,6 @@
 {
   "name": "themosis/themosis",
-  "description": "The Themosis framework. A framework for WordPress developers.",
+  "description": "The Themosis framework. A WordPress framework.",
   "keywords": ["themosis", "framework", "WordPress"],
   "license": "GPL-2.0+",
   "authors": [
@@ -26,13 +26,13 @@
     "preferred-install": "dist"
   },
   "require": {
-    "php": ">=5.5.9",
-    "johnpbloch/wordpress": "^4.5",
+    "php": ">=5.6",
+    "johnpbloch/wordpress": "^4.6",
     "themosis/framework": "dev-master",
     "themosis/theme": "dev-dev",
     "vlucas/phpdotenv": "^2.2",
     "filp/whoops": "^2.1",
-    "illuminate/database": "^5.2"
+    "illuminate/database": "^5.3"
   },
   "require-dev": {
     "phpunit/phpunit": "5.3.*"
