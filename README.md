@@ -18,11 +18,11 @@ Any help is appreciated. The project is open-source and we encourage you to part
 - Reporting a bug issue
 - Suggesting features
 - Sending a pull request with code fix or feature
-- Following the project on GitHub
-- Following us on Twitter
+- Following the project on [GitHub](https://github.com/themosis)
+- Following us on Twitter: [@Themosis](https://twitter.com/Themosis)
 - Sharing the project around your community
 
-For details about contributing to the framework, please check the [contribution guide](http://framework.themosis.com/docs/contributing/).
+For details about contributing to the framework, please check the [contribution guide](https://framework.themosis.com/docs/1.3/contributing/).
 
 License
 -------
