@@ -44,9 +44,23 @@ class Environment
         // by comparing the given hostnames from an array.
         if (is_array($this->locations) && !empty($this->locations)) {
             foreach ($this->locations as $location => $host) {
-                $host = is_array($host) ? $host : [$host];
-                if (in_array($hostname, $host)) {
-                    return $location;
+
+                /*
+                 * Test against an array of hosts.
+                 */
+                if (is_array($host)) {
+                    if (in_array($hostname, $host)) {
+                        return $location;
+                    }
+                } else {
+                    /*
+                     * Test against a string/regular expression.
+                     */
+                    $pattern = ($host !== '/') ? str_replace('*', '(.*)', $host).'\z' : '^/$';
+
+                    if ((bool) preg_match('/'.$pattern.'/', $hostname)) {
+                        return $location;
+                    }
                 }
             }
         }
@@ -54,6 +68,8 @@ class Environment
         // If not using array, a single string is provided to define the
         // environment.
         if (is_string($this->locations)) {
+
+            // Default string.
             return $this->locations;
         }
 

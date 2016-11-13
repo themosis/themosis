@@ -61,4 +61,26 @@ class TestEnvironment extends PHPUnit_Framework_TestCase
         $env = new \Thms\Config\Environment($locations);
         $this->assertEquals('local', $env->which());
     }
+
+    public function testWhichEnvironmentWithRegEx()
+    {
+        $locations = [
+            'local' => '*.themosis.dev',
+            'production' => '*.aws.elastic456278s9d.com',
+            'staging' => 'xyz\..+\.net',
+            'custom' => 'my-hostname',
+        ];
+
+        $env = new Thms\Config\Environment($locations);
+
+        $this->assertEquals('local', $env->which('server001.themosis.dev'));
+        $this->assertEquals('local', $env->which('abcserver3578sdd67.themosis.dev'));
+
+        $this->assertEquals('production', $env->which('us2-467.aws.elastic456278s9d.com'));
+
+        $this->assertEquals('staging', $env->which('xyz.some-name.net'));
+        $this->assertEquals('staging', $env->which('xyz.another_name215658.net'));
+
+        $this->assertEquals('custom', $env->which('my-hostname'));
+    }
 }

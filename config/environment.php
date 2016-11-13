@@ -3,4 +3,7 @@
 /*----------------------------------------------------*/
 // Define environment type
 /*----------------------------------------------------*/
-return '';
+return [
+    'local' => 'INSERT-HOSTNAME',
+    'production' => 'INSERT-HOSTNAME'
+];
