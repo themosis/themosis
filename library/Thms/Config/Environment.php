@@ -49,16 +49,16 @@ class Environment
                  * Test against an array of hosts.
                  */
                 if (is_array($host)) {
-                    if (in_array($hostname, $host)) {
-                        return $location;
+                    foreach ($host as $h) {
+                        if ($this->match($h, $hostname)) {
+                            return $location;
+                        }
                     }
                 } else {
                     /*
                      * Test against a string/regular expression.
                      */
-                    $pattern = ($host !== '/') ? str_replace('*', '(.*)', $host).'\z' : '^/$';
-
-                    if ((bool) preg_match('/'.$pattern.'/', $hostname)) {
+                    if ($this->match($host, $hostname)) {
                         return $location;
                     }
                 }
@@ -74,5 +74,19 @@ class Environment
         }
 
         return '';
+    }
+
+    /**
+     * Check if a host is matching a pattern.
+     *
+     * @param string $host The regular expression pattern host to use.
+     * @param string $hostname The host name.
+     *
+     * @return bool
+     */
+    protected function match($host, $hostname)
+    {
+        $pattern = ($host !== '/') ? str_replace('*', '(.*)', $host).'\z' : '^/$';
+        return (bool) preg_match('/'.$pattern.'/', $hostname);
     }
 }

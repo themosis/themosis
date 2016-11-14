@@ -82,5 +82,15 @@ class TestEnvironment extends PHPUnit_Framework_TestCase
         $this->assertEquals('staging', $env->which('xyz.another_name215658.net'));
 
         $this->assertEquals('custom', $env->which('my-hostname'));
+
+        $locations = [
+            'local' => ['host-one', '*.themosis.net', 'eu-2_3-xyz.aws.com']
+        ];
+
+        $env = new Thms\Config\Environment($locations);
+
+        $this->assertEquals('local', $env->which('host-one'));
+        $this->assertEquals('local', $env->which('host-one.themosis.net'));
+        $this->assertEquals('local', $env->which('eu-2_3-xyz.aws.com'));
     }
 }
