@@ -22,7 +22,7 @@ Any help is appreciated. The project is open-source and we encourage you to part
 - Following us on Twitter: [@Themosis](https://twitter.com/Themosis)
 - Sharing the project around your community
 
-For details about contributing to the framework, please check the [contribution guide](https://framework.themosis.com/docs/1.3/contributing/).
+For details about contributing to the framework, please check the [contribution guide](http://framework.themosis.com/docs/1.3/contributing).
 
 License
 -------
