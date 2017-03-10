@@ -25,3 +25,4 @@ cs_fixer*
 .env
 .env.*
 !.env.local
+!.env.example
