@@ -4,6 +4,6 @@
 // Define environment type
 /*----------------------------------------------------*/
 return [
-    'local' => 'INSERT-HOSTNAME',
+    'local' => gethostname(),
     'production' => 'INSERT-HOSTNAME'
 ];
