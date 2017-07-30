@@ -5,7 +5,7 @@ $rootPath = dirname(__DIR__);
 /*----------------------------------------------------*/
 // Composer autoload
 /*----------------------------------------------------*/
-if (file_exists($autoload = $rootPath.DS.'vendor'.DS.'autoload.php')) {
+if (!file_exists($autoload = $rootPath.DS.'vendor'.DS.'autoload.php')) {
     die("Couldn't load the Composer autoload file.");
 }
 require_once $autoload;
@@ -38,7 +38,7 @@ try {
     $env->load();
     $env->required(['DB_NAME', 'DB_USER', 'DB_PASSWORD', 'DB_HOST', 'WP_HOME', 'WP_SITEURL']);
 } catch (\Exception $e) {
-    die("Error in autoload.php around line 29: " . $e->getMessage());
+    die("Error in autoload.php around line 36: " . $e->getMessage());
 }
 
 /*
