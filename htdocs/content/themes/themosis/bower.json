@@ -1,0 +1,16 @@
+{
+  "name": "themosis-theme",
+  "description": "A WordPress theme.",
+  "license": "GPLv2",
+  "homepage": "https://github.com/themosis/theme",
+  "moduleType": [],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "assets/components/",
+    "test",
+    "tests"
+  ]
+}
