@@ -58,4 +58,4 @@ if (defined('THEMOSIS_ERROR') && THEMOSIS_ERROR) {
 define('THEMOSIS_STORAGE', $rootPath . DS . 'storage');
 define('CONTENT_DIR', 'content');
 define('WP_CONTENT_DIR', $webrootPath . DS . CONTENT_DIR);
-define('WP_CONTENT_URL', WP_HOME . '/' . CONTENT_DIR);
+define('WP_CONTENT_URL', '/' . CONTENT_DIR);
