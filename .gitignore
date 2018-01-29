@@ -3,8 +3,10 @@
 Thumbs.db
 
 ### Composer
-composer.lock
 vendor/
+
+### NPM
+node_modules/
 
 ### IDE
 .idea/
