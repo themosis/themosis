@@ -1,0 +1,20 @@
+{
+    "name": "@gladeye/themosis",
+    "version": "1.3.2-p1",
+    "description": "The Themosis framework. A WordPress framework.",
+    "main": "null",
+    "repository": "https://github.com/gladeye/themosis.git",
+    "private": true,
+    "scripts": {
+        "start": "run-p start:wordpress start:webpack",
+        "start:webpack": "webpack-dev-server --port 8000 --hot --inline",
+        "start:wordpress": "wp server",
+        "build:webpack": "NODE_ENV=production webpack"
+    },
+    "devDependencies": {
+        "@gladeye/bento": "^1.2.1",
+        "npm-run-all": "^4.1.2",
+        "webpack": "^3.10.0",
+        "webpack-dev-server": "^2.11.1"
+    }
+}
