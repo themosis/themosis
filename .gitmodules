@@ -1,6 +1,0 @@
-[submodule "htdocs/content/mu-plugins/themosis-framework"]
-	path = htdocs/content/mu-plugins/themosis-framework
-	url = git@github.com:themosis/framework.git
-[submodule "htdocs/content/themes/themosis-theme"]
-	path = htdocs/content/themes/themosis-theme
-	url = git@github.com:themosis/theme.git
