@@ -3,11 +3,10 @@
 Thumbs.db
 
 ### Composer
-composer.lock
-vendor/
+/vendor
 
 ### IDE
-.idea/
+/.idea
 
 ### PHPCS
 cs_fixer*
