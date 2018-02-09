@@ -2,6 +2,13 @@
 .DS_Store
 Thumbs.db
 
+### Vagrant / Homestead
+/.vagrant
+/Homestead.yaml
+/Vagrantfile
+/after.sh
+/aliases
+
 ### Composer
 /vendor
 

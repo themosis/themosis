@@ -1724,12 +1724,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/themosis/framework.git",
-                "reference": "451400e9d1dbbd4218128a26d799541ed5a404b6"
+                "reference": "ff4a9167bbfd0cdfa915601d63d1b5061c25e072"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/themosis/framework/zipball/451400e9d1dbbd4218128a26d799541ed5a404b6",
-                "reference": "451400e9d1dbbd4218128a26d799541ed5a404b6",
+                "url": "https://api.github.com/repos/themosis/framework/zipball/ff4a9167bbfd0cdfa915601d63d1b5061c25e072",
+                "reference": "ff4a9167bbfd0cdfa915601d63d1b5061c25e072",
                 "shasum": ""
             },
             "require": {
@@ -1777,7 +1777,7 @@
                 "themosis",
                 "wordpress"
             ],
-            "time": "2018-02-09T15:25:11+00:00"
+            "time": "2018-02-09T16:14:31+00:00"
         },
         {
             "name": "twig/twig",

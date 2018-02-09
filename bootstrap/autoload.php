@@ -67,6 +67,7 @@ if (defined('THEMOSIS_ERROR') && THEMOSIS_ERROR) {
 /*----------------------------------------------------*/
 // Constants
 /*----------------------------------------------------*/
+define('THEMOSIS_ROOT', $rootPath);
 define('THEMOSIS_STORAGE', $rootPath.DS.'storage');
 define('CONTENT_DIR', 'content');
 define('WP_CONTENT_DIR', $webrootPath.DS.CONTENT_DIR);
