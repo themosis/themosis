@@ -30,7 +30,7 @@
     "johnpbloch/wordpress-core-installer": "^1.0",
     "johnpbloch/wordpress-core": "^4.9.4",
     "themosis/framework": "dev-develop",
-    "vlucas/phpdotenv": "^2.2",
+    "vlucas/phpdotenv": "^2.4",
     "filp/whoops": "^2.1",
     "illuminate/database": "^5.5"
   },
