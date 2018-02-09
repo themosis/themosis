@@ -6,9 +6,21 @@
 defined('DS') ? DS : define('DS', DIRECTORY_SEPARATOR);
 
 /*----------------------------------------------------*/
-// Bootstrap WordPress
+// Application root path
 /*----------------------------------------------------*/
-require_once dirname(__DIR__).DS.'bootstrap'.DS.'autoload.php';
+define('THEMOSIS_ROOT', realpath(__DIR__.'/../'));
+
+/*----------------------------------------------------*/
+// Composer autoload
+/*----------------------------------------------------*/
+if (file_exists($autoload = THEMOSIS_ROOT.'/vendor/autoload.php')) {
+    require_once $autoload;
+}
+
+/*----------------------------------------------------*/
+// Bootstrap application
+/*----------------------------------------------------*/
+require_once dirname(__DIR__).DS.'bootstrap'.DS.'application.php';
 
 /*----------------------------------------------------*/
 // Sets up WordPress vars and included files

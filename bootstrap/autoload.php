@@ -7,13 +7,6 @@ $rootPath = dirname(__DIR__);
 $webrootPath = $rootPath.DS.'htdocs';
 
 /*----------------------------------------------------*/
-// Composer autoload
-/*----------------------------------------------------*/
-if (file_exists($autoload = $rootPath.DS.'vendor'.DS.'autoload.php')) {
-    require_once $autoload;
-}
-
-/*----------------------------------------------------*/
 // Environment configuration
 /*----------------------------------------------------*/
 /*
@@ -67,7 +60,6 @@ if (defined('THEMOSIS_ERROR') && THEMOSIS_ERROR) {
 /*----------------------------------------------------*/
 // Constants
 /*----------------------------------------------------*/
-define('THEMOSIS_ROOT', $rootPath);
 define('THEMOSIS_STORAGE', $rootPath.DS.'storage');
 define('CONTENT_DIR', 'content');
 define('WP_CONTENT_DIR', $webrootPath.DS.CONTENT_DIR);
