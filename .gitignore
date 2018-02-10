@@ -2,24 +2,21 @@
 .DS_Store
 Thumbs.db
 
-### Vagrant / Homestead
-/.vagrant
-/Homestead.yaml
-/Vagrantfile
-/after.sh
-/aliases
-
 ### Composer
-/vendor
+composer.lock
+vendor/
 
 ### IDE
-/.idea
+.idea/
 
 ### PHPCS
 cs_fixer*
 
 ### Wordpress
-/htdocs/cms/
+/htdocs/cms/*
+!/htdocs/cms/.gitkeep
+/htdocs/content/mu-plugins/themosis-framework/
+/htdocs/content/themes/themosis-theme/
 /htdocs/content/uploads/
 /htdocs/content/upgrade/
 

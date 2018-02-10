@@ -1,15 +1,43 @@
 <?php
 
-use Dotenv\Dotenv;
-use Thms\Bootstrap\EnvironmentLoader;
-use Thms\Core\Application;
+/*----------------------------------------------------*/
+// Paths
+/*----------------------------------------------------*/
+$rootPath = dirname(__DIR__);
+$webrootPath = $rootPath.DS.'htdocs';
 
-$application = new Application(THEMOSIS_ROOT);
+/*----------------------------------------------------*/
+// Composer autoload
+/*----------------------------------------------------*/
+if (file_exists($autoload = $rootPath.DS.'vendor'.DS.'autoload.php')) {
+    require_once $autoload;
+}
 
-$dotenv = new Dotenv(THEMOSIS_ROOT);
+/*----------------------------------------------------*/
+// Environment configuration
+/*----------------------------------------------------*/
+/*
+ * Locations
+ */
+if (file_exists($locations = $rootPath.DS.'config'.DS.'environment.php')) {
+    $locations = require_once $locations;
+} else {
+    die('Unable to find your environment.php setup file.');
+}
 
-$bootstrap = new EnvironmentLoader(THEMOSIS_ROOT, $dotenv);
-$bootstrap->bootstrap();
+/*
+ * Define environment file
+ */
+$location = new \Thms\Config\Environment($locations);
+$location = $location->which(gethostname());
+$file = empty($location) ? '.env' : ".env.{$location}";
+
+/*
+ * Load environment
+ */
+$env = new \Dotenv\Dotenv($rootPath, $file);
+$env->load();
+$env->required(['DB_NAME', 'DB_USER', 'DB_PASSWORD', 'DB_HOST', 'WP_HOME', 'WP_SITEURL']);
 
 /*
  * Load environment configuration

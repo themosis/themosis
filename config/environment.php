@@ -4,6 +4,6 @@
 // Define environment type
 /*----------------------------------------------------*/
 return [
-    'local' => ['themosis'],
+    'local' => 'INSERT-HOSTNAME',
     'production' => 'INSERT-HOSTNAME'
 ];
