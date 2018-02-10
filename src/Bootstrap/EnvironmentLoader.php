@@ -3,13 +3,21 @@
 namespace Thms\Bootstrap;
 
 use Dotenv\Dotenv;
+use Illuminate\Contracts\Foundation\Application;
 
 class EnvironmentLoader
 {
     /**
-     * @var Dotenv
+     * @var Application
      */
-    protected $env;
+    protected $app;
+
+    /**
+     * Environment directory name.
+     *
+     * @var string
+     */
+    protected $dir = 'environment';
 
     /**
      * Required environment variables.
@@ -27,27 +35,24 @@ class EnvironmentLoader
     ];
 
     /**
-     * EnvironmentLoader constructor.
-     *
-     * @param string $path Application root path.
-     * @param Dotenv $env
-     */
-    public function __construct($path, Dotenv $env)
-    {
-        $this->env = $env;
-    }
-
-    /**
      * Bootstrap the application environment.
+     *
+     * @param Application $app
      */
-    public function bootstrap()
+    public function bootstrap(Application $app)
     {
-        $this->env->load();
-        $this->env->required($this->required);
+        $this->app = $app;
+
+        try {
+            $dotenv = new Dotenv($app->environmentPath(), $app->environmentFile());
+            $dotenv->load();
+            $dotenv->required($this->required);
+        } catch (\Exception $e) {
+            $app->make('log')->debug($e->getMessage());
+        }
+
         $location = $this->detectEnvironment();
         $this->loadEnvironment($location);
-
-        return $this;
     }
 
     /**
@@ -57,7 +62,21 @@ class EnvironmentLoader
      */
     protected function loadEnvironment($location = 'local')
     {
-        file_exists($config = $rootPath.DS.'config'.DS.'environments'.DS.$location.'.php');
+        $path = sprintf('%s/locations/%s.php', $this->dir, $location);
+
+        /*
+         * Load environment configuration file. Ex.: local.php
+         */
+        if (file_exists($file = $this->app->configPath($path))) {
+            require_once $file;
+        }
+
+        /*
+         * Load shared environment configuration file shared.php
+         */
+        if (file_exists($sharedFile = $this->app->configPath($this->dir.'/shared.php'))) {
+            require_once $sharedFile;
+        }
     }
 
     /**
@@ -67,12 +86,6 @@ class EnvironmentLoader
      */
     protected function detectEnvironment()
     {
-        $environment = getenv('APP_ENV');
-
-        if (empty($environment)) {
-            return 'local';
-        }
-
-        return $environment;
+        return env('APP_ENV', 'local');
     }
 }

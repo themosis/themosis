@@ -5,7 +5,6 @@
 /*----------------------------------------------------*/
 define('DB_CHARSET', 'utf8mb4');
 define('DB_COLLATE', 'utf8mb4_unicode_ci');
-$table_prefix = getenv('DB_PREFIX') ? getenv('DB_PREFIX') : 'wp_';
 
 /*----------------------------------------------------*/
 // Illuminate database

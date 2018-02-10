@@ -1,43 +1,39 @@
 <?php
 
-use Dotenv\Dotenv;
-use Thms\Bootstrap\EnvironmentLoader;
+use Illuminate\Contracts\Http\Kernel;
 use Thms\Core\Application;
 
 $app = new Application(THEMOSIS_ROOT);
 
-$dotenv = new Dotenv(THEMOSIS_ROOT);
+/*----------------------------------------------------*/
+// Bind interfaces
+/*----------------------------------------------------*/
+$app->singleton(
+    Illuminate\Contracts\Http\Kernel::class,
+    App\Http\Kernel::class
+);
 
-$bootstrap = new EnvironmentLoader(THEMOSIS_ROOT, $dotenv);
-$bootstrap->bootstrap();
+/*----------------------------------------------------*/
+// Start the application
+/*----------------------------------------------------*/
+$app->make(Kernel::class);
 
-/*
- * Load environment configuration
- */
-// If .env file selected, default its location to local configuration.
-$location = ('.env' === $file) ? 'local' : $location;
-if (file_exists($config = $rootPath.DS.'config'.DS.'environments'.DS.$location.'.php')) {
-    require_once $config;
-}
-
-/*
- * Include shared configuration
- */
-if (file_exists($shared = $rootPath.DS.'config'.DS.'shared.php')) {
-    require_once $shared;
-}
+/*----------------------------------------------------*/
+// Database prefix (WordPress)
+/*----------------------------------------------------*/
+$table_prefix = getenv('DATABASE_PREFIX') ? getenv('DATABASE_PREFIX') : 'wp_';
 
 /*----------------------------------------------------*/
 // Error handling
 /*----------------------------------------------------*/
-if (defined('THEMOSIS_ERROR') && THEMOSIS_ERROR) {
+/*if (defined('THEMOSIS_ERROR') && THEMOSIS_ERROR) {
     $whoops = new \Whoops\Run();
     $whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler());
     $whoops->register();
-}
+}*/
 
 /*----------------------------------------------------*/
 // Constants
 /*----------------------------------------------------*/
-define('THEMOSIS_STORAGE', $rootPath.DS.'storage');
+//define('THEMOSIS_STORAGE', $rootPath.DS.'storage');
 

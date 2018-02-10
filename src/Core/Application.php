@@ -30,6 +30,20 @@ class Application extends Container implements ApplicationContract, HttpKernelIn
     protected $basePath;
 
     /**
+     * Path location of env files.
+     *
+     * @var string
+     */
+    protected $environmentPath;
+
+    /**
+     * Environment file name base.
+     *
+     * @var string
+     */
+    protected $environmentFile = '.env';
+
+    /**
      * The deferred services and their providers.
      *
      * @var array
@@ -49,6 +63,13 @@ class Application extends Container implements ApplicationContract, HttpKernelIn
      * @var array
      */
     protected $loadedProviders = [];
+
+    /**
+     * Indicates if the application has been bootstrapped or not.
+     *
+     * @var bool
+     */
+    protected $hasBeenBootstrapped = false;
 
     /**
      * Indicates if the application has booted.
@@ -313,7 +334,7 @@ class Application extends Container implements ApplicationContract, HttpKernelIn
      */
     public function configPath($path = '')
     {
-        return $this->resourcePath('config').($path ? DIRECTORY_SEPARATOR.$path : $path);
+        return $this->basePath('config').($path ? DIRECTORY_SEPARATOR.$path : $path);
     }
 
     /**
@@ -351,6 +372,26 @@ class Application extends Container implements ApplicationContract, HttpKernelIn
         }
 
         return $this->applicationPath('bootstrap').($path ? DIRECTORY_SEPARATOR.$path : $path);
+    }
+
+    /**
+     * Return the environment path.
+     *
+     * @return string
+     */
+    public function environmentPath()
+    {
+        return $this->environmentPath ?: $this->basePath();
+    }
+
+    /**
+     * Return the environment file name base.
+     *
+     * @return string
+     */
+    public function environmentFile()
+    {
+        return $this->environmentFile ?: '.env';
     }
 
     /**
@@ -424,6 +465,39 @@ class Application extends Container implements ApplicationContract, HttpKernelIn
             $this->booting(function () use ($instance) {
                 $this->bootProvider($instance);
             });
+        }
+    }
+
+    /**
+     * Verify if the application has been bootstrapped before.
+     *
+     * @return bool
+     */
+    public function hasBeenBootstrapped()
+    {
+        return $this->hasBeenBootstrapped;
+    }
+
+    /**
+     * Bootstrap the application with given list of bootstrap
+     * classes.
+     *
+     * @param array $bootstrappers
+     */
+    public function bootstrapWith(array $bootstrappers)
+    {
+        $this->hasBeenBootstrapped = true;
+
+        foreach ($bootstrappers as $bootstrapper) {
+            $this['events']->fire('bootstrapping: '.$bootstrapper, [$this]);
+
+            /*
+             * Instantiate each bootstrap class and call its "bootstrap" method
+             * with the Application as a parameter.
+             */
+            $this->make($bootstrapper)->bootstrap($this);
+
+            $this['events']->fire('bootstrapped: '.$bootstrapper, [$this]);
         }
     }
 
