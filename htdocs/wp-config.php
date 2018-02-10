@@ -6,9 +6,12 @@
 defined('DS') ? DS : define('DS', DIRECTORY_SEPARATOR);
 
 /*----------------------------------------------------*/
-// Application root path
+// Application paths
 /*----------------------------------------------------*/
 define('THEMOSIS_ROOT', realpath(__DIR__.'/../'));
+define('CONTENT_DIR', 'content');
+define('WP_CONTENT_DIR', THEMOSIS_ROOT.DS.CONTENT_DIR);
+//define('WP_CONTENT_URL', WP_HOME.DS.CONTENT_DIR);
 
 /*----------------------------------------------------*/
 // Composer autoload

@@ -285,7 +285,7 @@ class Application extends Container implements ApplicationContract, HttpKernelIn
      */
     public function webPath($path = '')
     {
-        return rtrim(ABSPATH, '\/').($path ? DIRECTORY_SEPARATOR.$path : $path);
+        //return rtrim(ABSPATH, '\/').($path ? DIRECTORY_SEPARATOR.$path : $path);
     }
 
     /**

@@ -4,7 +4,7 @@ use Dotenv\Dotenv;
 use Thms\Bootstrap\EnvironmentLoader;
 use Thms\Core\Application;
 
-$application = new Application(THEMOSIS_ROOT);
+$app = new Application(THEMOSIS_ROOT);
 
 $dotenv = new Dotenv(THEMOSIS_ROOT);
 
@@ -40,6 +40,4 @@ if (defined('THEMOSIS_ERROR') && THEMOSIS_ERROR) {
 // Constants
 /*----------------------------------------------------*/
 define('THEMOSIS_STORAGE', $rootPath.DS.'storage');
-define('CONTENT_DIR', 'content');
-define('WP_CONTENT_DIR', $webrootPath.DS.CONTENT_DIR);
-define('WP_CONTENT_URL', WP_HOME.'/'.CONTENT_DIR);
+

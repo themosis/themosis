@@ -7,7 +7,7 @@
     {
       "name": "Julien Lambé",
       "email": "julien@themosis.com",
-      "homepage": "http://www.themosis.com/"
+      "homepage": "https://www.themosis.com/"
     }
   ],
   "type": "project",
@@ -18,8 +18,8 @@
     }
   ],
   "autoload": {
-    "psr-0": {
-      "Thms": "library"
+    "psr-4": {
+      "Thms\\": "src/"
     }
   },
   "config": {
