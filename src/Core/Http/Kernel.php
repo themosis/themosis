@@ -3,6 +3,7 @@
 namespace Thms\Core\Http;
 
 use Illuminate\Contracts\Foundation\Application;
+use Thms\Bootstrap\ConfigurationLoader;
 
 class Kernel implements \Illuminate\Contracts\Http\Kernel
 {
@@ -11,20 +12,22 @@ class Kernel implements \Illuminate\Contracts\Http\Kernel
      */
     protected $app;
 
+    public function __construct(Application $app)
+    {
+        $this->app = $app;
+        $this->bootstrap();
+    }
+
     /**
      * List of bootstrap classes.
      *
      * @var array
      */
     protected $bootstrappers = [
-        \Thms\Bootstrap\EnvironmentLoader::class
+        \Thms\Bootstrap\EnvironmentLoader::class,
+        \Thms\Bootstrap\ConfigurationLoader::class,
+        \Thms\Bootstrap\ExceptionHandler::class,
     ];
-
-    public function __construct(Application $app)
-    {
-        $this->app = $app;
-        $this->bootstrap();
-    }
 
     /**
      * Bootstrap the application.

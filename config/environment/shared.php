@@ -18,7 +18,7 @@ $capsule->addConnection([
     'password'  => DB_PASSWORD,
     'charset'   => DB_CHARSET,
     'collation' => DB_COLLATE,
-    'prefix'    => $table_prefix
+    'prefix'    => env('DATABASE_PREFIX', 'wp_')
 ]);
 $capsule->setAsGlobal();
 $capsule->bootEloquent();
