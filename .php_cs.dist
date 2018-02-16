@@ -69,5 +69,6 @@ return Config::create()
             'space_before' => 'none'
         ],
         'semicolon_after_instruction' => true,
-        'trim_array_spaces' => true
+        'trim_array_spaces' => true,
+        'ternary_operator_spaces' => true
     ]);
