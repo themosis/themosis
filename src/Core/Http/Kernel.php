@@ -6,6 +6,7 @@ use Exception;
 use Illuminate\Contracts\Debug\ExceptionHandler;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Support\Facades\Facade;
+use Throwable;
 
 class Kernel implements \Illuminate\Contracts\Http\Kernel
 {
@@ -59,8 +60,16 @@ class Kernel implements \Illuminate\Contracts\Http\Kernel
      */
     public function handle($request)
     {
-        $request->enableHttpMethodParameterOverride();
-        $response = $this->sendRequestThroughRouter($request);
+        try {
+            $request->enableHttpMethodParameterOverride();
+            $response = $this->sendRequestThroughRouter($request);
+        } catch (Exception $e) {
+            $this->reportException($e);
+            $response = $this->renderException($request, $e);
+        } catch (Throwable $e) {
+            $this->reportException($e);
+            $response = $this->renderException($request, $e);
+        }
 
         return $response;
     }
@@ -77,6 +86,8 @@ class Kernel implements \Illuminate\Contracts\Http\Kernel
         Facade::clearResolvedInstance('request');
 
         $this->bootstrap();
+
+        //TODO: Create valid HTTP response
     }
 
     /**
@@ -87,6 +98,19 @@ class Kernel implements \Illuminate\Contracts\Http\Kernel
     protected function reportException(Exception $e)
     {
         $this->app[ExceptionHandler::class]->report($e);
+    }
+
+    /**
+     * Render the exception to a response.
+     *
+     * @param \Illuminate\Http\Request $request
+     * @param \Exception               $e
+     *
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
+    protected function renderException($request, Exception $e)
+    {
+        return $this->app[ExceptionHandler::class]->render($request, $e);
     }
 
     public function terminate($request, $response)

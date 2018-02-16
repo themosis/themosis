@@ -27,7 +27,7 @@ $kernel->handle(
     $request = Illuminate\Http\Request::capture()
 );
 
-//trim();
+trim();
 
 /*----------------------------------------------------*/
 // Database prefix (WordPress)
