@@ -5,11 +5,16 @@ namespace Thms\Core\Exceptions;
 use Exception;
 use Illuminate\Contracts\Debug\ExceptionHandler;
 use Illuminate\Contracts\Support\Responsable;
+use Illuminate\Filesystem\Filesystem;
 use Illuminate\Http\Exceptions\HttpResponseException;
+use Illuminate\Http\Response;
 use Illuminate\Routing\Router;
 use Illuminate\Support\Arr;
-use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\RedirectResponse as SymfonyRedirectResponse;
+use Symfony\Component\HttpFoundation\Response as SymfonyResponse;
 use Symfony\Component\HttpKernel\Exception\HttpException;
+use Whoops\Handler\PrettyPageHandler;
+use Whoops\Run as Whoops;
 
 class Handler implements ExceptionHandler
 {
@@ -45,7 +50,7 @@ class Handler implements ExceptionHandler
             return $e->report();
         }
 
-        // TODO: Log exception
+        // TODO: Log exceptions
     }
 
     /**
@@ -53,6 +58,8 @@ class Handler implements ExceptionHandler
      *
      * @param \Illuminate\Http\Request $request
      * @param \Exception               $e
+     *
+     * @throws \Illuminate\Container\EntryNotFoundException
      *
      * @return \Symfony\Component\HttpFoundation\Response
      */
@@ -91,7 +98,7 @@ class Handler implements ExceptionHandler
      */
     protected function prepareException(Exception $e)
     {
-        // TODO: Prepare core exceptions
+        // TODO: Prepare core exceptions (HttpException)
         return $e;
     }
 
@@ -135,10 +142,13 @@ class Handler implements ExceptionHandler
     protected function prepareResponse($request, Exception $e)
     {
         if (! $this->isHttpException($e) && config('app.debug')) {
-            // TODO: Implement ErrorException response.
-            dd("Error exception");
+            return $this->toIlluminateResponse(
+                $this->convertExceptionToResponse($e),
+                $e
+            );
         }
 
+        // TODO: Handle HttpException
         return $this->toIlluminateResponse(
             $this->renderHttpException($e)
         );
@@ -166,7 +176,97 @@ class Handler implements ExceptionHandler
      */
     protected function toIlluminateResponse($response, Exception $e)
     {
-        // TODO: Implement IlluminateResponse conversion
+        if ($response instanceof SymfonyRedirectResponse) {
+            // TODO: implement RedirectResponse
+        } else {
+            $response = new Response(
+                $response->getContent(),
+                $response->getStatusCode(),
+                $response->headers->all()
+            );
+        }
+
+        return $response->withException($e);
+    }
+
+    /**
+     * Convert an exception to a response instance.
+     *
+     * @param Exception $e
+     *
+     * @throws \Illuminate\Container\EntryNotFoundException
+     *
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
+    protected function convertExceptionToResponse(Exception $e)
+    {
+        $headers = $this->isHttpException($e) ? $e->getHeaders() : [];
+        $statusCode = $this->isHttpException($e) ? $e->getStatusCode() : 500;
+
+        try {
+            $content = config('app.debug') && class_exists(Whoops::class)
+                ? $this->renderExceptionWithWhoops($e)
+                : $this->renderExceptionWithSymfony($e, config('app.debug'));
+        } catch (Exception $e) {
+            $content = $content ?? $this->renderExceptionWithSymfony($e, config('app.debug'));
+        }
+
+        return SymfonyResponse::create(
+            $content,
+            $statusCode,
+            $headers
+        );
+    }
+
+    /**
+     * Render an exception using Whoops.
+     *
+     * @param Exception $e
+     *
+     * @return string
+     */
+    protected function renderExceptionWithWhoops(Exception $e)
+    {
+        return tap(new Whoops(), function ($whoops) {
+            $whoops->pushHandler($this->whoopsHandler());
+            $whoops->writeToOutput(false);
+            $whoops->allowQuit(false);
+        })->handleException($e);
+    }
+
+    /**
+     * Get the Whoops handler for the application.
+     *
+     * @return \Whoops\Handler\Handler
+     */
+    protected function whoopsHandler()
+    {
+        return tap(new PrettyPageHandler(), function ($handler) {
+            $files = new Filesystem();
+            $handler->handleUnconditionally(true);
+
+            foreach (config('app.debug_blacklist', []) as $key => $secrets) {
+                foreach ($secrets as $secret) {
+                    $handler->blacklist($key, $secret);
+                }
+            }
+
+            if (config('app.editor', false)) {
+                $handler->setEditor(config('app.editor'));
+            }
+
+            $handler->setApplicationPaths(
+                array_flip(Arr::except(
+                    array_flip($files->directories(base_path())),
+                    [base_path('vendor')]
+                ))
+            );
+        });
+    }
+
+    protected function renderExceptionWithSymfony(Exception $e, $debug)
+    {
+        // TODO: Implement exception rendering with Symfony
     }
 
     protected function renderHttpException(HttpException $e)
