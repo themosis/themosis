@@ -10,6 +10,8 @@ use Illuminate\Http\Exceptions\HttpResponseException;
 use Illuminate\Http\Response;
 use Illuminate\Routing\Router;
 use Illuminate\Support\Arr;
+use Symfony\Component\Debug\Exception\FlattenException;
+use Symfony\Component\Debug\ExceptionHandler as SymfonyExceptionHandler;
 use Symfony\Component\HttpFoundation\RedirectResponse as SymfonyRedirectResponse;
 use Symfony\Component\HttpFoundation\Response as SymfonyResponse;
 use Symfony\Component\HttpKernel\Exception\HttpException;
@@ -264,9 +266,17 @@ class Handler implements ExceptionHandler
         });
     }
 
+    /**
+     * Render an exception to a string using Symfony.
+     *
+     * @param Exception $e
+     * @param $debug
+     *
+     * @return string
+     */
     protected function renderExceptionWithSymfony(Exception $e, $debug)
     {
-        // TODO: Implement exception rendering with Symfony
+        return (new SymfonyExceptionHandler($debug))->getHtml(FlattenException::create($e));
     }
 
     protected function renderHttpException(HttpException $e)
