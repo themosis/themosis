@@ -179,7 +179,11 @@ class Handler implements ExceptionHandler
     protected function toIlluminateResponse($response, Exception $e)
     {
         if ($response instanceof SymfonyRedirectResponse) {
-            // TODO: implement RedirectResponse
+            $response = new SymfonyRedirectResponse(
+                $response->getTargetUrl(),
+                $response->getStatusCode(),
+                $response->headers->all()
+            );
         } else {
             $response = new Response(
                 $response->getContent(),
