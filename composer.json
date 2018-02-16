@@ -21,7 +21,10 @@
     "psr-4": {
       "Thms\\": "src/",
       "App\\": "app/"
-    }
+    },
+    "files": [
+      "src/Core/helpers.php"
+    ]
   },
   "config": {
     "preferred-install": "dist"

@@ -21,7 +21,7 @@ $app->make(Kernel::class);
 /*----------------------------------------------------*/
 // Database prefix (WordPress)
 /*----------------------------------------------------*/
-$table_prefix = getenv('DATABASE_PREFIX') ? getenv('DATABASE_PREFIX') : 'wp_';
+$table_prefix = env('DATABASE_PREFIX', 'wp_');
 
 /*----------------------------------------------------*/
 // Error handling
