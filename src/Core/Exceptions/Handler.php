@@ -5,6 +5,7 @@ namespace Thms\Core\Exceptions;
 use Exception;
 use Illuminate\Contracts\Debug\ExceptionHandler;
 use Illuminate\Contracts\Support\Responsable;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Filesystem\Filesystem;
 use Illuminate\Http\Exceptions\HttpResponseException;
 use Illuminate\Http\Response;
@@ -15,6 +16,7 @@ use Symfony\Component\Debug\ExceptionHandler as SymfonyExceptionHandler;
 use Symfony\Component\HttpFoundation\RedirectResponse as SymfonyRedirectResponse;
 use Symfony\Component\HttpFoundation\Response as SymfonyResponse;
 use Symfony\Component\HttpKernel\Exception\HttpException;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Whoops\Handler\PrettyPageHandler;
 use Whoops\Run as Whoops;
 
@@ -100,7 +102,13 @@ class Handler implements ExceptionHandler
      */
     protected function prepareException(Exception $e)
     {
-        // TODO: Prepare core exceptions (HttpException)
+        if ($e instanceof ModelNotFoundException) {
+            $e = new NotFoundHttpException($e->getMessage(), $e);
+        }
+
+        // TODO: Implement AuthorizationException
+        // TODO: Implement TokenMismatchException
+
         return $e;
     }
 
@@ -150,9 +158,14 @@ class Handler implements ExceptionHandler
             );
         }
 
+        if (! $this->isHttpException($e)) {
+            $e = new HttpException(500, $e->getMessage());
+        }
+
         // TODO: Handle HttpException
         return $this->toIlluminateResponse(
-            $this->renderHttpException($e)
+            $this->renderHttpException($e),
+            $e
         );
     }
 
@@ -283,8 +296,18 @@ class Handler implements ExceptionHandler
         return (new SymfonyExceptionHandler($debug))->getHtml(FlattenException::create($e));
     }
 
+    /**
+     * Render the given HttpException.
+     *
+     * @param \Symfony\Component\HttpKernel\Exception\HttpException $e
+     *
+     * @throws \Illuminate\Container\EntryNotFoundException
+     *
+     * @return \Symfony\Component\HttpFoundation\Response;
+     */
     protected function renderHttpException(HttpException $e)
     {
         // TODO: Implement HTTPException rendering
+        return $this->convertExceptionToResponse($e);
     }
 }
