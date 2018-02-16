@@ -1,0 +1,54 @@
+<?php
+
+use PhpCsFixer\Config;
+use PhpCsFixer\Finder;
+
+/**
+ * Plugin PHP code fixer.
+ */
+$finder = Finder::create()
+    ->in([
+        'app',
+        'bootstrap',
+        'config',
+        'htdocs',
+        'src',
+        'tests'
+    ])
+    ->exclude([
+        'bin',
+        'htdocs/cms',
+        'htdocs/content/mu-plugins/themosis-framework',
+        'htdocs/content/plugins',
+        'htdocs/content/themes',
+        'htdocs/content/upgrade',
+        'htdocs/content/uploads',
+        'htdocs/content/static',
+        'node_modules'
+    ]);
+
+return Config::create()
+    ->setFinder($finder)
+    ->setRules([
+        '@PSR2' => true,
+        'strict_param' => false,
+        'array_syntax' => [
+            'syntax' => 'short'
+        ],
+        'concat_space' => [
+            'spacing' => 'none'
+        ],
+        'ordered_imports' => true,
+        'no_unused_imports' => true,
+        'blank_line_before_return' => true,
+        'no_whitespace_in_blank_line' => true,
+        'blank_line_after_namespace' => true,
+        'single_blank_line_before_namespace' => true,
+        'single_line_after_imports' => true,
+        'blank_line_after_opening_tag' => true,
+        'no_empty_statement' => true,
+        'trailing_comma_in_multiline_array' => false,
+        'no_blank_lines_after_class_opening' => true,
+        'no_blank_lines_after_phpdoc' => true,
+        'phpdoc_trim' => true
+    ]);
