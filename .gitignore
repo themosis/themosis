@@ -17,6 +17,7 @@ Thumbs.db
 
 ### PHPCS
 cs_fixer*
+.php_cs.cache
 
 ### Wordpress
 /htdocs/cms/

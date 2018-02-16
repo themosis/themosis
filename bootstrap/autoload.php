@@ -36,4 +36,3 @@ $table_prefix = env('DATABASE_PREFIX', 'wp_');
 // Constants
 /*----------------------------------------------------*/
 //define('THEMOSIS_STORAGE', $rootPath.DS.'storage');
-

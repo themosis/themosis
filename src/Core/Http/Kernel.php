@@ -3,7 +3,6 @@
 namespace Thms\Core\Http;
 
 use Illuminate\Contracts\Foundation\Application;
-use Thms\Bootstrap\ConfigurationLoader;
 
 class Kernel implements \Illuminate\Contracts\Http\Kernel
 {
@@ -34,7 +33,7 @@ class Kernel implements \Illuminate\Contracts\Http\Kernel
      */
     public function bootstrap()
     {
-        if (!$this->app->hasBeenBootstrapped()) {
+        if (! $this->app->hasBeenBootstrapped()) {
             $this->app->bootstrapWith($this->bootstrappers());
         }
     }

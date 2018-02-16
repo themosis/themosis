@@ -7,6 +7,17 @@ use PhpCsFixer\Finder;
  * Plugin PHP code fixer.
  */
 $finder = Finder::create()
+    ->exclude([
+        'bin',
+        'cms',
+        'content/mu-plugins/themosis-framework',
+        'content/plugins',
+        'content/themes',
+        'content/upgrade',
+        'content/uploads',
+        'content/static',
+        'node_modules'
+    ])
     ->in([
         'app',
         'bootstrap',
@@ -14,17 +25,6 @@ $finder = Finder::create()
         'htdocs',
         'src',
         'tests'
-    ])
-    ->exclude([
-        'bin',
-        'htdocs/cms',
-        'htdocs/content/mu-plugins/themosis-framework',
-        'htdocs/content/plugins',
-        'htdocs/content/themes',
-        'htdocs/content/upgrade',
-        'htdocs/content/uploads',
-        'htdocs/content/static',
-        'node_modules'
     ]);
 
 return Config::create()
@@ -35,11 +35,15 @@ return Config::create()
         'array_syntax' => [
             'syntax' => 'short'
         ],
+        'cast_spaces' => [
+            'space' => 'single'
+        ],
         'concat_space' => [
             'spacing' => 'none'
         ],
         'ordered_imports' => true,
         'no_unused_imports' => true,
+        'no_whitespace_before_comma_in_array' => true,
         'blank_line_before_return' => true,
         'no_whitespace_in_blank_line' => true,
         'blank_line_after_namespace' => true,
@@ -50,5 +54,20 @@ return Config::create()
         'trailing_comma_in_multiline_array' => false,
         'no_blank_lines_after_class_opening' => true,
         'no_blank_lines_after_phpdoc' => true,
-        'phpdoc_trim' => true
+        'phpdoc_trim' => true,
+        'phpdoc_add_missing_param_annotation' => true,
+        'phpdoc_align' => true,
+        'phpdoc_no_empty_return' => true,
+        'phpdoc_order' => true,
+        'phpdoc_return_self_reference' => true,
+        'phpdoc_scalar' => true,
+        'phpdoc_separation' => true,
+        'phpdoc_single_line_var_spacing' => true,
+        'phpdoc_var_without_name' => true,
+        'not_operator_with_successor_space' => true,
+        'return_type_declaration' => [
+            'space_before' => 'none'
+        ],
+        'semicolon_after_instruction' => true,
+        'trim_array_spaces' => true
     ]);

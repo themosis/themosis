@@ -39,15 +39,16 @@ class ConfigurationLoader
     /**
      * Load configuration items from all found config files.
      *
-     * @param Application $app
+     * @param Application        $app
      * @param RepositoryContract $repository
+     *
      * @throws Exception
      */
     protected function loadConfigurationFiles(Application $app, RepositoryContract $repository)
     {
         $files = $this->getConfigurationFiles($app);
 
-        if (!isset($files['app'])) {
+        if (! isset($files['app'])) {
             throw new Exception('Unable to load the "app" configuration file.');
         }
 
@@ -84,7 +85,7 @@ class ConfigurationLoader
      * Get configuration file nesting path.
      *
      * @param \SplFileInfo $file
-     * @param string $path
+     * @param string       $path
      *
      * @return string
      */
