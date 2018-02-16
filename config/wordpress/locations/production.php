@@ -1,30 +1,23 @@
 <?php
 
 /*----------------------------------------------------*/
-// Production config
+// WordPress Production Configuration
 /*----------------------------------------------------*/
 // Database
-define('DB_NAME', getenv('DB_NAME'));
-define('DB_USER', getenv('DB_USER'));
-define('DB_PASSWORD', getenv('DB_PASSWORD'));
-define('DB_HOST', getenv('DB_HOST') ? getenv('DB_HOST') : 'localhost');
+define('DB_NAME', config('database.connections.mysql.database'));
+define('DB_USER', config('database.connections.mysql.username'));
+define('DB_PASSWORD', config('database.connections.mysql.password'));
+define('DB_HOST', config('database.connections.mysql.host'));
 
 // WordPress URLs
-define('WP_HOME', getenv('WP_HOME'));
-define('WP_SITEURL', getenv('WP_SITEURL'));
+define('WP_HOME', config('app.url'));
+define('WP_SITEURL', config('app.wp'));
 
 // Jetpack
-define('JETPACK_DEV_DEBUG', false);
-
-// Encoding
-define('THEMOSIS_CHARSET', 'UTF-8');
+define('JETPACK_DEV_DEBUG', config('app.debug'));
 
 // Development
-define('SAVEQUERIES', false);
-define('WP_DEBUG', false);
-define('WP_DEBUG_DISPLAY', false);
-define('SCRIPT_DEBUG', false);
-
-// Themosis framework
-define('THEMOSIS_ERROR', false);
-define('BS', false);
+define('SAVEQUERIES', config('app.debug'));
+define('WP_DEBUG', config('app.debug'));
+define('WP_DEBUG_DISPLAY', config('app.debug'));
+define('SCRIPT_DEBUG', config('app.debug'));
