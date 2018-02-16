@@ -15,6 +15,13 @@ class ConfigurationLoader
      */
     protected $app;
 
+    /**
+     * WordPress  directory name.
+     *
+     * @var string
+     */
+    protected $dir = 'wordpress';
+
     public function bootstrap(Application $app)
     {
         $this->app = $app;
@@ -47,6 +54,8 @@ class ConfigurationLoader
         foreach ($files as $key => $path) {
             $repository->set($key, require $path);
         }
+
+        $this->loadWordPressConfiguration(env('APP_ENV', 'production'));
     }
 
     /**
@@ -88,5 +97,29 @@ class ConfigurationLoader
         }
 
         return $nested;
+    }
+
+    /**
+     * Load WordPress configuration files.
+     *
+     * @param string $location
+     */
+    protected function loadWordPressConfiguration($location = 'production')
+    {
+        $path = sprintf('%s/locations/%s.php', $this->dir, $location);
+
+        /*
+         * Load WordPress configuration file. Ex.: local.php
+         */
+        if (file_exists($file = $this->app->configPath($path))) {
+            require_once $file;
+        }
+
+        /*
+         * Load shared environment configuration file shared.php
+         */
+        if (file_exists($sharedFile = $this->app->configPath($this->dir.'/shared.php'))) {
+            require_once $sharedFile;
+        }
     }
 }

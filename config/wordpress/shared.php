@@ -7,24 +7,6 @@ define('DB_CHARSET', 'utf8mb4');
 define('DB_COLLATE', 'utf8mb4_unicode_ci');
 
 /*----------------------------------------------------*/
-// Illuminate database
-/*----------------------------------------------------*/
-$capsule = new Illuminate\Database\Capsule\Manager();
-$capsule->addConnection([
-    'driver'    => 'mysql',
-    'host'      => DB_HOST,
-    'database'  => DB_NAME,
-    'username'  => DB_USER,
-    'password'  => DB_PASSWORD,
-    'charset'   => DB_CHARSET,
-    'collation' => DB_COLLATE,
-    'prefix'    => env('DATABASE_PREFIX', 'wp_')
-]);
-$capsule->setAsGlobal();
-$capsule->bootEloquent();
-$GLOBALS['themosis.capsule'] = $capsule;
-
-/*----------------------------------------------------*/
 // Authentication unique keys and salts
 /*----------------------------------------------------*/
 /*
