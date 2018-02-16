@@ -2,7 +2,10 @@
 
 namespace Thms\Core\Http;
 
+use Exception;
+use Illuminate\Contracts\Debug\ExceptionHandler;
 use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Support\Facades\Facade;
 
 class Kernel implements \Illuminate\Contracts\Http\Kernel
 {
@@ -14,7 +17,6 @@ class Kernel implements \Illuminate\Contracts\Http\Kernel
     public function __construct(Application $app)
     {
         $this->app = $app;
-        $this->bootstrap();
     }
 
     /**
@@ -48,9 +50,43 @@ class Kernel implements \Illuminate\Contracts\Http\Kernel
         return $this->bootstrappers;
     }
 
+    /**
+     * Handle application request.
+     *
+     * @param \Illuminate\Http\Request $request
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function handle($request)
     {
-        // TODO: Implement handle() method.
+        $request->enableHttpMethodParameterOverride();
+        $response = $this->sendRequestThroughRouter($request);
+
+        return $response;
+    }
+
+    /**
+     * Send the given request through the middleware / router.
+     *
+     * @param \Illuminate\Http\Request $request
+     */
+    protected function sendRequestThroughRouter($request)
+    {
+        $this->app->instance('request', $request);
+
+        Facade::clearResolvedInstance('request');
+
+        $this->bootstrap();
+    }
+
+    /**
+     * Report the exception to the exception handler.
+     *
+     * @param \Exception $e
+     */
+    protected function reportException(Exception $e)
+    {
+        $this->app[ExceptionHandler::class]->report($e);
     }
 
     public function terminate($request, $response)
@@ -58,8 +94,13 @@ class Kernel implements \Illuminate\Contracts\Http\Kernel
         // TODO: Implement terminate() method.
     }
 
+    /**
+     * Return the application instance.
+     *
+     * @return Application
+     */
     public function getApplication()
     {
-        // TODO: Implement getApplication() method.
+        return $this->app;
     }
 }

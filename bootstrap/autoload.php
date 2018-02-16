@@ -13,10 +13,21 @@ $app->singleton(
     App\Http\Kernel::class
 );
 
+$app->singleton(
+    Illuminate\Contracts\Debug\ExceptionHandler::class,
+    App\Exceptions\Handler::class
+);
+
 /*----------------------------------------------------*/
 // Start the application
 /*----------------------------------------------------*/
-$app->make(Kernel::class);
+$kernel = $app->make(Kernel::class);
+
+$kernel->handle(
+    $request = Illuminate\Http\Request::capture()
+);
+
+//trim();
 
 /*----------------------------------------------------*/
 // Database prefix (WordPress)

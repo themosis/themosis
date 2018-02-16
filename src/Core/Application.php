@@ -126,7 +126,11 @@ class Application extends Container implements ApplicationContract, HttpKernelIn
                 \Illuminate\Contracts\Container\Container::class,
                 \Illuminate\Contracts\Foundation\Application::class,
                 \Psr\Container\ContainerInterface::class
-            ]
+            ],
+            'request' => [
+                \Illuminate\Http\Request::class,
+                \Symfony\Component\HttpFoundation\Request::class
+            ],
         ];
 
         foreach ($list as $key => $aliases) {
@@ -678,5 +682,61 @@ class Application extends Container implements ApplicationContract, HttpKernelIn
     public function runningUnitTests()
     {
         // TODO: Implement runningUnitTests() method.
+    }
+
+    /**
+     * Resolve the given type from the container.
+     *
+     * (Overriding Container::make)
+     *
+     * @param string $abstract
+     * @param array  $parameters
+     *
+     * @return mixed
+     */
+    public function make($abstract, array $parameters = [])
+    {
+        $abstract = $this->getAlias($abstract);
+
+        if (isset($this->deferredServices[$abstract]) && ! isset($this->instances[$abstract])) {
+            $this->loadDeferredProvider($abstract);
+        }
+
+        return parent::make($abstract, $parameters);
+    }
+
+    /**
+     * Load the provider for a deferred service.
+     *
+     * @param string $service
+     */
+    public function loadDeferredProvider($service)
+    {
+        if (! isset($this->deferredServices[$service])) {
+            return;
+        }
+
+        $provider = $this->deferredServices[$service];
+
+        // If the service provider has not already been loaded and registered we can
+        // register it with the application and remove the service from this list
+        // of deferred services, since it will already be loaded on subsequent.
+        if (! isset($this->loadedProviders[$provider])) {
+            $this->registerDeferredProvider($provider, $service);
+        }
+    }
+
+    /**
+     * Determine if the given abstract type has been bound.
+     *
+     * (Overriding Container::bound)
+     *
+     * @param string $abstract
+     *
+     * @return bool
+     */
+    public function bound($abstract)
+    {
+        return isset($this->deferredServices[$abstract]) || parent::bound($abstract);
     }
 }
