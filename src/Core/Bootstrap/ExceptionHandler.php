@@ -1,6 +1,6 @@
 <?php
 
-namespace Thms\Bootstrap;
+namespace Thms\Core\Bootstrap;
 
 use Illuminate\Contracts\Foundation\Application;
 

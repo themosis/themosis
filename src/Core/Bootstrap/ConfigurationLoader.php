@@ -1,6 +1,6 @@
 <?php
 
-namespace Thms\Bootstrap;
+namespace Thms\Core\Bootstrap;
 
 use Exception;
 use Illuminate\Config\Repository;

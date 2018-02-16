@@ -23,9 +23,9 @@ class Kernel implements \Illuminate\Contracts\Http\Kernel
      * @var array
      */
     protected $bootstrappers = [
-        \Thms\Bootstrap\EnvironmentLoader::class,
-        \Thms\Bootstrap\ConfigurationLoader::class,
-        \Thms\Bootstrap\ExceptionHandler::class,
+        \Thms\Core\Bootstrap\EnvironmentLoader::class,
+        \Thms\Core\Bootstrap\ConfigurationLoader::class,
+        \Thms\Core\Bootstrap\ExceptionHandler::class,
     ];
 
     /**
