@@ -23,7 +23,7 @@ $app->singleton(
 /*----------------------------------------------------*/
 $kernel = $app->make(Kernel::class);
 
-$kernel->handle(
+$response = $kernel->handle(
     $request = Illuminate\Http\Request::capture()
 );
 
@@ -31,17 +31,3 @@ $kernel->handle(
 // Database prefix (WordPress)
 /*----------------------------------------------------*/
 $table_prefix = env('DATABASE_PREFIX', 'wp_');
-
-/*----------------------------------------------------*/
-// Error handling
-/*----------------------------------------------------*/
-/*if (defined('THEMOSIS_ERROR') && THEMOSIS_ERROR) {
-    $whoops = new \Whoops\Run();
-    $whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler());
-    $whoops->register();
-}*/
-
-/*----------------------------------------------------*/
-// Constants
-/*----------------------------------------------------*/
-//define('THEMOSIS_STORAGE', $rootPath.DS.'storage');

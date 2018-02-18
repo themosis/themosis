@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Container\Container;
+use Illuminate\Contracts\Routing\ResponseFactory;
+use Illuminate\Contracts\View\Factory as ViewFactory;
 
 if (! function_exists('app')) {
     /**
@@ -73,5 +75,77 @@ if (! function_exists('database_path')) {
     function database_path($path = '')
     {
         return app()->databasePath($path);
+    }
+}
+
+if (! function_exists('resource_path')) {
+    /**
+     * Get the path to the resources folder.
+     *
+     * @param string $path
+     *
+     * @return string
+     */
+    function resource_path($path = '')
+    {
+        return app()->resourcePath($path);
+    }
+}
+
+if (! function_exists('storage_path')) {
+    /**
+     * Get the path to the storage folder.
+     *
+     * @param string $path
+     *
+     * @return string
+     */
+    function storage_path($path = '')
+    {
+        return app('path.storage').($path ? DIRECTORY_SEPARATOR.$path : $path);
+    }
+}
+
+if (! function_exists('response')) {
+    /**
+     * Return a new response from the application.
+     *
+     * @param string $content
+     * @param int    $status
+     * @param array  $headers
+     *
+     * @return \Symfony\Component\HttpFoundation\Response|\Illuminate\Contracts\Routing\ResponseFactory
+     */
+    function response($content = '', $status = 200, array $headers = [])
+    {
+        $factory = app(ResponseFactory::class);
+
+        if (func_num_args() === 0) {
+            return $factory;
+        }
+
+        return $factory->make($content, $status, $headers);
+    }
+}
+
+if (! function_exists('view')) {
+    /**
+     * Get the evaluated view contents for the given view.
+     *
+     * @param string $view
+     * @param array  $data
+     * @param array  $mergeData
+     *
+     * @return \Illuminate\View\View|\Illuminate\Contracts\View\Factory
+     */
+    function view($view = null, $data = [], $mergeData = [])
+    {
+        $factory = app(ViewFactory::class);
+
+        if (func_num_args() === 0) {
+            return $factory;
+        }
+
+        return $factory->make($view, $data, $mergeData);
     }
 }

@@ -23,7 +23,7 @@ if (file_exists($autoload = THEMOSIS_ROOT.'/vendor/autoload.php')) {
 /*----------------------------------------------------*/
 // Bootstrap application
 /*----------------------------------------------------*/
-require_once dirname(__DIR__).'/bootstrap/autoload.php';
+require_once dirname(__DIR__).'/bootstrap/start.php';
 
 /*----------------------------------------------------*/
 // Sets up WordPress vars and included files

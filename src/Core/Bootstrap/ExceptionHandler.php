@@ -25,6 +25,12 @@ class ExceptionHandler
         set_error_handler([$this, 'handleError']);
 
         set_exception_handler([$this, 'handleException']);
+
+        // TODO: Implement register shutdown handler
+
+        if (! $app->environment('testing')) {
+            ini_set('display_errors', 'Off');
+        }
     }
 
     /**

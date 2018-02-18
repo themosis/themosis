@@ -87,7 +87,7 @@ class Kernel implements \Illuminate\Contracts\Http\Kernel
 
         $this->bootstrap();
 
-        //TODO: Create valid HTTP response
+        //TODO: Create valid HTTP response and return it
     }
 
     /**

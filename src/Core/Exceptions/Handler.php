@@ -162,7 +162,6 @@ class Handler implements ExceptionHandler
             $e = new HttpException(500, $e->getMessage());
         }
 
-        // TODO: Handle HttpException
         return $this->toIlluminateResponse(
             $this->renderHttpException($e),
             $e
@@ -307,7 +306,20 @@ class Handler implements ExceptionHandler
      */
     protected function renderHttpException(HttpException $e)
     {
-        // TODO: Implement HTTPException rendering
+        $status = $e->getStatusCode();
+
+        $paths = collect(config('view.paths'));
+
+        view()->replaceNamespace('errors', $paths->map(function ($path) {
+            return "{$path}/errors";
+        })->push(__DIR__.'/views')->all());
+
+        if (view()->exists($view = "errors::{$status}")) {
+            return response()->view($view, [
+                'exception' => $e
+            ], $status, $e->getHeaders());
+        }
+
         return $this->convertExceptionToResponse($e);
     }
 }
