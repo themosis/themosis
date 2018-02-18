@@ -3,6 +3,7 @@
 namespace Thms\Core\Exceptions;
 
 use Exception;
+use Illuminate\Contracts\Container\Container;
 use Illuminate\Contracts\Debug\ExceptionHandler;
 use Illuminate\Contracts\Support\Responsable;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
@@ -11,17 +12,24 @@ use Illuminate\Http\Exceptions\HttpResponseException;
 use Illuminate\Http\Response;
 use Illuminate\Routing\Router;
 use Illuminate\Support\Arr;
+use Psr\Log\LoggerInterface;
 use Symfony\Component\Debug\Exception\FlattenException;
 use Symfony\Component\Debug\ExceptionHandler as SymfonyExceptionHandler;
 use Symfony\Component\HttpFoundation\RedirectResponse as SymfonyRedirectResponse;
 use Symfony\Component\HttpFoundation\Response as SymfonyResponse;
 use Symfony\Component\HttpKernel\Exception\HttpException;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+use Throwable;
 use Whoops\Handler\PrettyPageHandler;
 use Whoops\Run as Whoops;
 
 class Handler implements ExceptionHandler
 {
+    /**
+     * @var Container
+     */
+    protected $container;
+
     /**
      * A list of the exception types that are not reported.
      *
@@ -39,10 +47,17 @@ class Handler implements ExceptionHandler
         HttpResponseException::class
     ];
 
+    public function __construct(Container $container)
+    {
+        $this->container = $container;
+    }
+
     /**
      * Report or log an exception.
      *
      * @param \Exception $e
+     *
+     * @throws Exception
      */
     public function report(Exception $e)
     {
@@ -54,7 +69,21 @@ class Handler implements ExceptionHandler
             return $e->report();
         }
 
-        // TODO: Log exceptions
+        try {
+            $logger = $this->container->make(LoggerInterface::class);
+        } catch (Exception $e) {
+            throw $e;
+        }
+
+        $logger->error(
+            $e->getMessage(),
+            array_merge(
+                $this->context(),
+                [
+                    'exception' => $e
+                ]
+            )
+        );
     }
 
     /**
@@ -321,5 +350,23 @@ class Handler implements ExceptionHandler
         }
 
         return $this->convertExceptionToResponse($e);
+    }
+
+    /**
+     * Get the default context variables for logging.
+     *
+     * @return array
+     */
+    protected function context()
+    {
+        try {
+            // TODO: Provide authentication variables. Verify Auth implementation with WordPress.
+            return [
+                'userId' => null,
+                'email' => null
+            ];
+        } catch (Throwable $e) {
+            return [];
+        }
     }
 }

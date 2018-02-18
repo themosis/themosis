@@ -11,6 +11,7 @@ defined('DS') ? DS : define('DS', DIRECTORY_SEPARATOR);
 define('THEMOSIS_ROOT', realpath(__DIR__.'/../'));
 define('CONTENT_DIR', 'content');
 define('WP_CONTENT_DIR', THEMOSIS_ROOT.DS.CONTENT_DIR);
+// TODO: Verify WP_CONTENT_URL use.
 //define('WP_CONTENT_URL', WP_HOME.DS.CONTENT_DIR);
 
 /*----------------------------------------------------*/

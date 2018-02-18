@@ -33,6 +33,8 @@ class ConfigurationLoader
          */
         $app->instance('config', $config = new Repository($items));
 
+        // TODO: Implement environment detector configuration
+
         $this->loadConfigurationFiles($app, $config);
     }
 

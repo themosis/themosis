@@ -133,6 +133,10 @@ class Application extends Container implements ApplicationContract, HttpKernelIn
                 \Illuminate\Contracts\Foundation\Application::class,
                 \Psr\Container\ContainerInterface::class
             ],
+            'log' => [
+                \Illuminate\Log\LogManager::class,
+                \Psr\Log\LoggerInterface::class
+            ],
             'request' => [
                 \Illuminate\Http\Request::class,
                 \Symfony\Component\HttpFoundation\Request::class
