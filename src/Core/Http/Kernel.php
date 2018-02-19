@@ -6,6 +6,8 @@ use Exception;
 use Illuminate\Contracts\Debug\ExceptionHandler;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Support\Facades\Facade;
+use Symfony\Component\Debug\Exception\FatalThrowableError;
+use Thms\Core\Http\Events\RequestHandled;
 use Throwable;
 
 class Kernel implements \Illuminate\Contracts\Http\Kernel
@@ -67,9 +69,13 @@ class Kernel implements \Illuminate\Contracts\Http\Kernel
             $this->reportException($e);
             $response = $this->renderException($request, $e);
         } catch (Throwable $e) {
-            $this->reportException($e);
+            $this->reportException($e = new FatalThrowableError($e));
             $response = $this->renderException($request, $e);
         }
+
+        $this->app['events']->dispatch(
+            new RequestHandled($request, $response)
+        );
 
         return $response;
     }

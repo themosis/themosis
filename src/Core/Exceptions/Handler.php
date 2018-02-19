@@ -106,6 +106,13 @@ class Handler implements ExceptionHandler
 
         $e = $this->prepareException($e);
 
+        if ($e instanceof HttpResponseException) {
+            return $e->getResponse();
+        }
+
+        // TODO: Implement Authentication Exception ?
+        // TODO: Implement Validation Exception
+
         return $request->expectsJson() ?
             $this->prepareJsonResponse($request, $e) :
             $this->prepareResponse($request, $e);

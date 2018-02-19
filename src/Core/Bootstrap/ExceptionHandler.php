@@ -7,6 +7,7 @@ use Exception;
 use Illuminate\Contracts\Debug\ExceptionHandler as ExceptionHandlerContract;
 use Illuminate\Contracts\Foundation\Application;
 use Symfony\Component\Console\Output\ConsoleOutput;
+use Symfony\Component\Debug\Exception\FatalErrorException;
 use Symfony\Component\Debug\Exception\FatalThrowableError;
 
 class ExceptionHandler
@@ -26,7 +27,7 @@ class ExceptionHandler
 
         set_exception_handler([$this, 'handleException']);
 
-        // TODO: Implement register shutdown handler
+        register_shutdown_function([$this, 'handleShutdown']);
 
         if (! $app->environment('testing')) {
             ini_set('display_errors', 'Off');
@@ -73,6 +74,48 @@ class ExceptionHandler
         } else {
             $this->renderHttpResponse($e);
         }
+    }
+
+    /**
+     * Handle the PHP shutdown event.
+     */
+    public function handleShutdown()
+    {
+        if (! is_null($error = error_get_last()) && $this->isFatal($error['type'])) {
+            $this->handleException($this->fatalExceptionFromError($error, 0));
+        }
+    }
+
+    /**
+     * Determine if the error type is fatal.
+     *
+     * @param int $type
+     *
+     * @return bool
+     */
+    protected function isFatal($type)
+    {
+        return in_array($type, [E_COMPILE_ERROR, E_CORE_ERROR, E_ERROR, E_PARSE]);
+    }
+
+    /**
+     * Create a new fatal exception instance from an error array.
+     *
+     * @param array    $error
+     * @param int|null $traceOffset
+     *
+     * @return \Symfony\Component\Debug\Exception\FatalErrorException
+     */
+    protected function fatalExceptionFromError(array $error, $traceOffset = null)
+    {
+        return new FatalErrorException(
+            $error['message'],
+            $error['type'],
+            0,
+            $error['file'],
+            $error['line'],
+            $traceOffset
+        );
     }
 
     /**
