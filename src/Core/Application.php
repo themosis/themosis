@@ -2,6 +2,7 @@
 
 namespace Thms\Core;
 
+use Closure;
 use Illuminate\Container\Container;
 use Illuminate\Contracts\Foundation\Application as ApplicationContract;
 use Illuminate\Events\EventServiceProvider;
@@ -436,6 +437,20 @@ class Application extends Container implements ApplicationContract, HttpKernelIn
     }
 
     /**
+     * Detech application's current environment.
+     *
+     * @param Closure $callback
+     *
+     * @return string
+     */
+    public function detectEnvironment(Closure $callback)
+    {
+        $args = $_SERVER['argv'] ?? null;
+
+        return $this['env'] = (new EnvironmentDetector())->detect($callback, $args);
+    }
+
+    /**
      * Determine if we are running in the console.
      *
      * @return bool
@@ -577,6 +592,16 @@ class Application extends Container implements ApplicationContract, HttpKernelIn
     public function getCachedPackagesPath()
     {
         // TODO: Implement getCachedPackagesPath() method.
+    }
+
+    /**
+     * Get the path to the configuration cache file.
+     *
+     * @return string
+     */
+    public function getCachedConfigPath()
+    {
+        return $this->bootstrapPath('cache/config.php');
     }
 
     /**

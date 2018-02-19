@@ -29,13 +29,35 @@ class ConfigurationLoader
         $items = [];
 
         /*
+         * Verify if configuration is cached. If so, fetch it
+         * to avoid parsing all config files.
+         */
+        if (file_exists($cached = $app->getCachedConfigPath())) {
+            $items = require $cached;
+            $loadedFromCache = true;
+        }
+
+        /*
          * Load configuration repository.
          */
         $app->instance('config', $config = new Repository($items));
 
-        // TODO: Implement environment detector configuration
+        if (! isset($loadedFromCache)) {
+            $this->loadConfigurationFiles($app, $config);
+        }
 
-        $this->loadConfigurationFiles($app, $config);
+        /*
+         * Let's set the application environment based on received
+         * configuration.
+         */
+        $app->detectEnvironment(function () use ($config) {
+            return $config->get('app.env', 'production');
+        });
+
+        /*
+         * date_default_timezone_set is set by default to UTC by WordPress.
+         */
+        mb_internal_encoding($config->get('app.charset'));
     }
 
     /**
@@ -58,7 +80,7 @@ class ConfigurationLoader
             $repository->set($key, require $path);
         }
 
-        $this->loadWordPressConfiguration(env('APP_ENV', 'production'));
+        $this->loadWordPressConfiguration();
     }
 
     /**
@@ -103,26 +125,16 @@ class ConfigurationLoader
     }
 
     /**
-     * Load WordPress configuration files.
+     * Load WordPress configuration file.
      *
-     * @param string $location
+     * @param string $name
      */
-    protected function loadWordPressConfiguration($location = 'production')
+    protected function loadWordPressConfiguration($name = 'wordpress')
     {
-        $path = sprintf('%s/locations/%s.php', $this->dir, $location);
+        $filename = sprintf('%s.php', $name);
 
-        /*
-         * Load WordPress configuration file. Ex.: local.php
-         */
-        if (file_exists($file = $this->app->configPath($path))) {
+        if (file_exists($file = $this->app->configPath($filename))) {
             require_once $file;
-        }
-
-        /*
-         * Load shared environment configuration file shared.php
-         */
-        if (file_exists($sharedFile = $this->app->configPath($this->dir.'/shared.php'))) {
-            require_once $sharedFile;
         }
     }
 }

@@ -31,3 +31,5 @@ $response = $kernel->handle(
 // Database prefix (WordPress)
 /*----------------------------------------------------*/
 $table_prefix = env('DATABASE_PREFIX', 'wp_');
+
+/* That's all, stop editing! Happy blogging. */
