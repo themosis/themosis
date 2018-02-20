@@ -6,6 +6,7 @@ use Closure;
 use Illuminate\Container\Container;
 use Illuminate\Contracts\Foundation\Application as ApplicationContract;
 use Illuminate\Events\EventServiceProvider;
+use Illuminate\Filesystem\Filesystem;
 use Illuminate\Filesystem\FilesystemServiceProvider;
 use Illuminate\Log\LogServiceProvider;
 use Illuminate\Routing\RoutingServiceProvider;
@@ -111,6 +112,11 @@ class Application extends Container implements ApplicationContract, HttpKernelIn
         static::setInstance($this);
         $this->instance('app', $this);
         $this->instance(Container::class, $this);
+        $this->instance(PackageManifest::class, new PackageManifest(
+            new Filesystem(),
+            $this->basePath(),
+            $this->getCachedPackagesPath()
+        ));
     }
 
     /**
@@ -591,7 +597,7 @@ class Application extends Container implements ApplicationContract, HttpKernelIn
      */
     public function getCachedPackagesPath()
     {
-        // TODO: Implement getCachedPackagesPath() method.
+        return $this->bootstrapPath('cache/packages.php');
     }
 
     /**
