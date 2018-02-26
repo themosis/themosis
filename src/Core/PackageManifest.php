@@ -47,8 +47,30 @@ class PackageManifest
      */
     public function aliases()
     {
-        return collect($this->getManifest())->flatMap(function ($configuration) {
-            return (array) ($configuration['aliases'] ?? []);
+        return $this->get();
+    }
+
+    /**
+     * Get providers of all the packages.
+     *
+     * @return array
+     */
+    public function providers()
+    {
+        return $this->get('providers');
+    }
+
+    /**
+     * Get manifest items by key.
+     *
+     * @param string $key
+     *
+     * @return array
+     */
+    public function get($key = 'aliases')
+    {
+        return collect($this->getManifest())->flatMap(function ($configuration) use ($key) {
+            return (array) ($configuration[$key] ?? []);
         })->filter()->all();
     }
 

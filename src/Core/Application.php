@@ -11,6 +11,7 @@ use Illuminate\Filesystem\FilesystemServiceProvider;
 use Illuminate\Log\LogServiceProvider;
 use Illuminate\Routing\RoutingServiceProvider;
 use Illuminate\Support\Arr;
+use Illuminate\Support\Collection;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Str;
 use Illuminate\View\ViewServiceProvider;
@@ -481,7 +482,15 @@ class Application extends Container implements ApplicationContract, HttpKernelIn
      */
     public function registerConfiguredProviders()
     {
-        // TODO: Implement registerConfiguredProviders() method.
+        $providers = Collection::make($this->config['app.providers'])
+            ->partition(function ($provider) {
+                return Str::startsWith($provider, 'Illuminate\\');
+            });
+
+        $providers->splice(1, 0, [$this->make(PackageManifest::class)->providers()]);
+
+        (new ProviderRepository($this, new Filesystem(), $this->getCachedServicesPath()))
+            ->load($providers->collapse()->toArray());
     }
 
     /**
@@ -587,7 +596,7 @@ class Application extends Container implements ApplicationContract, HttpKernelIn
      */
     public function getCachedServicesPath()
     {
-        // TODO: Implement getCachedServicesPath() method.
+        return $this->bootstrapPath('cache/services.php');
     }
 
     /**
