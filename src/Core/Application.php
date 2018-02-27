@@ -515,6 +515,16 @@ class Application extends Container implements ApplicationContract, HttpKernelIn
     }
 
     /**
+     * Add an array of services to the application's deferred services.
+     *
+     * @param array $services
+     */
+    public function addDeferredServices(array $services)
+    {
+        $this->deferredServices = array_merge($this->deferredServices, $services);
+    }
+
+    /**
      * Verify if the application has been bootstrapped before.
      *
      * @return bool
