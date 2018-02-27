@@ -153,6 +153,9 @@ class Application extends Container implements ApplicationContract, HttpKernelIn
         $this->register(new ViewServiceProvider($this));
     }
 
+    /**
+     * Register the core class aliases in the container.
+     */
     protected function registerCoreContainerAliases()
     {
         $list = [
@@ -169,6 +172,11 @@ class Application extends Container implements ApplicationContract, HttpKernelIn
             'request' => [
                 \Illuminate\Http\Request::class,
                 \Symfony\Component\HttpFoundation\Request::class
+            ],
+            'router' => [
+                \Illuminate\Routing\Router::class,
+                \Illuminate\Contracts\Routing\Registrar::class,
+                \Illuminate\Contracts\Routing\BindingRegistrar::class
             ],
             'view' => [
                 \Illuminate\View\Factory::class,
@@ -866,5 +874,16 @@ class Application extends Container implements ApplicationContract, HttpKernelIn
     public function isBooted()
     {
         return $this->booted;
+    }
+
+    /**
+     * Determine if middleware has been disabled for the application.
+     *
+     * @return bool
+     */
+    public function shouldSkipMiddleware()
+    {
+        return $this->bound('middleware.disable') &&
+            $this->make('middleware.disable') === true;
     }
 }

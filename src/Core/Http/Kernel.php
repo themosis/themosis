@@ -5,6 +5,8 @@ namespace Thms\Core\Http;
 use Exception;
 use Illuminate\Contracts\Debug\ExceptionHandler;
 use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Routing\Pipeline;
+use Illuminate\Routing\Router;
 use Illuminate\Support\Facades\Facade;
 use Symfony\Component\Debug\Exception\FatalThrowableError;
 use Thms\Core\Http\Events\RequestHandled;
@@ -17,10 +19,12 @@ class Kernel implements \Illuminate\Contracts\Http\Kernel
      */
     protected $app;
 
-    public function __construct(Application $app)
-    {
-        $this->app = $app;
-    }
+    /**
+     * The router instance.
+     *
+     * @var \Illuminate\Routing\Router
+     */
+    protected $router;
 
     /**
      * List of bootstrap classes.
@@ -35,6 +39,52 @@ class Kernel implements \Illuminate\Contracts\Http\Kernel
         \Thms\Core\Bootstrap\RegisterProviders::class,
         \Thms\Core\Bootstrap\BootProviders::class
     ];
+
+    /**
+     * The application's middleware stack.
+     *
+     * @var array
+     */
+    protected $middleware = [];
+
+    /**
+     * The application's route middleware groups.
+     *
+     * @var array
+     */
+    protected $middlewareGroups = [];
+
+    /**
+     * The application's route middleware.
+     *
+     * @var array
+     */
+    protected $routeMiddleware = [];
+
+    /**
+     * Priority sorted list of middlewares.
+     *
+     * @var array
+     */
+    protected $middlewarePriority = [
+        \Illuminate\Routing\Middleware\SubstituteBindings::class
+    ];
+
+    public function __construct(Application $app, Router $router)
+    {
+        $this->app = $app;
+        $this->router = $router;
+
+        $router->middlewarePriority = $this->middlewarePriority;
+
+        foreach ($this->middlewareGroups as $key => $middleware) {
+            $router->middlewareGroup($key, $middleware);
+        }
+
+        foreach ($this->routeMiddleware as $key => $middleware) {
+            $router->aliasMiddleware($key, $middleware);
+        }
+    }
 
     /**
      * Bootstrap the application.
@@ -87,6 +137,8 @@ class Kernel implements \Illuminate\Contracts\Http\Kernel
      * Send the given request through the middleware / router.
      *
      * @param \Illuminate\Http\Request $request
+     *
+     * @return \Illuminate\Http\Response
      */
     protected function sendRequestThroughRouter($request)
     {
@@ -96,7 +148,10 @@ class Kernel implements \Illuminate\Contracts\Http\Kernel
 
         $this->bootstrap();
 
-        //TODO: Create valid HTTP response and return it
+        return (new Pipeline($this->app))
+            ->send($request)
+            ->through($this->app->shouldSkipMiddleware() ? [] : $this->middleware)
+            ->then($this->dispatchToRouter());
     }
 
     /**
@@ -135,5 +190,14 @@ class Kernel implements \Illuminate\Contracts\Http\Kernel
     public function getApplication()
     {
         return $this->app;
+    }
+
+    protected function dispatchToRouter()
+    {
+        return function ($request) {
+            $this->app->instance('request', $request);
+
+            return $this->router->dispatch($request);
+        };
     }
 }
