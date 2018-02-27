@@ -84,6 +84,27 @@ class Application extends Container implements ApplicationContract, HttpKernelIn
      */
     protected $booted = false;
 
+    /**
+     * List of booting callbacks.
+     *
+     * @var array
+     */
+    protected $bootingCallbacks = [];
+
+    /**
+     * List of booted callbacks.
+     *
+     * @var array
+     */
+    protected $bootedCallbacks = [];
+
+    /**
+     * List of terminating callbacks.
+     *
+     * @var array
+     */
+    protected $terminatingCallbacks = [];
+
     public function __construct($basePath = null)
     {
         if ($basePath) {
@@ -562,7 +583,36 @@ class Application extends Container implements ApplicationContract, HttpKernelIn
      */
     public function boot()
     {
-        // TODO: Implement boot() method.
+        if (! $this->booted) {
+            return;
+        }
+
+        /*
+         * Once the application has booted we will also fire some "booted" callbacks
+         * for any listeners that need to do work after this initial booting gets
+         * finished. This is useful when ordering the boot-up processes we run.
+         */
+        $this->fireAppCallbacks($this->bootingCallbacks);
+
+        array_walk($this->serviceProviders, function ($provider) {
+            $this->bootProvider($provider);
+        });
+
+        $this->booted = true;
+
+        $this->fireAppCallbacks($this->bootedCallbacks);
+    }
+
+    /**
+     * Call the booting callbacks for the application.
+     *
+     * @param array $callbacks
+     */
+    protected function fireAppCallbacks(array $callbacks)
+    {
+        foreach ($callbacks as $callback) {
+            call_user_func($callback, $this);
+        }
     }
 
     /**
@@ -586,7 +636,7 @@ class Application extends Container implements ApplicationContract, HttpKernelIn
      */
     public function booting($callback)
     {
-        // TODO: Implement booting() method.
+        $this->bootingCallbacks[] = $callback;
     }
 
     /**
@@ -596,7 +646,11 @@ class Application extends Container implements ApplicationContract, HttpKernelIn
      */
     public function booted($callback)
     {
-        // TODO: Implement booted() method.
+        $this->bootedCallbacks[] = $callback;
+
+        if ($this->isBooted()) {
+            $this->fireAppCallbacks([$callback]);
+        }
     }
 
     /**
@@ -802,5 +856,15 @@ class Application extends Container implements ApplicationContract, HttpKernelIn
     public function bound($abstract)
     {
         return isset($this->deferredServices[$abstract]) || parent::bound($abstract);
+    }
+
+    /**
+     * Determine if the application has booted.
+     *
+     * @return bool
+     */
+    public function isBooted()
+    {
+        return $this->booted;
     }
 }

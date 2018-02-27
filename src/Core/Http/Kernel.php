@@ -32,7 +32,8 @@ class Kernel implements \Illuminate\Contracts\Http\Kernel
         \Thms\Core\Bootstrap\ConfigurationLoader::class,
         \Thms\Core\Bootstrap\ExceptionHandler::class,
         \Thms\Core\Bootstrap\RegisterFacades::class,
-        \Thms\Core\Bootstrap\RegisterProviders::class
+        \Thms\Core\Bootstrap\RegisterProviders::class,
+        \Thms\Core\Bootstrap\BootProviders::class
     ];
 
     /**
