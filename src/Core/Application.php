@@ -808,6 +808,7 @@ class Application extends Container implements ApplicationContract, HttpKernelIn
     public function runningUnitTests()
     {
         // TODO: Implement runningUnitTests() method.
+        return false;
     }
 
     /**
