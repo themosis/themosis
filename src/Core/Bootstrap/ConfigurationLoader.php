@@ -134,7 +134,7 @@ class ConfigurationLoader
         $filename = sprintf('%s.php', $name);
 
         if (file_exists($file = $this->app->configPath($filename))) {
-            require_once $file;
+            require $file;
         }
     }
 }

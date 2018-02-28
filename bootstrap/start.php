@@ -32,7 +32,7 @@ $response = $kernel->handle(
 /*----------------------------------------------------*/
 $table_prefix = env('DATABASE_PREFIX', 'wp_');
 
-// TODO: Implement response
+// TODO: Implement routing and  response
 // TODO: Implement kernel terminate
 
 /* That's all, stop editing! Happy blogging. */
