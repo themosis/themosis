@@ -23,7 +23,7 @@ $finder = Finder::create()
         'bootstrap',
         'config',
         'htdocs',
-        'src',
+        'framework',
         'tests'
     ]);
 
