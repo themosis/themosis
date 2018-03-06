@@ -11,24 +11,21 @@ defined('DS') ? DS : define('DS', DIRECTORY_SEPARATOR);
 define('THEMOSIS_PUBLIC_DIR', 'htdocs');
 define('THEMOSIS_ROOT', realpath(__DIR__.'/../'));
 define('CONTENT_DIR', 'content');
-define('WP_CONTENT_DIR', THEMOSIS_ROOT.DS.THEMOSIS_PUBLIC_DIR.DS.CONTENT_DIR);
-// TODO: Refactor WP_CONTENT_DIR.
-// TODO: Verify WP_CONTENT_URL use.
-//define('WP_CONTENT_URL', WP_HOME.DS.CONTENT_DIR);
+define('WP_CONTENT_DIR', realpath(THEMOSIS_ROOT.DS.THEMOSIS_PUBLIC_DIR.DS.CONTENT_DIR));
 
 /*----------------------------------------------------*/
 // Composer autoload
 /*----------------------------------------------------*/
 if (file_exists($autoload = THEMOSIS_ROOT.'/vendor/autoload.php')) {
-    require_once $autoload;
+    require $autoload;
 }
 
 /*----------------------------------------------------*/
 // Bootstrap application
 /*----------------------------------------------------*/
-require_once dirname(__DIR__).'/bootstrap/start.php';
+require dirname(__DIR__).'/bootstrap/start.php';
 
 /*----------------------------------------------------*/
-// Sets up WordPress vars and included files
+// Set up WordPress vars and included files
 /*----------------------------------------------------*/
 require_once ABSPATH.'/wp-settings.php';

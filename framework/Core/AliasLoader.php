@@ -19,7 +19,7 @@ class AliasLoader
     protected $registered = false;
 
     /**
-     * @var \Thms\Core\AliasLoader
+     * @var \Themosis\Core\AliasLoader
      */
     protected static $instance;
 
@@ -213,7 +213,7 @@ class AliasLoader
     /**
      * Set the value of the singleton loader.
      *
-     * @param \Thms\Core\AliasLoader $loader
+     * @param \Themosis\Core\AliasLoader $loader
      */
     public static function setInstance($loader)
     {

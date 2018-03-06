@@ -70,20 +70,15 @@ class Kernel implements \Illuminate\Contracts\Http\Kernel
         \Illuminate\Routing\Middleware\SubstituteBindings::class
     ];
 
-    public function __construct(Application $app, Router $router)
+    public function __construct(Application $app)
     {
         $this->app = $app;
-        $this->router = $router;
+    }
 
-        $router->middlewarePriority = $this->middlewarePriority;
-
-        foreach ($this->middlewareGroups as $key => $middleware) {
-            $router->middlewareGroup($key, $middleware);
-        }
-
-        foreach ($this->routeMiddleware as $key => $middleware) {
-            $router->aliasMiddleware($key, $middleware);
-        }
+    public function init($request)
+    {
+        $this->app->instance('request', $request);
+        $this->bootstrap();
     }
 
     /**
@@ -145,8 +140,6 @@ class Kernel implements \Illuminate\Contracts\Http\Kernel
         $this->app->instance('request', $request);
 
         Facade::clearResolvedInstance('request');
-
-        $this->bootstrap();
 
         return (new Pipeline($this->app))
             ->send($request)

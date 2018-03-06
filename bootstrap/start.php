@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Contracts\Http\Kernel;
-use Thms\Core\Application;
+use Themosis\Core\Application;
 
 $app = new Application(THEMOSIS_ROOT);
 
@@ -18,21 +18,25 @@ $app->singleton(
     App\Exceptions\Handler::class
 );
 
-/*----------------------------------------------------*/
-// Start the application
-/*----------------------------------------------------*/
+/*
+|--------------------------------------------------------------------------
+| Start the application
+|--------------------------------------------------------------------------
+|
+| We're going to initialize the kernel instance and capture the current
+| request. We won't directly manage a response from the current file.
+| We let WordPress bootstrap its stuff and we'll manage the response
+| once WordPress is fully loaded.
+|
+*/
 $kernel = $app->make(Kernel::class);
-
-$response = $kernel->handle(
-    $request = Illuminate\Http\Request::capture()
+$kernel->init(
+    Illuminate\Http\Request::capture()
 );
 
 /*----------------------------------------------------*/
 // Database prefix (WordPress)
 /*----------------------------------------------------*/
 $table_prefix = env('DATABASE_PREFIX', 'wp_');
-
-// TODO: Implement routing and  response
-// TODO: Implement kernel terminate
 
 /* That's all, stop editing! Happy blogging. */
