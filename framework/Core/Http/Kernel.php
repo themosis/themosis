@@ -75,9 +75,17 @@ class Kernel implements \Illuminate\Contracts\Http\Kernel
         $this->app = $app;
     }
 
+    /**
+     * Initialize the kernel (bootstrap application base components).
+     *
+     * @param \Illuminate\Http\Request $request
+     */
     public function init($request)
     {
         $this->app->instance('request', $request);
+
+        Facade::clearResolvedInstance('request');
+
         $this->bootstrap();
     }
 
