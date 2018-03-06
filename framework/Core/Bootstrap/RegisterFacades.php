@@ -1,11 +1,11 @@
 <?php
 
-namespace Thms\Core\Bootstrap;
+namespace Themosis\Core\Bootstrap;
 
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Support\Facades\Facade;
-use Thms\Core\AliasLoader;
-use Thms\Core\PackageManifest;
+use Themosis\Core\AliasLoader;
+use Themosis\Core\PackageManifest;
 
 class RegisterFacades
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Thms\Core;
+namespace Themosis\Core;
 
 use Closure;
 use Illuminate\Container\Container;

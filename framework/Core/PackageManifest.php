@@ -1,6 +1,6 @@
 <?php
 
-namespace Thms\Core;
+namespace Themosis\Core;
 
 use Exception;
 use Illuminate\Filesystem\Filesystem;
@@ -88,6 +88,8 @@ class PackageManifest
         if (! file_exists($this->manifestPath)) {
             $this->build();
         }
+
+        // FIXME: should return an array somehow.
     }
 
     /**

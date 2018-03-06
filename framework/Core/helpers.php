@@ -11,7 +11,7 @@ if (! function_exists('app')) {
      * @param string $abstract
      * @param array  $parameters
      *
-     * @return mixed|\Thms\Core\Application
+     * @return mixed|\Themosis\Core\Application
      */
     function app($abstract = null, array $parameters = [])
     {

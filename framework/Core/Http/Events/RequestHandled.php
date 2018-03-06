@@ -1,6 +1,6 @@
 <?php
 
-namespace Thms\Core\Http\Events;
+namespace Themosis\Core\Http\Events;
 
 class RequestHandled
 {

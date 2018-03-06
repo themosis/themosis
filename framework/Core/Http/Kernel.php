@@ -1,6 +1,6 @@
 <?php
 
-namespace Thms\Core\Http;
+namespace Themosis\Core\Http;
 
 use Exception;
 use Illuminate\Contracts\Debug\ExceptionHandler;
@@ -9,7 +9,7 @@ use Illuminate\Routing\Pipeline;
 use Illuminate\Routing\Router;
 use Illuminate\Support\Facades\Facade;
 use Symfony\Component\Debug\Exception\FatalThrowableError;
-use Thms\Core\Http\Events\RequestHandled;
+use Themosis\Core\Http\Events\RequestHandled;
 use Throwable;
 
 class Kernel implements \Illuminate\Contracts\Http\Kernel
@@ -32,12 +32,12 @@ class Kernel implements \Illuminate\Contracts\Http\Kernel
      * @var array
      */
     protected $bootstrappers = [
-        \Thms\Core\Bootstrap\EnvironmentLoader::class,
-        \Thms\Core\Bootstrap\ConfigurationLoader::class,
-        \Thms\Core\Bootstrap\ExceptionHandler::class,
-        \Thms\Core\Bootstrap\RegisterFacades::class,
-        \Thms\Core\Bootstrap\RegisterProviders::class,
-        \Thms\Core\Bootstrap\BootProviders::class
+        \Themosis\Core\Bootstrap\EnvironmentLoader::class,
+        \Themosis\Core\Bootstrap\ConfigurationLoader::class,
+        \Themosis\Core\Bootstrap\ExceptionHandler::class,
+        \Themosis\Core\Bootstrap\RegisterFacades::class,
+        \Themosis\Core\Bootstrap\RegisterProviders::class,
+        \Themosis\Core\Bootstrap\BootProviders::class
     ];
 
     /**

@@ -1,6 +1,6 @@
 <?php
 
-namespace Thms\Core\Bootstrap;
+namespace Themosis\Core\Bootstrap;
 
 use Dotenv\Dotenv;
 use Illuminate\Contracts\Foundation\Application;

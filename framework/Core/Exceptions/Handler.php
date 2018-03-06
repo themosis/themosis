@@ -1,6 +1,6 @@
 <?php
 
-namespace Thms\Core\Exceptions;
+namespace Themosis\Core\Exceptions;
 
 use Exception;
 use Illuminate\Contracts\Container\Container;

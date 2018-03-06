@@ -1,6 +1,6 @@
 <?php
 
-namespace Thms\Core;
+namespace Themosis\Core;
 
 use Exception;
 use Illuminate\Contracts\Foundation\Application;
