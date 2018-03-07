@@ -9,7 +9,6 @@ use Illuminate\Events\EventServiceProvider;
 use Illuminate\Filesystem\Filesystem;
 use Illuminate\Filesystem\FilesystemServiceProvider;
 use Illuminate\Log\LogServiceProvider;
-use Illuminate\Routing\RoutingServiceProvider;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Collection;
 use Illuminate\Support\ServiceProvider;
@@ -885,5 +884,27 @@ class Application extends Container implements ApplicationContract, HttpKernelIn
     {
         return $this->bound('middleware.disable') &&
             $this->make('middleware.disable') === true;
+    }
+
+    /**
+     * Register the framework core "plugin" and auto-load
+     * any found mu-plugins after the framework.
+     *
+     * @param string $pluginsPath
+     */
+    public function registerPlugins(string $pluginsPath)
+    {
+        (new PluginsRepository($this, new Filesystem(), $pluginsPath, $this->getCachedPluginsPath()))
+            ->load();
+    }
+
+    /**
+     * Return cached plugins manifest file path.
+     *
+     * @return string
+     */
+    public function getCachedPluginsPath()
+    {
+        return $this->bootstrapPath('cache/plugins.php');
     }
 }

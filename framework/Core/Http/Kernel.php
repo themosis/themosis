@@ -145,10 +145,6 @@ class Kernel implements \Illuminate\Contracts\Http\Kernel
      */
     protected function sendRequestThroughRouter($request)
     {
-        $this->app->instance('request', $request);
-
-        Facade::clearResolvedInstance('request');
-
         return (new Pipeline($this->app))
             ->send($request)
             ->through($this->app->shouldSkipMiddleware() ? [] : $this->middleware)

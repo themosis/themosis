@@ -1,1 +1,3 @@
-/themosis-framework
+*
+!/load.php
+!.gitignore
