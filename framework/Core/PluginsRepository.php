@@ -38,6 +38,11 @@ class PluginsRepository
     public function load()
     {
         $manifest = $this->loadManifest();
+
+        // Load plugins based on cached manifest.
+        foreach ($manifest as $dir => $pluginFile) {
+            $this->app->registerPlugin($dir, $pluginFile);
+        }
     }
 
     /**

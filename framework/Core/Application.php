@@ -288,7 +288,7 @@ class Application extends Container implements ApplicationContract, HttpKernelIn
      */
     public function mupluginsPath($path = '')
     {
-        return $this->basePath($path);
+        return $this->contentPath('mu-plugins').($path ? DIRECTORY_SEPARATOR.$path : $path);
     }
 
     /**
@@ -892,10 +892,22 @@ class Application extends Container implements ApplicationContract, HttpKernelIn
      *
      * @param string $pluginsPath
      */
-    public function registerPlugins(string $pluginsPath)
+    public function loadPlugins(string $pluginsPath)
     {
         (new PluginsRepository($this, new Filesystem(), $pluginsPath, $this->getCachedPluginsPath()))
             ->load();
+    }
+
+    /**
+     * Register a plugin and load it.
+     *
+     * @param string $dir Plugin directory name.
+     * @param string $file Plugin main file.
+     */
+    public function registerPlugin(string $dir, string $file)
+    {
+        $pluginPath = $this->mupluginsPath($dir.'/'.$file);
+        require $pluginPath;
     }
 
     /**

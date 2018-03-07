@@ -15,4 +15,4 @@ if (! class_exists('Themosis\Core\Application')) {
     return;
 }
 
-(Application::getInstance())->registerPlugins(__DIR__);
+(Application::getInstance())->loadPlugins(__DIR__);
