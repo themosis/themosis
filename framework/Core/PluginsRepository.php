@@ -4,7 +4,6 @@ namespace Themosis\Core;
 
 use Exception;
 use Illuminate\Filesystem\Filesystem;
-use Symfony\Component\Finder\SplFileInfo;
 use Themosis\Core\Events\PluginLoaded;
 
 class PluginsRepository
