@@ -1,13 +1,14 @@
 <?php
 
-use Thms\Core\Application;
+use PHPUnit\Framework\TestCase;
+use Themosis\Core\Application;
 
-class ApplicationTest extends PHPUnit_Framework_TestCase
+class ApplicationTest extends TestCase
 {
     public function testBasePathSetup()
     {
-        $app = new Application(realpath(__DIR__.'/../../'));
-
-        $this->assertEquals('/home/vagrant/code', $app->basePath());
+        $path = realpath(__DIR__.'/../../');
+        $app = new Application(realpath($path));
+        $this->assertEquals($path, $app->basePath());
     }
 }

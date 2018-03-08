@@ -6,7 +6,7 @@
          convertWarningsToExceptions="true"
          verbose="true">
     <testsuites>
-        <testsuite name="Themosis test suite">
+        <testsuite name="Themosis">
             <directory suffix="Test.php">./tests</directory>
         </testsuite>
     </testsuites>
