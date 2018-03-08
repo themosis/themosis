@@ -4,6 +4,8 @@ namespace Themosis\Core;
 
 use Exception;
 use Illuminate\Filesystem\Filesystem;
+use Symfony\Component\Finder\SplFileInfo;
+use Themosis\Core\Events\PluginLoaded;
 
 class PluginsRepository
 {
@@ -44,6 +46,13 @@ class PluginsRepository
         'network' => 'Network'
     ];
 
+    /**
+     * At compilation, stores
+     *
+     * @var array
+     */
+    protected $plugins;
+
     public function __construct(Application $application, Filesystem $files, string $pluginsPath, string $manifestPath)
     {
         $this->app = $application;
@@ -69,9 +78,13 @@ class PluginsRepository
         }
 
         // Load plugins defined in the manifest.
-        foreach ($manifest as $dir => $pluginFile) {
-            $path = sprintf('%s/%s', $dir, $pluginFile);
+        // Dispatch an event with loaded plugin data.
+        foreach ($manifest as $plugin => $headers) {
+            $path = sprintf('%s/%s', $plugin, $headers['root']);
             $this->app->registerPlugin($path);
+            $this->app['events']->dispatch(
+                new PluginLoaded($plugin, $headers)
+            );
         }
     }
 
@@ -93,21 +106,20 @@ class PluginsRepository
             // As we load the plugins from the mu-plugins directory
             // we do not need to get their header. Only the file
             // that defines them.
-            $file = $this->findPluginRootFile($directory);
-            $manifest[$directory] = $file->getFilename();
+            $manifest[$directory] = $this->getPlugin($directory);
         }
 
         return $this->writeManifest($manifest);
     }
 
     /**
-     * Find the plugin root file (the one containing plugin headers).
+     * Get the plugin. Find the root file and return its headers.
      *
      * @param string $directory
      *
-     * @return \SplFileInfo
+     * @return array
      */
-    public function findPluginRootFile(string $directory)
+    public function getPlugin(string $directory)
     {
         $files = $this->files->files($this->app->mupluginsPath($directory));
 
@@ -115,7 +127,7 @@ class PluginsRepository
             $headers = $this->getPluginHeaders($file->getRealPath());
 
             if (! empty($headers['name'])) {
-                return $file;
+                return array_merge(['root' => $file->getFilename()], $headers);
                 break;
             }
         }

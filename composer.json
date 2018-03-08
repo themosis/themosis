@@ -48,7 +48,7 @@
     "laravel/homestead": "^7.0"
   },
   "extra":{
-    "installer-paths":{
+    "installer-paths": {
       "htdocs/content/mu-plugins/themosis-{$name}/": ["themosis/framework"],
       "htdocs/content/plugins/{$name}/": ["type:wordpress-plugin"],
       "htdocs/content/themes/themosis-{$name}/": ["themosis/theme"],
