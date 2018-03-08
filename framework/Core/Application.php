@@ -891,23 +891,29 @@ class Application extends Container implements ApplicationContract, HttpKernelIn
      * any found mu-plugins after the framework.
      *
      * @param string $pluginsPath
+     *
+     * @throws \Illuminate\Contracts\Filesystem\FileNotFoundException
+     * @throws \Exception
      */
     public function loadPlugins(string $pluginsPath)
     {
+        $directories = Collection::make((new Filesystem())->directories($this->mupluginsPath()))
+            ->map(function ($directory) {
+                return ltrim(substr($directory, strrpos($directory, '/')), '\/');
+            })->toArray();
+
         (new PluginsRepository($this, new Filesystem(), $pluginsPath, $this->getCachedPluginsPath()))
-            ->load();
+            ->load($directories);
     }
 
     /**
      * Register a plugin and load it.
      *
-     * @param string $dir Plugin directory name.
-     * @param string $file Plugin main file.
+     * @param string $path Plugin relative path (pluginDirName/pluginMainFile).
      */
-    public function registerPlugin(string $dir, string $file)
+    public function registerPlugin(string $path)
     {
-        $pluginPath = $this->mupluginsPath($dir.'/'.$file);
-        require $pluginPath;
+        require $this->mupluginsPath($path);
     }
 
     /**

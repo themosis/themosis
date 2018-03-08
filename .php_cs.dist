@@ -10,7 +10,7 @@ $finder = Finder::create()
     ->exclude([
         'bin',
         'cms',
-        'content/mu-plugins/themosis-framework',
+        'content/mu-plugins',
         'content/plugins',
         'content/themes',
         'content/upgrade',
