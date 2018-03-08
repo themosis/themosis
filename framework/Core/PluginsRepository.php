@@ -45,13 +45,6 @@ class PluginsRepository
         'network' => 'Network'
     ];
 
-    /**
-     * At compilation, stores
-     *
-     * @var array
-     */
-    protected $plugins;
-
     public function __construct(Application $application, Filesystem $files, string $pluginsPath, string $manifestPath)
     {
         $this->app = $application;
