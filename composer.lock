@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "585acbf5a9d3ebbd77d4247794fee0f9",
+    "content-hash": "dc52146a77a24dcec92bfde2690512c9",
     "packages": [
         {
             "name": "doctrine/inflector",
@@ -136,7 +136,7 @@
         },
         {
             "name": "illuminate/config",
-            "version": "v5.6.9",
+            "version": "v5.6.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/config.git",
@@ -180,7 +180,7 @@
         },
         {
             "name": "illuminate/container",
-            "version": "v5.6.9",
+            "version": "v5.6.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/container.git",
@@ -224,7 +224,7 @@
         },
         {
             "name": "illuminate/contracts",
-            "version": "v5.6.9",
+            "version": "v5.6.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/contracts.git",
@@ -268,16 +268,16 @@
         },
         {
             "name": "illuminate/database",
-            "version": "v5.6.9",
+            "version": "v5.6.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/database.git",
-                "reference": "2e375da72827d1bbb20fcc42a0fd190badd341e2"
+                "reference": "4d2fc3c816ed402fcac290e6ca7bc855d5313000"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/database/zipball/2e375da72827d1bbb20fcc42a0fd190badd341e2",
-                "reference": "2e375da72827d1bbb20fcc42a0fd190badd341e2",
+                "url": "https://api.github.com/repos/illuminate/database/zipball/4d2fc3c816ed402fcac290e6ca7bc855d5313000",
+                "reference": "4d2fc3c816ed402fcac290e6ca7bc855d5313000",
                 "shasum": ""
             },
             "require": {
@@ -323,11 +323,11 @@
                 "orm",
                 "sql"
             ],
-            "time": "2018-03-06T03:35:04+00:00"
+            "time": "2018-03-09T13:55:05+00:00"
         },
         {
             "name": "illuminate/events",
-            "version": "v5.6.9",
+            "version": "v5.6.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/events.git",
@@ -372,7 +372,7 @@
         },
         {
             "name": "illuminate/filesystem",
-            "version": "v5.6.9",
+            "version": "v5.6.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/filesystem.git",
@@ -423,16 +423,16 @@
         },
         {
             "name": "illuminate/http",
-            "version": "v5.6.9",
+            "version": "v5.6.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/http.git",
-                "reference": "dc848b920b073293078097645471ad36d9c1f6db"
+                "reference": "39131ae386ff4b84903cdc3ae5a6dd2af2eb05ba"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/http/zipball/dc848b920b073293078097645471ad36d9c1f6db",
-                "reference": "dc848b920b073293078097645471ad36d9c1f6db",
+                "url": "https://api.github.com/repos/illuminate/http/zipball/39131ae386ff4b84903cdc3ae5a6dd2af2eb05ba",
+                "reference": "39131ae386ff4b84903cdc3ae5a6dd2af2eb05ba",
                 "shasum": ""
             },
             "require": {
@@ -465,20 +465,20 @@
             ],
             "description": "The Illuminate Http package.",
             "homepage": "https://laravel.com",
-            "time": "2018-03-06T20:06:11+00:00"
+            "time": "2018-03-09T14:19:22+00:00"
         },
         {
             "name": "illuminate/log",
-            "version": "v5.6.9",
+            "version": "v5.6.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/log.git",
-                "reference": "2e43370ed7d8271f567c7626ee0fa8cc72940ce0"
+                "reference": "e835839b9f3a417e0cdbf9f34b8b21dff7e8e44c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/log/zipball/2e43370ed7d8271f567c7626ee0fa8cc72940ce0",
-                "reference": "2e43370ed7d8271f567c7626ee0fa8cc72940ce0",
+                "url": "https://api.github.com/repos/illuminate/log/zipball/e835839b9f3a417e0cdbf9f34b8b21dff7e8e44c",
+                "reference": "e835839b9f3a417e0cdbf9f34b8b21dff7e8e44c",
                 "shasum": ""
             },
             "require": {
@@ -510,11 +510,11 @@
             ],
             "description": "The Illuminate Log package.",
             "homepage": "https://laravel.com",
-            "time": "2018-02-16T13:38:08+00:00"
+            "time": "2018-03-08T14:31:27+00:00"
         },
         {
             "name": "illuminate/pipeline",
-            "version": "v5.6.9",
+            "version": "v5.6.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/pipeline.git",
@@ -558,16 +558,16 @@
         },
         {
             "name": "illuminate/routing",
-            "version": "v5.6.9",
+            "version": "v5.6.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/routing.git",
-                "reference": "ee5a15fd027e96140dcab60b5c9c4a7dc13c3b71"
+                "reference": "d5a5f033d1a1ef05c50e15901908a28dd00b2dfd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/routing/zipball/ee5a15fd027e96140dcab60b5c9c4a7dc13c3b71",
-                "reference": "ee5a15fd027e96140dcab60b5c9c4a7dc13c3b71",
+                "url": "https://api.github.com/repos/illuminate/routing/zipball/d5a5f033d1a1ef05c50e15901908a28dd00b2dfd",
+                "reference": "d5a5f033d1a1ef05c50e15901908a28dd00b2dfd",
                 "shasum": ""
             },
             "require": {
@@ -610,11 +610,11 @@
             ],
             "description": "The Illuminate Routing package.",
             "homepage": "https://laravel.com",
-            "time": "2018-03-01T20:53:30+00:00"
+            "time": "2018-03-08T15:45:46+00:00"
         },
         {
             "name": "illuminate/session",
-            "version": "v5.6.9",
+            "version": "v5.6.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/session.git",
@@ -664,16 +664,16 @@
         },
         {
             "name": "illuminate/support",
-            "version": "v5.6.9",
+            "version": "v5.6.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/support.git",
-                "reference": "c74e5a0a4cdd599f65a615398041cc1be19cc86f"
+                "reference": "259f6f17a11b0379340ec5311fcba27bc2a04070"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/support/zipball/c74e5a0a4cdd599f65a615398041cc1be19cc86f",
-                "reference": "c74e5a0a4cdd599f65a615398041cc1be19cc86f",
+                "url": "https://api.github.com/repos/illuminate/support/zipball/259f6f17a11b0379340ec5311fcba27bc2a04070",
+                "reference": "259f6f17a11b0379340ec5311fcba27bc2a04070",
                 "shasum": ""
             },
             "require": {
@@ -717,11 +717,11 @@
             ],
             "description": "The Illuminate Support package.",
             "homepage": "https://laravel.com",
-            "time": "2018-03-04T15:11:54+00:00"
+            "time": "2018-03-09T16:52:54+00:00"
         },
         {
             "name": "illuminate/view",
-            "version": "v5.6.9",
+            "version": "v5.6.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/view.git",
@@ -936,20 +936,20 @@
         },
         {
             "name": "nesbot/carbon",
-            "version": "1.23.0",
+            "version": "1.24.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/briannesbitt/Carbon.git",
-                "reference": "4a874a39b2b00d7e0146cd46fab6f47c41ce9e65"
+                "reference": "ef12cbd8ba5ce624f0a6a95e0850c4cc13e71e41"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/4a874a39b2b00d7e0146cd46fab6f47c41ce9e65",
-                "reference": "4a874a39b2b00d7e0146cd46fab6f47c41ce9e65",
+                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/ef12cbd8ba5ce624f0a6a95e0850c4cc13e71e41",
+                "reference": "ef12cbd8ba5ce624f0a6a95e0850c4cc13e71e41",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.0",
+                "php": ">=5.3.9",
                 "symfony/translation": "~2.6 || ~3.0 || ~4.0"
             },
             "require-dev": {
@@ -985,7 +985,7 @@
                 "datetime",
                 "time"
             ],
-            "time": "2018-02-28T09:22:05+00:00"
+            "time": "2018-03-09T15:49:34+00:00"
         },
         {
             "name": "psr/container",
@@ -1750,54 +1750,6 @@
             "time": "2017-07-22T11:58:36+00:00"
         },
         {
-            "name": "hamcrest/hamcrest-php",
-            "version": "v2.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/hamcrest/hamcrest-php.git",
-                "reference": "776503d3a8e85d4f9a1148614f95b7a608b046ad"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/hamcrest/hamcrest-php/zipball/776503d3a8e85d4f9a1148614f95b7a608b046ad",
-                "reference": "776503d3a8e85d4f9a1148614f95b7a608b046ad",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^5.3|^7.0"
-            },
-            "replace": {
-                "cordoval/hamcrest-php": "*",
-                "davedevelopment/hamcrest-php": "*",
-                "kodova/hamcrest-php": "*"
-            },
-            "require-dev": {
-                "phpunit/php-file-iterator": "1.3.3",
-                "phpunit/phpunit": "~4.0",
-                "satooshi/php-coveralls": "^1.0"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "2.0-dev"
-                }
-            },
-            "autoload": {
-                "classmap": [
-                    "hamcrest"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD"
-            ],
-            "description": "This is the PHP port of Hamcrest Matchers",
-            "keywords": [
-                "test"
-            ],
-            "time": "2016-01-20T08:20:44+00:00"
-        },
-        {
             "name": "laravel/homestead",
             "version": "v7.2.0",
             "source": {
@@ -1846,71 +1798,6 @@
             ],
             "description": "A virtual machine for web artisans.",
             "time": "2018-03-06T18:32:42+00:00"
-        },
-        {
-            "name": "mockery/mockery",
-            "version": "1.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/mockery/mockery.git",
-                "reference": "1bac8c362b12f522fdd1f1fa3556284c91affa38"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/mockery/mockery/zipball/1bac8c362b12f522fdd1f1fa3556284c91affa38",
-                "reference": "1bac8c362b12f522fdd1f1fa3556284c91affa38",
-                "shasum": ""
-            },
-            "require": {
-                "hamcrest/hamcrest-php": "~2.0",
-                "lib-pcre": ">=7.0",
-                "php": ">=5.6.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "~5.7|~6.1"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.0.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-0": {
-                    "Mockery": "library/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Pádraic Brady",
-                    "email": "padraic.brady@gmail.com",
-                    "homepage": "http://blog.astrumfutura.com"
-                },
-                {
-                    "name": "Dave Marshall",
-                    "email": "dave.marshall@atstsolutions.co.uk",
-                    "homepage": "http://davedevelopment.co.uk"
-                }
-            ],
-            "description": "Mockery is a simple yet flexible PHP mock object framework for use in unit testing with PHPUnit, PHPSpec or any other testing framework. Its core goal is to offer a test double framework with a succinct API capable of clearly defining all possible object operations and interactions using a human readable Domain Specific Language (DSL). Designed as a drop in alternative to PHPUnit's phpunit-mock-objects library, Mockery is easy to integrate with PHPUnit and can operate alongside phpunit-mock-objects without the World ending.",
-            "homepage": "http://github.com/mockery/mockery",
-            "keywords": [
-                "BDD",
-                "TDD",
-                "library",
-                "mock",
-                "mock objects",
-                "mockery",
-                "stub",
-                "test",
-                "test double",
-                "testing"
-            ],
-            "time": "2017-10-06T16:20:43+00:00"
         },
         {
             "name": "myclabs/deep-copy",

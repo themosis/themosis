@@ -1,29 +1,27 @@
 <?php
 
 use Illuminate\Filesystem\Filesystem;
-use Mockery\Adapter\Phpunit\MockeryPHPUnitIntegration;
 use PHPUnit\Framework\TestCase;
 use Themosis\Core\Application;
 use Themosis\Core\PluginsRepository;
 
 class PluginsLoaderTest extends TestCase
 {
-    use MockeryPHPUnitIntegration;
-
     public function testLoadManifestWhenNoFileExists()
     {
-        $app = Mockery::mock('Themosis\Core\Application');
-        $filesystem = Mockery::mock('Illuminate\Filesystem\Filesystem');
+        $app = $this->createMock('Themosis\Core\Application');
+        $filesystem = $this->createMock('Illuminate\Filesystem\Filesystem');
         $loader = new PluginsRepository($app, $filesystem, '', 'plugins.php');
 
-        $filesystem->shouldReceive('exists')->once();
+        $filesystem->expects($this->once())
+            ->method('exists');
         $this->assertNull($loader->loadManifest());
     }
 
     public function testLoadManifestWhenFileExists()
     {
-        $app = Mockery::mock('Themosis\Core\Application');
-        $filesystem = Mockery::mock('Illuminate\Filesystem\Filesystem');
+        $app = $this->createMock('Themosis\Core\Application');
+        $filesystem = $this->createMock('Illuminate\Filesystem\Filesystem');
         $loader = new PluginsRepository(
             $app,
             $filesystem,
@@ -44,8 +42,12 @@ class PluginsLoaderTest extends TestCase
             'network' => ''
         ]];
 
-        $filesystem->shouldReceive('exists')->once()->andReturnTrue();
-        $filesystem->shouldReceive('getRequire')->once()->andReturn($plugins);
+        $filesystem->expects($this->once())
+            ->method('exists')
+            ->will($this->returnValue(true));
+        $filesystem->expects($this->once())
+            ->method('getRequire')
+            ->will($this->returnValue($plugins));
 
         $manifest = $loader->loadManifest();
         $this->assertTrue(is_array($manifest));
@@ -54,8 +56,8 @@ class PluginsLoaderTest extends TestCase
 
     public function testLoaderCanGetPluginHeader()
     {
-        $app = Mockery::mock('Themosis\Core\Application');
-        $filesystem = Mockery::mock('Illuminate\Filesystem\Filesystem');
+        $app = $this->createMock('Themosis\Core\Application');
+        $filesystem = $this->createMock('Illuminate\Filesystem\Filesystem');
         $loader = new PluginsRepository(
             $app,
             $filesystem,

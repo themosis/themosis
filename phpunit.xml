@@ -4,6 +4,7 @@
          convertErrorsToExceptions="true"
          convertNoticesToExceptions="true"
          convertWarningsToExceptions="true"
+         processIsolation="false"
          verbose="true">
     <testsuites>
         <testsuite name="Themosis">
