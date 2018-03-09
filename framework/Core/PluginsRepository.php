@@ -136,7 +136,7 @@ class PluginsRepository
      */
     public function getPluginHeaders(string $path): array
     {
-        $data = $this->getFileDate($path);
+        $data = $this->getFileContent($path);
         $headers = [];
 
         foreach ($this->headers as $field => $regex) {
@@ -158,7 +158,7 @@ class PluginsRepository
      *
      * @return string
      */
-    public function getFileDate(string $path, int $length = 8192): string
+    public function getFileContent(string $path, int $length = 8192): string
     {
         $handle = fopen($path, 'r');
         $content = fread($handle, $length);
@@ -185,7 +185,7 @@ class PluginsRepository
      *
      * @throws \Illuminate\Contracts\Filesystem\FileNotFoundException
      *
-     * @return mixed|null
+     * @return array|null
      */
     public function loadManifest()
     {
