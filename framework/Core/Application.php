@@ -235,8 +235,6 @@ class Application extends Container implements ApplicationContract, HttpKernelIn
         $this->instance('path.themes', $this->themesPath());
         // Application
         $this->instance('path.application', $this->applicationPath());
-        // Resources
-        $this->instance('path.resources', $this->resourcePath());
         // Languages
         $this->instance('path.lang', $this->langPath());
         // Web root
@@ -264,7 +262,7 @@ class Application extends Container implements ApplicationContract, HttpKernelIn
      */
     public function path($path = '')
     {
-        return $this->basePath.DIRECTORY_SEPARATOR.'themosis-framework'.($path ? DIRECTORY_SEPARATOR.$path : $path);
+        return $this->basePath.DIRECTORY_SEPARATOR.'app'.($path ? DIRECTORY_SEPARATOR.$path : $path);
     }
 
     /**
@@ -324,19 +322,7 @@ class Application extends Container implements ApplicationContract, HttpKernelIn
      */
     public function applicationPath($path = '')
     {
-        return $this->mupluginsPath('themosis-application').($path ? DIRECTORY_SEPARATOR.$path : $path);
-    }
-
-    /**
-     * Get the path to the application "resources" directory.
-     *
-     * @param string $path
-     *
-     * @return string
-     */
-    public function resourcePath($path = '')
-    {
-        return $this->applicationPath('resources').($path ? DIRECTORY_SEPARATOR.$path : $path);
+        return $this->basePath('app').($path ? DIRECTORY_SEPARATOR.$path : $path);
     }
 
     /**
@@ -360,7 +346,7 @@ class Application extends Container implements ApplicationContract, HttpKernelIn
      */
     public function webPath($path = '')
     {
-        //return rtrim(ABSPATH, '\/').($path ? DIRECTORY_SEPARATOR.$path : $path);
+        return $this->basePath(THEMOSIS_PUBLIC_DIR).($path ? DIRECTORY_SEPARATOR.$path : $path);
     }
 
     /**
