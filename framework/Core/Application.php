@@ -378,7 +378,7 @@ class Application extends Container implements ApplicationContract, HttpKernelIn
     }
 
     /**
-     * Get the storage directory.
+     * Get the storage directory path.
      *
      * @param string $path
      *
@@ -394,7 +394,7 @@ class Application extends Container implements ApplicationContract, HttpKernelIn
     }
 
     /**
-     * Get the database directory.
+     * Get the database directory path.
      *
      * @param string $path
      *
@@ -405,13 +405,15 @@ class Application extends Container implements ApplicationContract, HttpKernelIn
         return $this->rootPath('database').($path ? DIRECTORY_SEPARATOR.$path : $path);
     }
 
+    /**
+     * Get the bootstrap directory path.
+     *
+     * @param string $path
+     * @return string
+     */
     public function bootstrapPath($path = '')
     {
-        if (defined('THEMOSIS_ROOT')) {
-            return $this->rootPath('bootstrap').($path ? DIRECTORY_SEPARATOR.$path : $path);
-        }
-
-        return $this->applicationPath('bootstrap').($path ? DIRECTORY_SEPARATOR.$path : $path);
+        return $this->rootPath('bootstrap').($path ? DIRECTORY_SEPARATOR.$path : $path);
     }
 
     /**

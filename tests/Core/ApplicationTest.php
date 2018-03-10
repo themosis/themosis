@@ -62,5 +62,35 @@ class ApplicationTest extends TestCase
             $app['path.web'],
             'Cannot get the web path'
         );
+        $this->assertEquals(
+            $path,
+            $app['path.root'],
+            'Cannot get the root path'
+        );
+        $this->assertEquals(
+            $path.'/config',
+            $app['path.config'],
+            'Cannot get the defaut config path'
+        );
+        $this->assertEquals(
+            $path.'/htdocstest',
+            $app['path.public'],
+            'Cannot get the public path'
+        );
+        $this->assertEquals(
+            $path.'/storage',
+            $app['path.storage'],
+            'Cannot get the storage path'
+        );
+        $this->assertEquals(
+            $path.'/database',
+            $app['path.database'],
+            'Cannot get the database path'
+        );
+        $this->assertEquals(
+            $path.'/bootstrap',
+            $app['path.bootstrap'],
+            'Cannot get the bootstrap path'
+        );
     }
 }
