@@ -13,7 +13,6 @@ use Illuminate\Support\Arr;
 use Illuminate\Support\Collection;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Str;
-use Illuminate\View\ViewServiceProvider;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\HttpKernelInterface;
@@ -408,6 +407,7 @@ class Application extends Container implements ApplicationContract, HttpKernelIn
      * Get the bootstrap directory path.
      *
      * @param string $path
+     *
      * @return string
      */
     public function bootstrapPath($path = '')
