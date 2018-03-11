@@ -148,7 +148,6 @@ class Application extends Container implements ApplicationContract, HttpKernelIn
         $this->register(new EventServiceProvider($this));
         $this->register(new LogServiceProvider($this));
         $this->register(new FilesystemServiceProvider($this));
-        $this->register(new ViewServiceProvider($this));
     }
 
     /**

@@ -1,7 +1,12 @@
 <?php
 
+use Illuminate\Container\Container;
+use Illuminate\Events\EventServiceProvider;
+use Illuminate\Filesystem\FilesystemServiceProvider;
+use Illuminate\Log\LogServiceProvider;
 use PHPUnit\Framework\TestCase;
 use Themosis\Core\Application;
+use Themosis\Core\PackageManifest;
 
 class ApplicationTest extends TestCase
 {
@@ -91,6 +96,50 @@ class ApplicationTest extends TestCase
             $path.'/bootstrap',
             $app['path.bootstrap'],
             'Cannot get the bootstrap path'
+        );
+    }
+
+    public function testApplicationBaseBindings()
+    {
+        $path = realpath(__DIR__.'/../');
+        $app = new Application($path);
+
+        $this->assertInstanceOf(
+            'Themosis\Core\Application',
+            $app['app'],
+            'Application instance is not bound'
+        );
+        $this->assertInstanceOf(
+            Container::class,
+            $app['Illuminate\Container\Container'],
+            'Container instance is not bound'
+        );
+        $this->assertInstanceOf(
+            PackageManifest::class,
+            $app['Themosis\Core\PackageManifest'],
+            'Package manifest is not bound'
+        );
+    }
+
+    public function testApplicationBaseServiceProviders()
+    {
+        $path = realpath(__DIR__.'/../');
+        $app = new Application($path);
+
+        $this->assertInstanceOf(
+            'Illuminate\Events\EventServiceProvider',
+            $app->getProvider(EventServiceProvider::class),
+            'The event service provider is not registered'
+        );
+        $this->assertInstanceOf(
+            'Illuminate\Log\LogServiceProvider',
+            $app->getProvider(LogServiceProvider::class),
+            'Log service provider is not registered'
+        );
+        $this->assertInstanceOf(
+            'Illuminate\Filesystem\FilesystemServiceProvider',
+            $app->getProvider(FilesystemServiceProvider::class),
+            'Filesystem service provider is not registered'
         );
     }
 }
