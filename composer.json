@@ -19,12 +19,8 @@
   ],
   "autoload": {
     "psr-4": {
-      "Themosis\\": "framework/",
       "App\\": "app/"
-    },
-    "files": [
-      "framework/Core/helpers.php"
-    ]
+    }
   },
   "config": {
     "preferred-install": "dist",
@@ -36,6 +32,7 @@
     "php": ">=7.1.0",
     "johnpbloch/wordpress-core-installer": "^1.0",
     "johnpbloch/wordpress-core": "^4.9.4",
+    "themosis/framework": "dev-develop",
     "vlucas/phpdotenv": "^2.4",
     "filp/whoops": "^2.1",
     "illuminate/config": "^5.6",
