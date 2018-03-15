@@ -34,14 +34,7 @@
     "johnpbloch/wordpress-core": "^4.9.4",
     "themosis/framework": "dev-develop",
     "vlucas/phpdotenv": "^2.4",
-    "filp/whoops": "^2.1",
-    "illuminate/config": "^5.6",
-    "illuminate/container": "^5.6",
-    "illuminate/database": "^5.6",
-    "illuminate/filesystem": "^5.6",
-    "illuminate/log": "^5.6",
-    "illuminate/view": "^5.6",
-    "illuminate/routing": "^5.6"
+    "filp/whoops": "^2.1"
   },
   "require-dev": {
     "laravel/homestead": "^7.0",
