@@ -1,8 +1,12 @@
 {
   "name": "themosis/themosis",
   "description": "The Themosis framework. A WordPress framework.",
-  "keywords": ["themosis", "framework", "WordPress"],
+  "keywords": ["themosis", "framework", "wordpress"],
   "license": "GPL-2.0-or-later",
+  "support": {
+    "issues": "https://github.com/themosis/framework/issues",
+    "source": "https://github.com/themosis/framework"
+  },
   "authors": [
     {
       "name": "Julien Lambé",
@@ -27,12 +31,11 @@
     "sort-packages": true,
     "optimize-autoloader": true
   },
-  "prefer-stable": true,
   "require": {
     "php": ">=7.1.0",
     "johnpbloch/wordpress-core-installer": "^1.0",
     "johnpbloch/wordpress-core": "^4.9.4",
-    "themosis/framework": "dev-develop",
+    "themosis/framework": "dev-feature/routing",
     "vlucas/phpdotenv": "^2.4",
     "filp/whoops": "^2.1"
   },
@@ -49,5 +52,7 @@
     "wordpress-install-dir": {
       "johnpbloch/wordpress-core": "htdocs/cms"
     }
-  }
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
 }

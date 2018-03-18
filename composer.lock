@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "897af58113fc74def9c4637c69d33382",
+    "content-hash": "609db328994eba1522187495870691ad",
     "packages": [
         {
             "name": "composer/installers",
@@ -1765,32 +1765,35 @@
         },
         {
             "name": "themosis/framework",
-            "version": "dev-develop",
+            "version": "dev-feature/routing",
             "source": {
                 "type": "git",
                 "url": "https://github.com/themosis/framework.git",
-                "reference": "32453e50e1c86e6e5ca81d6544b4b044be5894b7"
+                "reference": "2a91ecc723c13c098e47a03292b9c05a8c338b4a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/themosis/framework/zipball/32453e50e1c86e6e5ca81d6544b4b044be5894b7",
-                "reference": "32453e50e1c86e6e5ca81d6544b4b044be5894b7",
+                "url": "https://api.github.com/repos/themosis/framework/zipball/2a91ecc723c13c098e47a03292b9c05a8c338b4a",
+                "reference": "2a91ecc723c13c098e47a03292b9c05a8c338b4a",
                 "shasum": ""
             },
             "require": {
                 "composer/installers": "^1.0",
                 "filp/whoops": "~2.1",
-                "illuminate/config": "^5.6",
-                "illuminate/container": "^5.6",
-                "illuminate/database": "^5.6",
-                "illuminate/events": "^5.6",
-                "illuminate/filesystem": "^5.6",
-                "illuminate/http": "^5.6",
-                "illuminate/log": "^5.6",
-                "illuminate/routing": "^5.6",
-                "illuminate/view": "^5.6",
+                "illuminate/config": "5.6.*",
+                "illuminate/container": "5.6.*",
+                "illuminate/database": "5.6.*",
+                "illuminate/events": "5.6.*",
+                "illuminate/filesystem": "5.6.*",
+                "illuminate/http": "5.6.*",
+                "illuminate/log": "5.6.*",
+                "illuminate/routing": "5.6.*",
+                "illuminate/view": "5.6.*",
                 "php": ">=7.1.0",
                 "twig/twig": "~2.0"
+            },
+            "replace": {
+                "themosis/hook": "self.version"
             },
             "require-dev": {
                 "phpunit/phpunit": "^7.0"
@@ -1798,10 +1801,10 @@
             "type": "library",
             "autoload": {
                 "psr-4": {
-                    "Themosis\\": "src/"
+                    "Themosis\\": "src/Themosis/"
                 },
                 "files": [
-                    "src/Core/helpers.php"
+                    "src/Themosis/Core/helpers.php"
                 ]
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -1818,11 +1821,10 @@
             "description": "The Themosis framework.",
             "keywords": [
                 "framework",
-                "plugin",
                 "themosis",
                 "wordpress"
             ],
-            "time": "2018-03-14T20:18:39+00:00"
+            "time": "2018-03-18T12:56:21+00:00"
         },
         {
             "name": "twig/twig",
@@ -3623,7 +3625,7 @@
         }
     ],
     "aliases": [],
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "stability-flags": {
         "themosis/framework": 20
     },
