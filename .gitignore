@@ -3,7 +3,6 @@
 Thumbs.db
 
 ### Composer
-composer.lock
 vendor/
 
 ### IDE
@@ -11,17 +10,7 @@ vendor/
 
 ### PHPCS
 cs_fixer*
-
-### Wordpress
-/htdocs/cms/*
-!/htdocs/cms/.gitkeep
-/htdocs/content/mu-plugins/themosis-framework/
-/htdocs/content/themes/themosis-theme/
-/htdocs/content/uploads/
-/htdocs/content/upgrade/
-
+.php_cs.cache
 
 ### Environment Credentials
 .env
-.env.*
-!.env.local
