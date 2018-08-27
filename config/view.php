@@ -10,7 +10,9 @@ return [
     | an array of paths that should be checked for your views.
     |
     */
-    'paths' => [],
+    'paths' => [
+        resource_path('views')
+    ],
 
     /*
     |--------------------------------------------------------------------------

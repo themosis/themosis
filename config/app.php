@@ -43,7 +43,7 @@ return [
     |--------------------------------------------------------------------------
     |
     */
-    'url' => env('WP_HOME', 'http://localhost'),
+    'url' => env('APP_URL', 'http://localhost'),
 
     /*
     |--------------------------------------------------------------------------
@@ -51,7 +51,7 @@ return [
     |--------------------------------------------------------------------------
     |
     */
-    'wp' => env('WP_SITEURL', 'http://localhost/cms'),
+    'wp' => env('WP_URL', 'http://localhost/cms'),
 
     /*
     |--------------------------------------------------------------------------
@@ -60,6 +60,18 @@ return [
     |
     */
     'charset' => env('APP_CHARSET', 'UTF-8'),
+
+    /*
+    |--------------------------------------------------------------------------
+    | Application Locale
+    |--------------------------------------------------------------------------
+    |
+    | The application locale determines the default locale that will be used
+    | by the translation service provider coming from the Illuminate package, not
+    | directly the WordPress behavior.
+    |
+    */
+    'locale' => 'en_US',
 
     /*
     |--------------------------------------------------------------------------
@@ -73,7 +85,45 @@ return [
     | Some plugins may also extend the list of service providers directly.
     |
     */
-    'providers' => [],
+    'providers' => [
+        // Illuminate + Themosis providers
+        Illuminate\Auth\AuthServiceProvider::class,
+        Illuminate\Bus\BusServiceProvider::class,
+        Illuminate\Cache\CacheServiceProvider::class,
+        Themosis\Core\Providers\ConsoleCoreServiceProvider::class,
+        Illuminate\Filesystem\FilesystemServiceProvider::class,
+        Illuminate\Auth\Passwords\PasswordResetServiceProvider::class,
+        Illuminate\Translation\TranslationServiceProvider::class,
+        Illuminate\Validation\ValidationServiceProvider::class,
+        Illuminate\View\ViewServiceProvider::class,
+        Themosis\Asset\AssetServiceProvider::class,
+        Themosis\Core\Providers\CoreServiceProvider::class,
+        Themosis\Html\HtmlServiceProvider::class,
+        Themosis\Hook\HookServiceProvider::class,
+        Themosis\Field\FieldServiceProvider::class,
+        Themosis\Forms\FormServiceProvider::class,
+        Themosis\Metabox\MetaboxServiceProvider::class,
+        Themosis\Page\PageServiceProvider::class,
+
+        // Application providers
+        App\Providers\AppServiceProvider::class,
+        App\Providers\AuthServiceProvider::class,
+        App\Providers\RouteServiceProvider::class
+    ],
+
+    /*
+    |--------------------------------------------------------------------------
+    | Application hooks
+    |--------------------------------------------------------------------------
+    |
+    | This array of hookable classes will be triggered when the WordPress
+    | hook API is loaded. Feel free to register as many hookable classes
+    | as you wish in order to organize your code.
+    |
+    */
+    'hooks' => [
+        App\Hooks\Application::class,
+    ],
 
     /*
     |--------------------------------------------------------------------------
@@ -85,5 +135,60 @@ return [
     | the aliases are "lazy" loaded so they don't hinder performance.
     |
     */
-    'aliases' => []
+    'aliases' => [
+        'Action' => Themosis\Support\Facades\Action::class,
+        'App' => Illuminate\Support\Facades\App::class,
+        'Asset' => Themosis\Support\Facades\Asset::class,
+        'Auth' => Illuminate\Support\Facades\Auth::class,
+        'Bus' => Illuminate\Support\Facades\Bus::class,
+        'Cache' => Illuminate\Support\Facades\Cache::class,
+        'Console' => Themosis\Core\Support\Facades\Console::class,
+        'Field' => Themosis\Support\Facades\Field::class,
+        'File' => Illuminate\Support\Facades\File::class,
+        'Form' => Themosis\Support\Facades\Form::class,
+        'Filter' => Themosis\Support\Facades\Filter::class,
+        'Gate' => Illuminate\Support\Facades\Gate::class,
+        'Html' => Themosis\Support\Facades\Html::class,
+        'Metabox' => Themosis\Support\Facades\Metabox::class,
+        'Page' => Themosis\Support\Facades\Page::class,
+        'Route' => Themosis\Support\Facades\Route::class,
+        'Storage' => Illuminate\Support\Facades\Storage::class,
+        'Validator' => Illuminate\Support\Facades\Validator::class,
+        'View' => Illuminate\Support\Facades\View::class
+    ],
+
+    /*
+    |--------------------------------------------------------------------------
+    | WordPress Conditions
+    |--------------------------------------------------------------------------
+    |
+    | This array of conditions is used by the router to detect any WordPress
+    | request. The key is the WordPress conditional function signature and
+    | the value is a string or an array of matching conditions for the route.
+    |
+    */
+    'conditions' => [
+        'is_404' => '404',
+        'is_archive' => 'archive',
+        'is_attachment' => 'attachment',
+        'is_author' => 'author',
+        'is_category' => ['category', 'cat'],
+        'is_date' => 'date',
+        'is_day' => 'day',
+        'is_front_page' => ['/', 'front'],
+        'is_home' => ['home', 'blog'],
+        'is_month' => 'month',
+        'is_page' => 'page',
+        'is_paged' => 'paged',
+        'is_page_template' => 'template',
+        'is_post_type_archive' => ['post-type-archive', 'postTypeArchive'],
+        'is_search' => 'search',
+        'is_single' => 'single',
+        'is_singular' => 'singular',
+        'is_sticky' => 'sticky',
+        'is_tag' => 'tag',
+        'is_tax' => 'tax',
+        'is_time' => 'time',
+        'is_year' => 'year'
+    ]
 ];

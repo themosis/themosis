@@ -1,0 +1,60 @@
+#!/usr/bin/env php
+<?php
+
+use Symfony\Component\Console\Input\ArgvInput;
+use Symfony\Component\Console\Output\ConsoleOutput;
+
+define('THEMOSIS_START', microtime(true));
+
+/*
+|--------------------------------------------------------------------------
+| Register application constants
+|--------------------------------------------------------------------------
+|
+*/
+define('DS', DIRECTORY_SEPARATOR);
+define('THEMOSIS_ROOT', realpath(__DIR__));
+define('THEMOSIS_PUBLIC_DIR', 'htdocs');
+define('CONTENT_DIR', 'content');
+define('WP_CONTENT_DIR', realpath(THEMOSIS_ROOT.DS.THEMOSIS_PUBLIC_DIR.DS.CONTENT_DIR));
+
+/*
+|--------------------------------------------------------------------------
+| Register the autoloader
+|--------------------------------------------------------------------------
+|
+*/
+require __DIR__.'/vendor/autoload.php';
+
+$app = require_once __DIR__.'/bootstrap/app.php';
+
+/*
+|--------------------------------------------------------------------------
+| Start the application
+|--------------------------------------------------------------------------
+|
+| When we run the console application, the current CLI command will be
+| executed in this console and the response sent back to a terminal
+| or another output device for the developers.
+|
+*/
+$kernel = $app->make(Illuminate\Contracts\Console\Kernel::class);
+
+$status = $kernel->handle(
+    $input = new ArgvInput(),
+    new ConsoleOutput()
+);
+
+/*
+|--------------------------------------------------------------------------
+| Shutdown the application
+|--------------------------------------------------------------------------
+|
+| Once the console has finished running, we will fire off the shutdown events
+| so that any final work may be done by the application before we shut
+| down the process. This is the last thing to happen to the request.
+|
+*/
+$kernel->terminate($input, $status);
+
+exit($status);

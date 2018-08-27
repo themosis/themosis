@@ -20,12 +20,28 @@ if (file_exists($autoload = THEMOSIS_ROOT.'/vendor/autoload.php')) {
     require $autoload;
 }
 
-/*----------------------------------------------------*/
-// Bootstrap application
-/*----------------------------------------------------*/
-require dirname(__DIR__).'/bootstrap/start.php';
+$app = require_once __DIR__.'/../bootstrap/app.php';
+
+/*
+|--------------------------------------------------------------------------
+| Start the application
+|--------------------------------------------------------------------------
+|
+| We're going to initialize the kernel instance and capture the current
+| request. We won't directly manage a response from the current file.
+| We let WordPress bootstrap its stuff and we'll manage the response
+| once WordPress is fully loaded.
+|
+*/
+$kernel = $app->make(Illuminate\Contracts\Http\Kernel::class);
+$kernel->init(
+    Illuminate\Http\Request::capture()
+);
 
 /*----------------------------------------------------*/
-// Set up WordPress vars and included files
+// Database prefix (WordPress)
 /*----------------------------------------------------*/
+$table_prefix = env('DATABASE_PREFIX', 'wp_');
+
+/* That's all, stop editing! Happy blogging. */
 require_once ABSPATH.'/wp-settings.php';
