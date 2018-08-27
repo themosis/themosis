@@ -27,5 +27,3 @@ cs_fixer*
 
 ### Environment Credentials
 .env
-.env.*
-!.env.local

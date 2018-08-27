@@ -9,21 +9,13 @@ use PhpCsFixer\Finder;
 $finder = Finder::create()
     ->exclude([
         'bin',
-        'cms',
-        'content/mu-plugins',
-        'content/plugins',
-        'content/themes',
-        'content/upgrade',
-        'content/uploads',
-        'content/static',
+        'htdocs',
         'node_modules'
     ])
     ->in([
         'app',
         'bootstrap',
         'config',
-        'htdocs',
-        'framework',
         'tests'
     ]);
 
