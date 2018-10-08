@@ -1,0 +1,16 @@
+
+> webpack3-sassloader6-sass4@1.0.0 webpack-p /Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/1536277707/webpack3-sassloader6-sass4/postcss/root-relative-asset
+> webpack -p
+
+Hash: cd30760fd1809f6bde6c
+Version: webpack 3.12.0
+Time: 1071ms
+                                        Asset       Size  Chunks             Chunk Names
+                                      main.js  512 bytes       0  [emitted]  main
+    main.a18f88be08defdbb6d1750ecd3d267bb.css  902 bytes       0  [emitted]  main
+                                  main.js.map    5.75 kB       0  [emitted]  main
+main.a18f88be08defdbb6d1750ecd3d267bb.css.map  518 bytes       0  [emitted]  main
+   [0] ./src/index.scss 41 bytes {0} [built]
+Child extract-text-webpack-plugin ../../../../.cache/webpack3-sassloader6-sass4/node_modules/extract-text-webpack-plugin/dist ../../../../.cache/webpack3-sassloader6-sass4/node_modules/css-loader/index.js??ref--0-1!../../../../../packages/resolve-url-loader/index.js??ref--0-2!../../../../.cache/webpack3-sassloader6-sass4/node_modules/sass-loader/lib/loader.js??ref--0-3!src/index.scss:
+       [0] /Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack3-sassloader6-sass4/node_modules/css-loader??ref--0-1!/Users/bholloway/Documents/bholloway/resolve-url-loader/packages/resolve-url-loader??ref--0-2!/Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack3-sassloader6-sass4/node_modules/sass-loader/lib/loader.js??ref--0-3!./src/index.scss 1.74 kB {0} [built]
+        + 1 hidden module

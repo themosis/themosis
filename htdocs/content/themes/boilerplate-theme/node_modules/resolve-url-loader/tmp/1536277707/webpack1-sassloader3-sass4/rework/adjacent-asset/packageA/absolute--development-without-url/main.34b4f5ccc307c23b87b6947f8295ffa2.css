@@ -1,0 +1,14 @@
+.some-class-name {
+  single-quoted: url("/Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/1536277707/webpack1-sassloader3-sass4/rework/adjacent-asset/packageB/images/img.jpg");
+  double-quoted: url("/Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/1536277707/webpack1-sassloader3-sass4/rework/adjacent-asset/packageB/images/img.jpg");
+  unquoted: url(/Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/1536277707/webpack1-sassloader3-sass4/rework/adjacent-asset/packageB/images/img.jpg);
+  query: url(/Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/1536277707/webpack1-sassloader3-sass4/rework/adjacent-asset/packageB/images/img.jpg);
+  hash: url(/Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/1536277707/webpack1-sassloader3-sass4/rework/adjacent-asset/packageB/images/img.jpg);
+}
+
+.another-class-name {
+  display: block;
+}
+
+
+/*# sourceMappingURL=main.34b4f5ccc307c23b87b6947f8295ffa2.css.map*/

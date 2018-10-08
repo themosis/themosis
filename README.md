@@ -1,7 +1,12 @@
-Themosis framework
+Themosis boilerplate
 ==================
 
-[![Build Status](https://travis-ci.org/themosis/themosis.svg?branch=dev)](https://travis-ci.org/themosis/themosis)
+This is a themosis theme boilerplate designed to be opinionated and to get you up and running very quickly.
+
+It uses laravel mix for frontend pre-processing and has a specific folder structure.
+
+Themosis framework
+==================
 
 The Themosis framework is a tool aimed to WordPress developers of any levels. But the better WordPress and PHP knowledge you have the easier it is to work with.
 

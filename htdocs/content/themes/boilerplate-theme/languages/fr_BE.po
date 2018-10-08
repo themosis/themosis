@@ -1,0 +1,60 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Themosis Theme\n"
+"POT-Creation-Date: 2016-05-09 19:54+0100\n"
+"PO-Revision-Date: 2016-05-09 20:02+0100\n"
+"Last-Translator: Julien Lambé <julien@themosis.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.5\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e;_x;esc_html__;esc_html_e;"
+"_n;_ex\n"
+"X-Poedit-Basepath: ../\n"
+"Language: fr_BE\n"
+"X-Poedit-SearchPath-0: resources\n"
+"X-Poedit-SearchPath-1: resources/admin\n"
+"X-Poedit-SearchPath-2: resources/views\n"
+
+#: resources/config/menus.config.php:12
+msgid "Header navigation"
+msgstr ""
+
+#: resources/config/sidebars.config.php:11
+msgid "First sidebar"
+msgstr ""
+
+#: resources/config/sidebars.config.php:13
+msgid "Area of first sidebar"
+msgstr ""
+
+#: resources/views/welcome.scout.php:174
+msgid "Congratulations!"
+msgstr "Félicitations!"
+
+#: resources/views/welcome.scout.php:175
+msgid "The Themosis framework is running."
+msgstr "Le framework Themosis est installé correctement."
+
+#: resources/views/welcome.scout.php:180
+msgid "Get started:"
+msgstr "Démarrer:"
+
+#: resources/views/welcome.scout.php:181
+msgid ""
+"Check the documentation and build your next WordPress website/application."
+msgstr ""
+"Parcourez la documentation et développez votre prochain projet WordPress."
+
+#: resources/views/welcome.scout.php:182
+msgid "Themosis framework documentation"
+msgstr "Documentation du framework Themosis"
+
+#: resources/views/welcome.scout.php:182
+msgid "View documentation"
+msgstr "Voir la documentation"
+
+#: resources/views/welcome.scout.php:187
+msgid "Links:"
+msgstr "Liens"

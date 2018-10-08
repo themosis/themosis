@@ -1,0 +1,92 @@
+
+> webpack3-sassloader6-sass4@1.0.0 webpack-d /Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/1536277707/webpack3-sassloader6-sass4/rework/shallow-asset
+> webpack --debug --output-pathinfo
+
+Hash: d4be0d3fe9e8ee9dcb47
+Version: webpack 3.12.0
+Time: 461ms
+      Asset     Size  Chunks             Chunk Names
+    main.js  7.98 kB       0  [emitted]  main
+main.js.map  2.44 kB       0  [emitted]  main
+   [0] ./src/index.scss 5.33 kB {0} [built] [failed] [1 error]
+
+ERROR in ./src/index.scss
+Module build failed: ModuleNotFoundError: Module not found: Error: Can't resolve './images/img.jpg' in '/Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/1536277707/webpack3-sassloader6-sass4/rework/shallow-asset/src'
+    at factoryCallback (/Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack3-sassloader6-sass4/node_modules/webpack/lib/Compilation.js:282:40)
+    at factory (/Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack3-sassloader6-sass4/node_modules/webpack/lib/NormalModuleFactory.js:237:20)
+    at resolver (/Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack3-sassloader6-sass4/node_modules/webpack/lib/NormalModuleFactory.js:60:20)
+    at asyncLib.parallel.e (/Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack3-sassloader6-sass4/node_modules/webpack/lib/NormalModuleFactory.js:127:20)
+    at /Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack3-sassloader6-sass4/node_modules/async/dist/async.js:3888:9
+    at /Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack3-sassloader6-sass4/node_modules/async/dist/async.js:473:16
+    at iteratorCallback (/Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack3-sassloader6-sass4/node_modules/async/dist/async.js:1062:13)
+    at /Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack3-sassloader6-sass4/node_modules/async/dist/async.js:969:16
+    at /Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack3-sassloader6-sass4/node_modules/async/dist/async.js:3885:13
+    at resolvers.normal.resolve (/Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack3-sassloader6-sass4/node_modules/webpack/lib/NormalModuleFactory.js:119:22)
+    at onError (/Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack3-sassloader6-sass4/node_modules/enhanced-resolve/lib/Resolver.js:65:10)
+    at loggingCallbackWrapper (/Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack3-sassloader6-sass4/node_modules/enhanced-resolve/lib/createInnerCallback.js:31:19)
+    at runAfter (/Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack3-sassloader6-sass4/node_modules/enhanced-resolve/lib/Resolver.js:158:4)
+    at innerCallback (/Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack3-sassloader6-sass4/node_modules/enhanced-resolve/lib/Resolver.js:146:3)
+    at loggingCallbackWrapper (/Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack3-sassloader6-sass4/node_modules/enhanced-resolve/lib/createInnerCallback.js:31:19)
+    at next (/Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack3-sassloader6-sass4/node_modules/tapable/lib/Tapable.js:252:11)
+    at /Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack3-sassloader6-sass4/node_modules/enhanced-resolve/lib/UnsafeCachePlugin.js:40:4
+    at loggingCallbackWrapper (/Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack3-sassloader6-sass4/node_modules/enhanced-resolve/lib/createInnerCallback.js:31:19)
+    at runAfter (/Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack3-sassloader6-sass4/node_modules/enhanced-resolve/lib/Resolver.js:158:4)
+    at innerCallback (/Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack3-sassloader6-sass4/node_modules/enhanced-resolve/lib/Resolver.js:146:3)
+    at loggingCallbackWrapper (/Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack3-sassloader6-sass4/node_modules/enhanced-resolve/lib/createInnerCallback.js:31:19)
+    at next (/Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack3-sassloader6-sass4/node_modules/tapable/lib/Tapable.js:252:11)
+    at innerCallback (/Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack3-sassloader6-sass4/node_modules/enhanced-resolve/lib/Resolver.js:144:11)
+    at loggingCallbackWrapper (/Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack3-sassloader6-sass4/node_modules/enhanced-resolve/lib/createInnerCallback.js:31:19)
+    at next (/Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack3-sassloader6-sass4/node_modules/tapable/lib/Tapable.js:249:35)
+    at resolver.doResolve.createInnerCallback (/Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack3-sassloader6-sass4/node_modules/enhanced-resolve/lib/DescriptionFilePlugin.js:44:6)
+    at loggingCallbackWrapper (/Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack3-sassloader6-sass4/node_modules/enhanced-resolve/lib/createInnerCallback.js:31:19)
+    at afterInnerCallback (/Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack3-sassloader6-sass4/node_modules/enhanced-resolve/lib/Resolver.js:168:10)
+    at loggingCallbackWrapper (/Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack3-sassloader6-sass4/node_modules/enhanced-resolve/lib/createInnerCallback.js:31:19)
+    at next (/Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack3-sassloader6-sass4/node_modules/tapable/lib/Tapable.js:252:11)
+
+ERROR in ./src/index.scss
+Module build failed: ModuleNotFoundError: Module not found: Error: Can't resolve './images/img.jpg' in '/Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/1536277707/webpack3-sassloader6-sass4/rework/shallow-asset/src'
+    at factoryCallback (/Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack3-sassloader6-sass4/node_modules/webpack/lib/Compilation.js:282:40)
+    at factory (/Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack3-sassloader6-sass4/node_modules/webpack/lib/NormalModuleFactory.js:237:20)
+    at resolver (/Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack3-sassloader6-sass4/node_modules/webpack/lib/NormalModuleFactory.js:60:20)
+    at asyncLib.parallel.e (/Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack3-sassloader6-sass4/node_modules/webpack/lib/NormalModuleFactory.js:127:20)
+    at /Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack3-sassloader6-sass4/node_modules/async/dist/async.js:3888:9
+    at /Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack3-sassloader6-sass4/node_modules/async/dist/async.js:473:16
+    at iteratorCallback (/Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack3-sassloader6-sass4/node_modules/async/dist/async.js:1062:13)
+    at /Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack3-sassloader6-sass4/node_modules/async/dist/async.js:969:16
+    at /Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack3-sassloader6-sass4/node_modules/async/dist/async.js:3885:13
+    at resolvers.normal.resolve (/Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack3-sassloader6-sass4/node_modules/webpack/lib/NormalModuleFactory.js:119:22)
+    at onError (/Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack3-sassloader6-sass4/node_modules/enhanced-resolve/lib/Resolver.js:65:10)
+    at loggingCallbackWrapper (/Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack3-sassloader6-sass4/node_modules/enhanced-resolve/lib/createInnerCallback.js:31:19)
+    at runAfter (/Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack3-sassloader6-sass4/node_modules/enhanced-resolve/lib/Resolver.js:158:4)
+    at innerCallback (/Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack3-sassloader6-sass4/node_modules/enhanced-resolve/lib/Resolver.js:146:3)
+    at loggingCallbackWrapper (/Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack3-sassloader6-sass4/node_modules/enhanced-resolve/lib/createInnerCallback.js:31:19)
+    at next (/Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack3-sassloader6-sass4/node_modules/tapable/lib/Tapable.js:252:11)
+    at /Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack3-sassloader6-sass4/node_modules/enhanced-resolve/lib/UnsafeCachePlugin.js:40:4
+    at loggingCallbackWrapper (/Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack3-sassloader6-sass4/node_modules/enhanced-resolve/lib/createInnerCallback.js:31:19)
+    at runAfter (/Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack3-sassloader6-sass4/node_modules/enhanced-resolve/lib/Resolver.js:158:4)
+    at innerCallback (/Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack3-sassloader6-sass4/node_modules/enhanced-resolve/lib/Resolver.js:146:3)
+    at loggingCallbackWrapper (/Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack3-sassloader6-sass4/node_modules/enhanced-resolve/lib/createInnerCallback.js:31:19)
+    at next (/Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack3-sassloader6-sass4/node_modules/tapable/lib/Tapable.js:252:11)
+    at innerCallback (/Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack3-sassloader6-sass4/node_modules/enhanced-resolve/lib/Resolver.js:144:11)
+    at loggingCallbackWrapper (/Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack3-sassloader6-sass4/node_modules/enhanced-resolve/lib/createInnerCallback.js:31:19)
+    at next (/Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack3-sassloader6-sass4/node_modules/tapable/lib/Tapable.js:249:35)
+    at resolver.doResolve.createInnerCallback (/Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack3-sassloader6-sass4/node_modules/enhanced-resolve/lib/DescriptionFilePlugin.js:44:6)
+    at loggingCallbackWrapper (/Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack3-sassloader6-sass4/node_modules/enhanced-resolve/lib/createInnerCallback.js:31:19)
+    at afterInnerCallback (/Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack3-sassloader6-sass4/node_modules/enhanced-resolve/lib/Resolver.js:168:10)
+    at loggingCallbackWrapper (/Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack3-sassloader6-sass4/node_modules/enhanced-resolve/lib/createInnerCallback.js:31:19)
+    at next (/Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack3-sassloader6-sass4/node_modules/tapable/lib/Tapable.js:252:11)
+ @ ./src/index.scss
+Child extract-text-webpack-plugin ../../../../.cache/webpack3-sassloader6-sass4/node_modules/extract-text-webpack-plugin/dist ../../../../.cache/webpack3-sassloader6-sass4/node_modules/css-loader/index.js??ref--0-1!../../../../../packages/resolve-url-loader/index.js??ref--0-2!../../../../.cache/webpack3-sassloader6-sass4/node_modules/sass-loader/lib/loader.js??ref--0-3!src/index.scss:
+       [0] /Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack3-sassloader6-sass4/node_modules/css-loader??ref--0-1!/Users/bholloway/Documents/bholloway/resolve-url-loader/packages/resolve-url-loader??ref--0-2!/Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack3-sassloader6-sass4/node_modules/sass-loader/lib/loader.js??ref--0-3!./src/index.scss 2.24 kB {0} [built]
+        + 2 hidden modules
+    
+    ERROR in /Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack3-sassloader6-sass4/node_modules/css-loader??ref--0-1!/Users/bholloway/Documents/bholloway/resolve-url-loader/packages/resolve-url-loader??ref--0-2!/Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack3-sassloader6-sass4/node_modules/sass-loader/lib/loader.js??ref--0-3!./src/index.scss
+    Module not found: Error: Can't resolve './images/img.jpg' in '/Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/1536277707/webpack3-sassloader6-sass4/rework/shallow-asset/src'
+     @ /Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack3-sassloader6-sass4/node_modules/css-loader??ref--0-1!/Users/bholloway/Documents/bholloway/resolve-url-loader/packages/resolve-url-loader??ref--0-2!/Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack3-sassloader6-sass4/node_modules/sass-loader/lib/loader.js??ref--0-3!./src/index.scss 7:78-105 7:146-173 7:209-236 7:269-296 7:328-355
+Child extract-text-webpack-plugin ../../../../.cache/webpack3-sassloader6-sass4/node_modules/extract-text-webpack-plugin/dist ../../../../.cache/webpack3-sassloader6-sass4/node_modules/css-loader/index.js??ref--0-1!../../../../../packages/resolve-url-loader/index.js??ref--0-2!../../../../.cache/webpack3-sassloader6-sass4/node_modules/sass-loader/lib/loader.js??ref--0-3!src/index.scss:
+       [0] /Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack3-sassloader6-sass4/node_modules/css-loader??ref--0-1!/Users/bholloway/Documents/bholloway/resolve-url-loader/packages/resolve-url-loader??ref--0-2!/Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack3-sassloader6-sass4/node_modules/sass-loader/lib/loader.js??ref--0-3!./src/index.scss 2.24 kB {0} [built]
+        + 2 hidden modules
+    
+    ERROR in /Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack3-sassloader6-sass4/node_modules/css-loader??ref--0-1!/Users/bholloway/Documents/bholloway/resolve-url-loader/packages/resolve-url-loader??ref--0-2!/Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack3-sassloader6-sass4/node_modules/sass-loader/lib/loader.js??ref--0-3!./src/index.scss
+    Module not found: Error: Can't resolve './images/img.jpg' in '/Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/1536277707/webpack3-sassloader6-sass4/rework/shallow-asset/src'
+     @ /Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack3-sassloader6-sass4/node_modules/css-loader??ref--0-1!/Users/bholloway/Documents/bholloway/resolve-url-loader/packages/resolve-url-loader??ref--0-2!/Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack3-sassloader6-sass4/node_modules/sass-loader/lib/loader.js??ref--0-3!./src/index.scss 7:78-105 7:146-173 7:209-236 7:269-296 7:328-355

@@ -1,0 +1,15 @@
+
+> webpack1-sassloader3-sass4@1.0.0 webpack-p /Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/1536277707/webpack1-sassloader3-sass4/postcss/selector-in-directive
+> webpack -p
+
+Hash: d5d247a9ab06a15125cb
+Version: webpack 1.15.0
+Time: 762ms
+                                        Asset       Size  Chunks             Chunk Names
+                                      main.js  251 bytes       0  [emitted]  main
+    main.03667872b2e90dd6179a849705f6e78d.css  469 bytes       0  [emitted]  main
+                                  main.js.map    3.33 kB       0  [emitted]  main
+main.03667872b2e90dd6179a849705f6e78d.css.map  841 bytes       0  [emitted]  main
+    + 1 hidden modules
+Child extract-text-webpack-plugin:
+        + 2 hidden modules

@@ -1,0 +1,23 @@
+
+> webpack4-sassloader7-sass4@1.0.0 webpack-d /Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/1536277707/webpack4-sassloader7-sass4/postcss/immediate-asset
+> webpack --debug --output-pathinfo --mode=development
+
+Hash: 123f173f52b2d0f9a35e
+Version: webpack 4.17.2
+Time: 363ms
+Built at: 09/07/2018 10:46:58 AM
+                               Asset       Size  Chunks             Chunk Names
+d68e763c825dc0e388929ae1b375ce18.jpg  631 bytes          [emitted]  
+       main.d7be2375392f7eb12d56.css  405 bytes    main  [emitted]  main
+                             main.js   3.82 KiB    main  [emitted]  main
+   main.d7be2375392f7eb12d56.css.map  480 bytes    main  [emitted]  main
+                         main.js.map   3.59 KiB    main  [emitted]  main
+[./src/index.scss] 39 bytes {main} [built]
+    + 1 hidden module
+Child mini-css-extract-plugin ../../../../.cache/webpack4-sassloader7-sass4/node_modules/css-loader/index.js??ref--4-1!../../../../../packages/resolve-url-loader/index.js??ref--4-2!../../../../.cache/webpack4-sassloader7-sass4/node_modules/sass-loader/lib/loader.js??ref--4-3!src/index.scss:
+                                   Asset       Size  Chunks             Chunk Names
+    d68e763c825dc0e388929ae1b375ce18.jpg  631 bytes          [emitted]  
+    [../../../../.cache/webpack4-sassloader7-sass4/node_modules/css-loader/index.js?!../../../../../packages/resolve-url-loader/index.js?!../../../../.cache/webpack4-sassloader7-sass4/node_modules/sass-loader/lib/loader.js?!./src/index.scss] /Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack4-sassloader7-sass4/node_modules/css-loader??ref--4-1!/Users/bholloway/Documents/bholloway/resolve-url-loader/packages/resolve-url-loader??ref--4-2!/Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack4-sassloader7-sass4/node_modules/sass-loader/lib/loader.js??ref--4-3!./src/index.scss 1.41 KiB {mini-css-extract-plugin} [built]
+    [./src/feature/img.jpg] 82 bytes {mini-css-extract-plugin} [built]
+    [./src/feature/img.jpg?query] 82 bytes {mini-css-extract-plugin} [built]
+        + 2 hidden modules

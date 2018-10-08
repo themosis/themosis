@@ -1,0 +1,15 @@
+
+> webpack1-sassloader3-sass4@1.0.0 webpack-d /Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/1536277707/webpack1-sassloader3-sass4/rework/shallow-asset
+> webpack -d
+
+Hash: 6999be8dac87d95a1dee
+Version: webpack 1.15.0
+Time: 686ms
+                                        Asset       Size  Chunks             Chunk Names
+                                      main.js    1.64 kB       0  [emitted]  main
+    main.8498389fbda6d8d6f52ae3e38b48903a.css  921 bytes       0  [emitted]  main
+                                  main.js.map    1.59 kB       0  [emitted]  main
+main.8498389fbda6d8d6f52ae3e38b48903a.css.map    1.61 kB       0  [emitted]  main
+    + 1 hidden modules
+Child extract-text-webpack-plugin:
+        + 2 hidden modules

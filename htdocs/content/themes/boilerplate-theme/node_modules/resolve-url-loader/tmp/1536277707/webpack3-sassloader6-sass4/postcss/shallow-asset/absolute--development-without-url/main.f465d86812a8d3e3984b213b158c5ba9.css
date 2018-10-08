@@ -1,0 +1,11 @@
+.some-class-name {
+  single-quoted: url("/Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/1536277707/webpack3-sassloader6-sass4/postcss/shallow-asset/src/images/img.jpg");
+  double-quoted: url("/Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/1536277707/webpack3-sassloader6-sass4/postcss/shallow-asset/src/images/img.jpg");
+  unquoted: url(/Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/1536277707/webpack3-sassloader6-sass4/postcss/shallow-asset/src/images/img.jpg);
+  query: url(/Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/1536277707/webpack3-sassloader6-sass4/postcss/shallow-asset/src/images/img.jpg);
+  hash: url(/Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/1536277707/webpack3-sassloader6-sass4/postcss/shallow-asset/src/images/img.jpg); }
+
+.another-class-name {
+  display: block; }
+
+/*# sourceMappingURL=main.f465d86812a8d3e3984b213b158c5ba9.css.map*/

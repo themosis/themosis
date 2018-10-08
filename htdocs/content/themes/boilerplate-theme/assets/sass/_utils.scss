@@ -1,0 +1,18 @@
+// conversions
+@function rem($sizeInPixels) {
+	$sizeInRems: $sizeInPixels / 16;
+	@return #{$sizeInRems}rem;
+}
+
+// assets
+@function themeSVG($name) {
+	@return "../images/svg/" + $name + ".svg";
+}
+
+@function themeJPG($name) {
+	@return "../images/jpg/" + $name + ".jpg";
+}
+
+@function themePNG($name) {
+	@return "../images/png/" + $name + ".png";
+}

@@ -1,0 +1,18 @@
+
+> webpack1-sassloader3-sass4@1.0.0 webpack-p /Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/1536277707/webpack1-sassloader3-sass4/rework/immediate-asset
+> webpack -p
+
+resolve-url-loader: ./src/index.scss: img.jpg
+  ./src/feature
+  FOUND
+Hash: 423004f376cc9ecbcbe8
+Version: webpack 1.15.0
+Time: 760ms
+                                        Asset       Size  Chunks             Chunk Names
+                                      main.js  251 bytes       0  [emitted]  main
+    main.0557ab12ee642db5e57a5f2e27d604dc.css  287 bytes       0  [emitted]  main
+                                  main.js.map    3.33 kB       0  [emitted]  main
+main.0557ab12ee642db5e57a5f2e27d604dc.css.map    1.51 kB       0  [emitted]  main
+    + 1 hidden modules
+Child extract-text-webpack-plugin:
+        + 2 hidden modules

@@ -1,0 +1,15 @@
+
+> webpack1-sassloader3-sass4@1.0.0 webpack-p /Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/1536277707/webpack1-sassloader3-sass4/rework/misconfiguration
+> webpack -p
+
+Hash: 4bb5ba17fb23f86afec8
+Version: webpack 1.15.0
+Time: 822ms
+                                        Asset       Size  Chunks             Chunk Names
+                                      main.js  251 bytes       0  [emitted]  main
+    main.a064625c5b0139a696f3dfdbe8ea9382.css   99 bytes       0  [emitted]  main
+                                  main.js.map    3.33 kB       0  [emitted]  main
+main.a064625c5b0139a696f3dfdbe8ea9382.css.map  842 bytes       0  [emitted]  main
+    + 1 hidden modules
+Child extract-text-webpack-plugin:
+        + 2 hidden modules

@@ -1,0 +1,21 @@
+
+> webpack1-sassloader3-sass4@1.0.0 webpack-d /Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/1536277707/webpack1-sassloader3-sass4/postcss/misconfiguration
+> webpack -d
+
+Hash: 861ec26824f86f50dc52
+Version: webpack 1.15.0
+Time: 587ms
+    + 1 hidden modules
+
+ERROR in ./src/index.scss
+Module build failed: ModuleError: Error: resolve-url-loader: loader misconfiguration
+  "join" Function must take exactly 2 arguments (filename and options hash)
+    at DependenciesBlock.<anonymous> (/Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack1-sassloader3-sass4/node_modules/webpack-core/lib/NormalModuleMixin.js:79:21)
+    at handleAsError (/Users/bholloway/Documents/bholloway/resolve-url-loader/packages/resolve-url-loader/index.js:213:12)
+    at Object.resolveUrlLoader (/Users/bholloway/Documents/bholloway/resolve-url-loader/packages/resolve-url-loader/index.js:92:12)
+Child extract-text-webpack-plugin:
+        + 2 hidden modules
+    
+    ERROR in /Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack1-sassloader3-sass4/~/css-loader?sourceMap!/Users/bholloway/Documents/bholloway/resolve-url-loader/packages/resolve-url-loader?sourceMap&engine=postcss&silent!/Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack1-sassloader3-sass4/~/sass-loader?sourceMap&sourceMapContents=false!./src/index.scss
+    Error: resolve-url-loader: loader misconfiguration
+      "join" Function must take exactly 2 arguments (filename and options hash)

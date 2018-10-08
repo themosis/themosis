@@ -1,0 +1,16 @@
+
+> webpack3-sassloader6-sass4@1.0.0 webpack-d /Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/1536277707/webpack3-sassloader6-sass4/rework/nested-import-mixed-quotes
+> webpack --debug --output-pathinfo
+
+Hash: 99d3c786beb867b699c0
+Version: webpack 3.12.0
+Time: 459ms
+                                        Asset       Size  Chunks             Chunk Names
+                                      main.js    2.69 kB       0  [emitted]  main
+    main.ff3fd263b64695d3867bb7165fbd4057.css  360 bytes       0  [emitted]  main
+                                  main.js.map    2.63 kB       0  [emitted]  main
+main.ff3fd263b64695d3867bb7165fbd4057.css.map    1.19 kB       0  [emitted]  main
+   [0] ./src/index.scss 41 bytes {0} [built]
+Child extract-text-webpack-plugin ../../../../.cache/webpack3-sassloader6-sass4/node_modules/extract-text-webpack-plugin/dist ../../../../.cache/webpack3-sassloader6-sass4/node_modules/css-loader/index.js??ref--0-1!../../../../../packages/resolve-url-loader/index.js??ref--0-2!../../../../.cache/webpack3-sassloader6-sass4/node_modules/sass-loader/lib/loader.js??ref--0-3!src/index.scss:
+       [0] /Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack3-sassloader6-sass4/node_modules/css-loader??ref--0-1!/Users/bholloway/Documents/bholloway/resolve-url-loader/packages/resolve-url-loader??ref--0-2!/Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack3-sassloader6-sass4/node_modules/sass-loader/lib/loader.js??ref--0-3!./src/index.scss 1.88 kB {0} [built]
+        + 1 hidden module

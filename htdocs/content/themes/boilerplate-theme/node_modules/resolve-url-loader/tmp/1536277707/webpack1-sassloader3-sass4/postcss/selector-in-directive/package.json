@@ -1,0 +1,19 @@
+{
+  "name": "webpack1-sassloader3-sass4",
+  "version": "1.0.0",
+  "dependencies": {
+    "adjust-sourcemap-loader": "^1.2.0",
+    "css-loader": "0.23.1",
+    "extract-text-webpack-plugin": "~1.0.1",
+    "file-loader": "~0.8.5",
+    "node-sass": "^4.5.0",
+    "sass-loader": "^3.1.2",
+    "webpack": "^1.12.12"
+  },
+  "scripts": {
+    "webpack-d": "webpack -d",
+    "webpack-d-bail": "webpack -d --bail",
+    "webpack-p": "webpack -p",
+    "webpack-p-bail": "webpack -p --bail"
+  }
+}

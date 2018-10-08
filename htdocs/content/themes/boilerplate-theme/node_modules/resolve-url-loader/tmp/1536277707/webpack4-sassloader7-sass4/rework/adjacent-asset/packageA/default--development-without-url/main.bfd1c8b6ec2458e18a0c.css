@@ -1,0 +1,15 @@
+.some-class-name {
+  single-quoted: url("../../packageB/images/img.jpg");
+  double-quoted: url("../../packageB/images/img.jpg");
+  unquoted: url(../../packageB/images/img.jpg);
+  query: url(../../packageB/images/img.jpg);
+  hash: url(../../packageB/images/img.jpg);
+}
+
+.another-class-name {
+  display: block;
+}
+
+
+
+/*# sourceMappingURL=main.bfd1c8b6ec2458e18a0c.css.map*/

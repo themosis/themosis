@@ -1,0 +1,15 @@
+
+> webpack1-sassloader3-sass4@1.0.0 webpack-d /Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/1536277707/webpack1-sassloader3-sass4/rework/deep-asset
+> webpack -d
+
+Hash: 51cfd8c67111170e1ba9
+Version: webpack 1.15.0
+Time: 643ms
+                                        Asset       Size  Chunks             Chunk Names
+                                      main.js    1.64 kB       0  [emitted]  main
+    main.b2b2089e220f45d1a2686d0117aa69aa.css  367 bytes       0  [emitted]  main
+                                  main.js.map    1.59 kB       0  [emitted]  main
+main.b2b2089e220f45d1a2686d0117aa69aa.css.map    1.58 kB       0  [emitted]  main
+    + 1 hidden modules
+Child extract-text-webpack-plugin:
+        + 2 hidden modules

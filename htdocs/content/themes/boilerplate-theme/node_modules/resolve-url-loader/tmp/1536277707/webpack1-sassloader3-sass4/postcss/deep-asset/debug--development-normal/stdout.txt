@@ -1,0 +1,21 @@
+
+> webpack1-sassloader3-sass4@1.0.0 webpack-d /Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/1536277707/webpack1-sassloader3-sass4/postcss/deep-asset
+> webpack -d
+
+resolve-url-loader: ./src/index.scss: images/img.jpg
+  ./src/feature
+  FOUND
+Hash: 9cc878a73cd941d03b62
+Version: webpack 1.15.0
+Time: 652ms
+                                        Asset       Size  Chunks             Chunk Names
+         d68e763c825dc0e388929ae1b375ce18.jpg  631 bytes          [emitted]  
+                                      main.js    1.64 kB       0  [emitted]  main
+    main.33173b33e486300d7ddb28ad54b36975.css  411 bytes       0  [emitted]  main
+                                  main.js.map    1.59 kB       0  [emitted]  main
+main.33173b33e486300d7ddb28ad54b36975.css.map  666 bytes       0  [emitted]  main
+    + 1 hidden modules
+Child extract-text-webpack-plugin:
+                                   Asset       Size  Chunks             Chunk Names
+    d68e763c825dc0e388929ae1b375ce18.jpg  631 bytes          [emitted]  
+        + 3 hidden modules

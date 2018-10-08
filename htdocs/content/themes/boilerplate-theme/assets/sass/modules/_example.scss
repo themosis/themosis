@@ -1,0 +1,26 @@
+$module: 'example';
+$bp-1: 992;
+$bp-2: 768;
+$bp-3: 576;
+$bp-4: 420;
+
+.#{$module} {
+
+	// foo
+	&__foo__wrapper {
+
+	}
+
+	&__foo {
+
+	}
+
+	// bar
+	&__bar {
+
+		@include width-down($bp-1) {
+			color: red;
+		}
+	}
+
+}

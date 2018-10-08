@@ -1,0 +1,69 @@
+sourceMap: true
+engine: "postcss"
+join: "[Function: defaultJoin]"
+silent: false
+absolute: false
+keepQuery: false
+root: false
+debug: false
+ModuleBuildError: Module build failed: ModuleNotFoundError: Module not found: Error: Cannot resolve 'file' or 'directory' ./feature/images/img.jpg in /Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/1536277707/webpack1-sassloader3-sass4/postcss/deep-asset/src
+    at /Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack1-sassloader3-sass4/node_modules/webpack/lib/Compilation.js:229:38
+    at onDoneResolving (/Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack1-sassloader3-sass4/node_modules/webpack/lib/NormalModuleFactory.js:29:20)
+    at /Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack1-sassloader3-sass4/node_modules/webpack/lib/NormalModuleFactory.js:85:20
+    at /Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack1-sassloader3-sass4/node_modules/async/lib/async.js:726:13
+    at /Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack1-sassloader3-sass4/node_modules/async/lib/async.js:52:16
+    at done (/Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack1-sassloader3-sass4/node_modules/async/lib/async.js:241:17)
+    at /Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack1-sassloader3-sass4/node_modules/async/lib/async.js:44:16
+    at /Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack1-sassloader3-sass4/node_modules/async/lib/async.js:723:17
+    at /Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack1-sassloader3-sass4/node_modules/async/lib/async.js:167:37
+    at /Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack1-sassloader3-sass4/node_modules/enhanced-resolve/lib/UnsafeCachePlugin.js:24:19
+    at onResolved (/Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack1-sassloader3-sass4/node_modules/enhanced-resolve/lib/Resolver.js:38:18)
+    at /Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack1-sassloader3-sass4/node_modules/enhanced-resolve/lib/Resolver.js:127:10
+    at /Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack1-sassloader3-sass4/node_modules/enhanced-resolve/lib/Resolver.js:191:15
+    at applyPluginsParallelBailResult.createInnerCallback.log (/Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack1-sassloader3-sass4/node_modules/enhanced-resolve/lib/Resolver.js:110:4)
+    at loggingCallbackWrapper (/Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack1-sassloader3-sass4/node_modules/enhanced-resolve/lib/createInnerCallback.js:21:19)
+    at /Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack1-sassloader3-sass4/node_modules/tapable/lib/Tapable.js:134:6
+    at Tapable.<anonymous> (/Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack1-sassloader3-sass4/node_modules/enhanced-resolve/lib/DirectoryDescriptionFilePlugin.js:24:12)
+    at Storage.finished (/Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack1-sassloader3-sass4/node_modules/enhanced-resolve/lib/CachedInputFileSystem.js:38:16)
+    at ReadFileContext.callback (/Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack1-sassloader3-sass4/node_modules/graceful-fs/graceful-fs.js:78:16)
+    at FSReqWrap.readFileAfterOpen [as oncomplete] (fs.js:367:13)
+    at DependenciesBlock.onModuleBuildFailed (/Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack1-sassloader3-sass4/node_modules/webpack-core/lib/NormalModuleMixin.js:315:19)
+    at DependenciesBlock.<anonymous> (/Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack1-sassloader3-sass4/node_modules/webpack-core/lib/NormalModuleMixin.js:228:39)
+    at context.callback (/Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack1-sassloader3-sass4/node_modules/webpack-core/lib/NormalModuleMixin.js:148:14)
+    at Object.<anonymous> (/Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack1-sassloader3-sass4/node_modules/extract-text-webpack-plugin/loader.js:82:20)
+    at Compiler.<anonymous> (/Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack1-sassloader3-sass4/node_modules/webpack/lib/Compiler.js:204:18)
+    at Compiler.<anonymous> (/Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack1-sassloader3-sass4/node_modules/webpack/lib/Compiler.js:395:18)
+    at /Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack1-sassloader3-sass4/node_modules/tapable/lib/Tapable.js:99:11
+    at Compilation.<anonymous> (/Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack1-sassloader3-sass4/node_modules/webpack/lib/Compilation.js:433:11)
+    at /Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack1-sassloader3-sass4/node_modules/webpack/lib/Compilation.js:414:13
+    at /Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack1-sassloader3-sass4/node_modules/webpack/lib/Compilation.js:329:11
+    at /Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack1-sassloader3-sass4/node_modules/async/lib/async.js:52:16
+    at done (/Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack1-sassloader3-sass4/node_modules/async/lib/async.js:241:17)
+    at /Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack1-sassloader3-sass4/node_modules/async/lib/async.js:44:16
+    at errorAndCallback (/Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack1-sassloader3-sass4/node_modules/webpack/lib/Compilation.js:200:5)
+    at errorOrWarningAndCallback (/Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack1-sassloader3-sass4/node_modules/webpack/lib/Compilation.js:225:13)
+    at /Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack1-sassloader3-sass4/node_modules/webpack/lib/Compilation.js:229:12
+    at onDoneResolving (/Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack1-sassloader3-sass4/node_modules/webpack/lib/NormalModuleFactory.js:29:20)
+    at /Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack1-sassloader3-sass4/node_modules/webpack/lib/NormalModuleFactory.js:85:20
+    at /Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack1-sassloader3-sass4/node_modules/async/lib/async.js:726:13
+    at /Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack1-sassloader3-sass4/node_modules/async/lib/async.js:52:16
+    at done (/Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack1-sassloader3-sass4/node_modules/async/lib/async.js:241:17)
+    at /Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack1-sassloader3-sass4/node_modules/async/lib/async.js:44:16
+    at /Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack1-sassloader3-sass4/node_modules/async/lib/async.js:723:17
+    at /Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack1-sassloader3-sass4/node_modules/async/lib/async.js:167:37
+    at /Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack1-sassloader3-sass4/node_modules/enhanced-resolve/lib/UnsafeCachePlugin.js:24:19
+    at onResolved (/Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack1-sassloader3-sass4/node_modules/enhanced-resolve/lib/Resolver.js:38:18)
+    at /Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack1-sassloader3-sass4/node_modules/enhanced-resolve/lib/Resolver.js:127:10
+    at /Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack1-sassloader3-sass4/node_modules/enhanced-resolve/lib/Resolver.js:191:15
+    at applyPluginsParallelBailResult.createInnerCallback.log (/Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack1-sassloader3-sass4/node_modules/enhanced-resolve/lib/Resolver.js:110:4)
+    at loggingCallbackWrapper (/Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack1-sassloader3-sass4/node_modules/enhanced-resolve/lib/createInnerCallback.js:21:19)
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! webpack1-sassloader3-sass4@1.0.0 webpack-p-bail: `webpack -p --bail`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the webpack1-sassloader3-sass4@1.0.0 webpack-p-bail script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /Users/bholloway/.npm/_logs/2018-09-06T23_58_52_968Z-debug.log

@@ -1,0 +1,18 @@
+
+> webpack1-sassloader3-sass4@1.0.0 webpack-d /Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/1536277707/webpack1-sassloader3-sass4/rework/shallow-asset
+> webpack -d
+
+resolve-url-loader: ./src/index.scss: ../images/img.jpg
+  ./src/feature
+  FOUND
+Hash: aacdc471a50bb3e7e019
+Version: webpack 1.15.0
+Time: 718ms
+                                        Asset       Size  Chunks             Chunk Names
+                                      main.js    1.64 kB       0  [emitted]  main
+    main.2707e916d05394ba129721893aed5409.css  316 bytes       0  [emitted]  main
+                                  main.js.map    1.59 kB       0  [emitted]  main
+main.2707e916d05394ba129721893aed5409.css.map    1.61 kB       0  [emitted]  main
+    + 1 hidden modules
+Child extract-text-webpack-plugin:
+        + 2 hidden modules

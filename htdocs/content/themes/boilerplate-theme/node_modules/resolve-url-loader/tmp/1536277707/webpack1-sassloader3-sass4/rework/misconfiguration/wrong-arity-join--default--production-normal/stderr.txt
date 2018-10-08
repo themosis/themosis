@@ -1,0 +1,8 @@
+sourceMap: true
+engine: "rework"
+join: -unstringifyable-
+silent: false
+absolute: false
+keepQuery: false
+root: false
+debug: false

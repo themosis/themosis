@@ -1,13 +1,11 @@
 {
-  "name": "themosis/themosis",
-  "description": "The Themosis framework. A WordPress framework.",
-  "keywords": ["themosis", "framework", "WordPress"],
+  "name": "harrisoncparker/themosis-boilerplate",
+  "description": "An opinionated boilerplate for the Themosis framework. A WordPress framework.",
+  "keywords": ["themosis", "framework", "WordPress", "boilerplate"],
   "license": "GPL-2.0+",
   "authors": [
     {
-      "name": "Julien Lambé",
-      "email": "julien@themosis.com",
-      "homepage": "http://www.themosis.com/"
+      "name": "Harrison Parker"
     }
   ],
   "type": "project",

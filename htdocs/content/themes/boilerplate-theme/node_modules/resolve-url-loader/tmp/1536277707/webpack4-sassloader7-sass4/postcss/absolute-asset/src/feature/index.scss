@@ -1,0 +1,7 @@
+.some-class-name {
+  single-quoted: url('/Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/1536277707/webpack4-sassloader7-sass4/postcss/absolute-asset/images/img.jpg');
+  double-quoted: url("/Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/1536277707/webpack4-sassloader7-sass4/postcss/absolute-asset/images/img.jpg");
+  unquoted: url(/Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/1536277707/webpack4-sassloader7-sass4/postcss/absolute-asset/images/img.jpg);
+  query: url(/Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/1536277707/webpack4-sassloader7-sass4/postcss/absolute-asset/images/img.jpg?query);
+  hash: url(/Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/1536277707/webpack4-sassloader7-sass4/postcss/absolute-asset/images/img.jpg#hash);
+}

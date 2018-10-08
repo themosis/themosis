@@ -1,0 +1,18 @@
+
+> webpack4-sassloader7-sass4@1.0.0 webpack-p /Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/1536277707/webpack4-sassloader7-sass4/rework/immediate-asset
+> webpack -p --mode=production
+
+Hash: 3c2828b9d6ec5a0e8d5c
+Version: webpack 4.17.2
+Time: 406ms
+Built at: 09/07/2018 10:39:53 AM
+                            Asset       Size  Chunks             Chunk Names
+    main.36753135889666ea6061.css  229 bytes       0  [emitted]  main
+                          main.js   3.67 KiB       0  [emitted]  main
+main.36753135889666ea6061.css.map   1.18 KiB          [emitted]  
+                      main.js.map   3.57 KiB       0  [emitted]  main
+[0] ./src/index.scss 39 bytes {0} [built]
+    + 1 hidden module
+Child mini-css-extract-plugin ../../../../.cache/webpack4-sassloader7-sass4/node_modules/css-loader/index.js??ref--4-1!../../../../../packages/resolve-url-loader/index.js??ref--4-2!../../../../.cache/webpack4-sassloader7-sass4/node_modules/sass-loader/lib/loader.js??ref--4-3!src/index.scss:
+    [0] /Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack4-sassloader7-sass4/node_modules/css-loader??ref--4-1!/Users/bholloway/Documents/bholloway/resolve-url-loader/packages/resolve-url-loader??ref--4-2!/Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack4-sassloader7-sass4/node_modules/sass-loader/lib/loader.js??ref--4-3!./src/index.scss 1.88 KiB {0} [built]
+        + 1 hidden module

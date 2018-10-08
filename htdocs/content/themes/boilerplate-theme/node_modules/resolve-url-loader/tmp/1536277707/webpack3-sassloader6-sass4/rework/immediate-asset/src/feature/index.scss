@@ -1,0 +1,7 @@
+.some-class-name {
+  single-quoted: url('img.jpg');
+  double-quoted: url("img.jpg");
+  unquoted: url(img.jpg);
+  query: url(img.jpg?query);
+  hash: url(img.jpg#hash);
+}

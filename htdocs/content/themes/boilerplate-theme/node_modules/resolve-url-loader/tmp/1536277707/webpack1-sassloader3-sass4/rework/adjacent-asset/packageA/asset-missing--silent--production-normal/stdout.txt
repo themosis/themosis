@@ -1,0 +1,37 @@
+
+> webpack1-sassloader3-sass4@1.0.0 webpack-p /Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/1536277707/webpack1-sassloader3-sass4/rework/adjacent-asset/packageA
+> webpack -p
+
+Hash: 861ec26824f86f50dc52
+Version: webpack 1.15.0
+Time: 697ms
+    + 1 hidden modules
+
+ERROR in ./src/index.scss
+Module build failed: ModuleNotFoundError: Module not found: Error: Cannot resolve 'file' or 'directory' ../../packageB/images/img.jpg in /Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/1536277707/webpack1-sassloader3-sass4/rework/adjacent-asset/packageA/src
+    at /Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack1-sassloader3-sass4/node_modules/webpack/lib/Compilation.js:229:38
+    at onDoneResolving (/Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack1-sassloader3-sass4/node_modules/webpack/lib/NormalModuleFactory.js:29:20)
+    at /Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack1-sassloader3-sass4/node_modules/webpack/lib/NormalModuleFactory.js:85:20
+    at /Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack1-sassloader3-sass4/node_modules/async/lib/async.js:726:13
+    at /Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack1-sassloader3-sass4/node_modules/async/lib/async.js:52:16
+    at done (/Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack1-sassloader3-sass4/node_modules/async/lib/async.js:241:17)
+    at /Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack1-sassloader3-sass4/node_modules/async/lib/async.js:44:16
+    at /Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack1-sassloader3-sass4/node_modules/async/lib/async.js:723:17
+    at /Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack1-sassloader3-sass4/node_modules/async/lib/async.js:167:37
+    at /Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack1-sassloader3-sass4/node_modules/enhanced-resolve/lib/UnsafeCachePlugin.js:24:19
+    at onResolved (/Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack1-sassloader3-sass4/node_modules/enhanced-resolve/lib/Resolver.js:38:18)
+    at /Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack1-sassloader3-sass4/node_modules/enhanced-resolve/lib/Resolver.js:127:10
+    at /Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack1-sassloader3-sass4/node_modules/enhanced-resolve/lib/Resolver.js:191:15
+    at applyPluginsParallelBailResult.createInnerCallback.log (/Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack1-sassloader3-sass4/node_modules/enhanced-resolve/lib/Resolver.js:110:4)
+    at loggingCallbackWrapper (/Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack1-sassloader3-sass4/node_modules/enhanced-resolve/lib/createInnerCallback.js:21:19)
+    at /Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack1-sassloader3-sass4/node_modules/tapable/lib/Tapable.js:134:6
+    at Tapable.<anonymous> (/Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack1-sassloader3-sass4/node_modules/enhanced-resolve/lib/DirectoryDescriptionFilePlugin.js:24:12)
+    at Storage.finished (/Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack1-sassloader3-sass4/node_modules/enhanced-resolve/lib/CachedInputFileSystem.js:38:16)
+    at ReadFileContext.callback (/Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack1-sassloader3-sass4/node_modules/graceful-fs/graceful-fs.js:78:16)
+    at FSReqWrap.readFileAfterOpen [as oncomplete] (fs.js:367:13)
+Child extract-text-webpack-plugin:
+        + 2 hidden modules
+    
+    ERROR in /Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack1-sassloader3-sass4/~/css-loader?sourceMap!/Users/bholloway/Documents/bholloway/resolve-url-loader/packages/resolve-url-loader?sourceMap&engine=rework&silent!/Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack1-sassloader3-sass4/~/sass-loader?sourceMap&sourceMapContents=false!./src/index.scss
+    Module not found: Error: Cannot resolve 'file' or 'directory' ../../packageB/images/img.jpg in /Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/1536277707/webpack1-sassloader3-sass4/rework/adjacent-asset/packageA/src
+     @ /Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack1-sassloader3-sass4/~/css-loader?sourceMap!/Users/bholloway/Documents/bholloway/resolve-url-loader/packages/resolve-url-loader?sourceMap&engine=rework&silent!/Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack1-sassloader3-sass4/~/sass-loader?sourceMap&sourceMapContents=false!./src/index.scss 6:65-105 6:133-173 6:196-236 6:256-296 6:315-355

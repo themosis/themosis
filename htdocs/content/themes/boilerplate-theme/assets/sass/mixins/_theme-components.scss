@@ -1,0 +1,7 @@
+@mixin exampleThemeComponent() {
+	position: relative;
+	&:after {
+		position: absolute;
+		// Some after element that repeats it's self all over the site
+	}
+}

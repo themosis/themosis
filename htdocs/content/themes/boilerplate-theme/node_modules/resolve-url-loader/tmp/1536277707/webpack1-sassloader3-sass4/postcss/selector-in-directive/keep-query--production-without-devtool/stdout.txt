@@ -1,0 +1,24 @@
+
+> webpack1-sassloader3-sass4@1.0.0 webpack-p /Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/1536277707/webpack1-sassloader3-sass4/postcss/selector-in-directive
+> webpack -p
+
+Hash: 8deedd6af630b6aa6db3
+Version: webpack 1.15.0
+Time: 774ms
+                                    Asset       Size  Chunks             Chunk Names
+     d68e763c825dc0e388929ae1b375ce18.jpg  631 bytes          [emitted]  
+     d68e763c825dc0e388929ae1b375ce18.eot  631 bytes          [emitted]  
+     d68e763c825dc0e388929ae1b375ce18.svg  631 bytes          [emitted]  
+     d68e763c825dc0e388929ae1b375ce18.ttf  631 bytes          [emitted]  
+    d68e763c825dc0e388929ae1b375ce18.woff  631 bytes          [emitted]  
+                                  main.js  218 bytes       0  [emitted]  main
+main.f441c3874fc94b54a1319fac6c6a6fea.css  589 bytes       0  [emitted]  main
+    + 1 hidden modules
+Child extract-text-webpack-plugin:
+                                    Asset       Size  Chunks             Chunk Names
+     d68e763c825dc0e388929ae1b375ce18.jpg  631 bytes          [emitted]  
+     d68e763c825dc0e388929ae1b375ce18.eot  631 bytes          [emitted]  
+     d68e763c825dc0e388929ae1b375ce18.svg  631 bytes          [emitted]  
+     d68e763c825dc0e388929ae1b375ce18.ttf  631 bytes          [emitted]  
+    d68e763c825dc0e388929ae1b375ce18.woff  631 bytes          [emitted]  
+        + 8 hidden modules

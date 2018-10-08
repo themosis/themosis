@@ -1,0 +1,4 @@
+
+> webpack1-sassloader3-sass4@1.0.0 webpack-d-bail /Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/1536277707/webpack1-sassloader3-sass4/rework/shallow-asset
+> webpack -d --bail
+

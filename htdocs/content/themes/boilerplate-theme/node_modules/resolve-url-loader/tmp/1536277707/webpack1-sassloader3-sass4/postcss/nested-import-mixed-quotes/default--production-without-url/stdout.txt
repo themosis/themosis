@@ -1,0 +1,15 @@
+
+> webpack1-sassloader3-sass4@1.0.0 webpack-p /Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/1536277707/webpack1-sassloader3-sass4/postcss/nested-import-mixed-quotes
+> webpack -p
+
+Hash: c833cbc9c04727a27478
+Version: webpack 1.15.0
+Time: 775ms
+                                        Asset       Size  Chunks             Chunk Names
+                                      main.js  251 bytes       0  [emitted]  main
+    main.eefbda84170eb1ce3ed070f4f37ebea9.css  351 bytes       0  [emitted]  main
+                                  main.js.map    3.33 kB       0  [emitted]  main
+main.eefbda84170eb1ce3ed070f4f37ebea9.css.map  613 bytes       0  [emitted]  main
+    + 1 hidden modules
+Child extract-text-webpack-plugin:
+        + 2 hidden modules

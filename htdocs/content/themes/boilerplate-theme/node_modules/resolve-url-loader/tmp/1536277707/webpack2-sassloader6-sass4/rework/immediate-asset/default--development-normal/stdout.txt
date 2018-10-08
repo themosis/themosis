@@ -1,0 +1,21 @@
+
+> webpack2-sassloader6-sass4@1.0.0 webpack-d /Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/1536277707/webpack2-sassloader6-sass4/rework/immediate-asset
+> webpack --debug --output-pathinfo
+
+Hash: 057db9aecddee60883f2
+Version: webpack 2.7.0
+Time: 529ms
+                                        Asset       Size  Chunks             Chunk Names
+         d68e763c825dc0e388929ae1b375ce18.jpg  631 bytes          [emitted]  
+                                      main.js    2.85 kB       0  [emitted]  main
+    main.c40128cf3222b40b96f82e85533f4726.css  412 bytes       0  [emitted]  main
+                                  main.js.map    2.79 kB       0  [emitted]  main
+main.c40128cf3222b40b96f82e85533f4726.css.map    1.35 kB       0  [emitted]  main
+   [0] ./src/index.scss 41 bytes {0} [built]
+Child extract-text-webpack-plugin:
+                                   Asset       Size  Chunks             Chunk Names
+    d68e763c825dc0e388929ae1b375ce18.jpg  631 bytes          [emitted]  
+       [0] ./src/feature/img.jpg 82 bytes {0} [built]
+       [1] /Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack2-sassloader6-sass4/~/css-loader/lib/css-base.js 2.26 kB {0} [built]
+       [2] /Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack2-sassloader6-sass4/~/css-loader/lib/url/escape.js 448 bytes {0} [built]
+       [3] /Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack2-sassloader6-sass4/~/css-loader?{"sourceMap":true}!/Users/bholloway/Documents/bholloway/resolve-url-loader/packages/resolve-url-loader?{"sourceMap":true,"engine":"rework"}!/Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/.cache/webpack2-sassloader6-sass4/~/sass-loader/lib/loader.js?{"sourceMap":true,"sourceMapContents":false}!./src/index.scss 2.2 kB {0} [built]

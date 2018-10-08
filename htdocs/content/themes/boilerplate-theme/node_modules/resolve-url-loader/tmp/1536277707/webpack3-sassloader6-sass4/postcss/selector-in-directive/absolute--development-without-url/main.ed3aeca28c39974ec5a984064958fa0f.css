@@ -1,0 +1,13 @@
+@font-face {
+  .some-class-name {
+    src: url("/Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/1536277707/webpack3-sassloader6-sass4/postcss/selector-in-directive/src/fonts/font.eot") format("embedded-opentype"), url("/Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/1536277707/webpack3-sassloader6-sass4/postcss/selector-in-directive/src/fonts/font.ttf") format("truetype"), url(/Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/1536277707/webpack3-sassloader6-sass4/postcss/selector-in-directive/src/fonts/font.woff) format(woff), url(/Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/1536277707/webpack3-sassloader6-sass4/postcss/selector-in-directive/src/fonts/font.svg) format(svg); } }
+
+@media only screen {
+  .another-class-name {
+    single-quoted: url("/Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/1536277707/webpack3-sassloader6-sass4/postcss/selector-in-directive/src/images/img.jpg");
+    double-quoted: url("/Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/1536277707/webpack3-sassloader6-sass4/postcss/selector-in-directive/src/images/img.jpg");
+    unquoted: url(/Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/1536277707/webpack3-sassloader6-sass4/postcss/selector-in-directive/src/images/img.jpg);
+    query: url(/Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/1536277707/webpack3-sassloader6-sass4/postcss/selector-in-directive/src/images/img.jpg);
+    hash: url(/Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/1536277707/webpack3-sassloader6-sass4/postcss/selector-in-directive/src/images/img.jpg); } }
+
+/*# sourceMappingURL=main.ed3aeca28c39974ec5a984064958fa0f.css.map*/

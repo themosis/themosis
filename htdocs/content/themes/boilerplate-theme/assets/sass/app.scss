@@ -1,0 +1,23 @@
+// SCSS
+
+// PLUGINS
+// eg ===> @import url("//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick.css");
+
+// Utilities
+@import "utils";
+
+// Mixins
+@import "mixins/common";
+@import "mixins/breakpoints";
+@import "mixins/_theme-components";
+
+// Global
+@import 'variables';
+@import 'global';
+@import 'typography';
+
+// Components - recurring elements for use in modules.
+@import 'components/example-component';
+
+// Modules - sections on the website.
+@import 'modules/example';
