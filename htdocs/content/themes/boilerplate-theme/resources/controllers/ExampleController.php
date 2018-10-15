@@ -23,9 +23,13 @@ class ExampleController extends BaseController {
 	}
 
 	/**
+	 * @param Example $example
+	 *
 	 * @return string
 	 */
-	public function show($example) {
+	public function show(Example $example) {
+
+		td($example->permalink());
 
 		return view( 'single.example', [
 			'fields' => get_fields(),

@@ -86,8 +86,25 @@ class Post extends Model {
 	 *
 	 * @return mixed
 	 */
-	public function metaField( $key ) {
+	public function getField( $key ) {
 		return Meta::get( $this->ID, $key, true );
+	}
+
+	/**
+	 * @param array|null $queryVars
+	 * @param bool $leaveName
+	 *
+	 * @return string
+	 */
+	public function permalink( array $queryVars = null, $leaveName = false ) {
+
+		$queryString = null;
+
+		if ( $queryVars ) {
+			$queryString = http_build_query( $queryVars );
+		}
+
+		return get_permalink( $this->ID, $leaveName ) . (@$queryString ? '?' . $queryString : '');
 	}
 
 	/**
