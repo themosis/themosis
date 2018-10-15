@@ -11,6 +11,7 @@ namespace Theme\Controllers;
 use Themosis\Route\BaseController;
 
 class PageController extends BaseController {
+
 	/**
 	 * @return string
 	 */
@@ -23,7 +24,17 @@ class PageController extends BaseController {
 	/**
 	 * @return string
 	 */
-	public function show( $slug ) {
-		return 'hello, ' . $slug . '!';
+	public function show()
+	{
+		return view('templates.default', ['fields' => get_fields()]);
 	}
+
+	/**
+	 * @return string
+	 */
+	public function notFound()
+	{
+		return view('404');
+	}
+
 }

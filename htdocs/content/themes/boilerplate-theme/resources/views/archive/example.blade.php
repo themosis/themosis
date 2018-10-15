@@ -1,0 +1,1 @@
+@php td($exampleItems) @endphp

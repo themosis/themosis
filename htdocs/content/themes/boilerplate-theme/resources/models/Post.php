@@ -3,6 +3,7 @@
 namespace Theme\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Builder;
 use Themosis\Facades\PostType;
 use Themosis\Metabox\Meta;
 
@@ -12,8 +13,7 @@ use Themosis\Metabox\Meta;
  *
  * @package Theme\Models
  */
-class Post extends Model
-{
+class Post extends Model {
 	/** @var string */
 	protected $table = 'posts';
 	/** @var string */
@@ -27,12 +27,42 @@ class Post extends Model
 	protected $postTypeLabelPlural = null;
 	/** @var string|null */
 	protected $postTypeLabelSingle = null;
-	/** @var string|null */
-	protected $postTypeDashicon = null;
 	/** @var array|null */
-	protected $postTypeSupports = null;
-	/** @var string|null */
-	protected $postTypeSlug = null;
+	protected $postTypeOptions = [
+		'public'      => true,
+		'has_archive' => true,
+		'menu_icon'   => 'dashicons-admin-page',
+		'supports'    => [ 'title', 'thumbnail' ]
+	];
+
+	/**
+	 * @return void
+	 */
+	protected static function boot() {
+		parent::boot();
+
+		static::addGlobalScope( 'postType', function ( Builder $builder ) {
+			( $instance = new static )->postType ? $builder->where( 'post_type', $instance->postType ) : null;
+		} );
+	}
+
+	/**
+	 * @param Builder $query
+	 *
+	 * @return Builder
+	 */
+	public function scopePublished( Builder $query ) {
+		return $query->where( 'post_status', 'publish' );
+	}
+
+	/**
+	 * @param Builder $query
+	 *
+	 * @return Builder
+	 */
+	public function scopeMenuOrder( Builder $query ) {
+		return $query->orderBy( 'menu_order' );
+	}
 
 	/**
 	 * Create new custom post type if set
@@ -47,52 +77,25 @@ class Post extends Model
 				$instance->postTypeLabelSingle ?: $instance->postType
 			);
 
-			$postType->set( [
-				'public'      => true,
-				'has_archive' => true,
-				'menu_icon'   => $instance->postTypeDashicon ?: 'dashicons-calendar',
-				'supports'    => $instance->postTypeSupports ?: [ 'title', 'thumbnail' ]
-			] );
-
-			if ( $instance->postTypeSlug ) {
-				$postType->set( [
-					'rewrite' => [
-						'slug' => $instance->postTypeSlug
-					]
-				] );
-			}
+			$postType->set( $instance->postTypeOptions );
 		}
 	}
 
 	/**
-	 * @return \Illuminate\Database\Eloquent\Builder
-	 */
-	public static function published()
-	{
-		$instance = new static;
-
-		$query = $instance->newQuery()->where('post_status', 'publish');
-
-		$instance->postType ? $query = $query->where('post_type', $instance->postType) : null;
-
-		return $query;
-	}
-
-	/**
 	 * @param $key
+	 *
 	 * @return mixed
 	 */
-	public function metaField($key)
-	{
-		return Meta::get($this->ID, $key, true);
+	public function metaField( $key ) {
+		return Meta::get( $this->ID, $key, true );
 	}
 
 	/**
 	 * @param string $size
+	 *
 	 * @return false|string
 	 */
-	public function featuredImage($size = '')
-	{
-		return get_the_post_thumbnail_url($this->ID, $size);
+	public function featuredImage( $size = '' ) {
+		return get_the_post_thumbnail_url( $this->ID, $size );
 	}
 }
