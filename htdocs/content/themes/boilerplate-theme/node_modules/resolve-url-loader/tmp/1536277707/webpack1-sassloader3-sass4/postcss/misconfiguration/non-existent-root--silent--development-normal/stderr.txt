@@ -1,8 +1,0 @@
-sourceMap: true
-engine: "postcss"
-root: "/Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/1536277707/webpack1-sassloader3-sass4/postcss/misconfiguration/foo"
-silent: true
-join: "[Function: defaultJoin]"
-absolute: false
-keepQuery: false
-debug: false

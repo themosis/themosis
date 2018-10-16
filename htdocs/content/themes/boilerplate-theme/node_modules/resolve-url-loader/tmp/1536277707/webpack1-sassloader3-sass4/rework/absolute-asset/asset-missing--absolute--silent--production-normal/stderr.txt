@@ -1,8 +1,0 @@
-sourceMap: true
-engine: "rework"
-absolute: true
-silent: true
-join: "[Function: defaultJoin]"
-keepQuery: false
-root: false
-debug: false

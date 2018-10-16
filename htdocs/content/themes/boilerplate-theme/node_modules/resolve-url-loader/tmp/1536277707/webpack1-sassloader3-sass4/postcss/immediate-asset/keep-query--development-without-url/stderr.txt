@@ -1,8 +1,0 @@
-sourceMap: true
-engine: "postcss"
-keepQuery: true
-join: "[Function: defaultJoin]"
-silent: false
-absolute: false
-root: false
-debug: false

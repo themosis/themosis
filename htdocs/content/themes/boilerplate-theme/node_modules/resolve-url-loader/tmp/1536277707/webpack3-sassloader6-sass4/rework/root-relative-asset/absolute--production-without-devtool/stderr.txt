@@ -1,8 +1,0 @@
-sourceMap: true
-engine: "rework"
-root: "/Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/1536277707/webpack3-sassloader6-sass4/rework/root-relative-asset"
-absolute: true
-join: "[Function: defaultJoin]"
-silent: false
-keepQuery: false
-debug: false

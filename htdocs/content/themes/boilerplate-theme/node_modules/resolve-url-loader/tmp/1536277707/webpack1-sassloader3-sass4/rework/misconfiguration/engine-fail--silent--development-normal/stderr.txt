@@ -1,8 +1,0 @@
-sourceMap: true
-engine: "fail"
-silent: true
-join: "[Function: defaultJoin]"
-absolute: false
-keepQuery: false
-root: false
-debug: false

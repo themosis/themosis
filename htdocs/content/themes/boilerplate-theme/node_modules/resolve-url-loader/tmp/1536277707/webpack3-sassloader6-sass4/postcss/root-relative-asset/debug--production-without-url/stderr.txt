@@ -1,8 +1,0 @@
-sourceMap: true
-engine: "postcss"
-root: "/Users/bholloway/Documents/bholloway/resolve-url-loader/tmp/1536277707/webpack3-sassloader6-sass4/postcss/root-relative-asset"
-debug: true
-join: "[Function: defaultJoin]"
-silent: false
-absolute: false
-keepQuery: false
