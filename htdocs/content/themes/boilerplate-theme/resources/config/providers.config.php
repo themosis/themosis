@@ -1,8 +1,11 @@
 <?php
 
+namespace Theme\Providers;
+
 /**
  * Define a list of service providers to use in your theme.
  */
 return [
-    Theme\Providers\RoutingService::class
+	RoutingService::class,
+	ViewComposerService::class
 ];
