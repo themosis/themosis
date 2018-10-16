@@ -18,7 +18,9 @@ class ModuleLoader {
 	 */
 	loadModules() {
 		this.modules.forEach(function (module) {
-			let elements = $('[data-js-' + camelToKebab(module.name) + ']');
+			// IE fallback for module.name
+			let name = module.name ? module.name : module.toString().match(/^function\s*([^\s(]+)/)[1];
+			let elements = $('[data-js-' + camelToKebab(name) + ']');
 			if (elements.length > 0) {
 				elements.each(function () {
 					let instance = new module($(this));
