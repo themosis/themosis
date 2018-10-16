@@ -34,6 +34,8 @@ class Post extends Model {
 		'menu_icon'   => 'dashicons-admin-page',
 		'supports'    => [ 'title', 'thumbnail' ]
 	];
+	/** @var bool  */
+	protected $postTypeOptionsPage = true;
 
 	/**
 	 * @return void
@@ -78,6 +80,19 @@ class Post extends Model {
 			);
 
 			$postType->set( $instance->postTypeOptions );
+
+			if (function_exists('acf_add_options_page') && $instance->postTypeOptionsPage) {
+				acf_add_options_page(array(
+					'page_title' => 'Options - ' . $instance->postTypeLabelSingle,
+					'menu_title' => 'Options - ' . $instance->postTypeLabelSingle,
+					'menu_slug' => 'options-' . $instance->postType,
+					'capability' => 'edit_posts',
+					'parent_slug' => 'edit.php?post_type=' . $instance->postType,
+					'position' => false,
+					'icon_url' => 'dashicons-images-alt2',
+					'redirect' => false,
+				));
+			}
 		}
 	}
 
