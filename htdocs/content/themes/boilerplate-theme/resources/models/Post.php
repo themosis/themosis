@@ -86,6 +86,7 @@ class Post extends Model {
 					'page_title' => 'Options - ' . $instance->postTypeLabelSingle,
 					'menu_title' => 'Options - ' . $instance->postTypeLabelSingle,
 					'menu_slug' => 'options-' . $instance->postType,
+					'post_id' => 'options-' . $instance->postType,
 					'capability' => 'edit_posts',
 					'parent_slug' => 'edit.php?post_type=' . $instance->postType,
 					'position' => false,
@@ -101,8 +102,10 @@ class Post extends Model {
 	 *
 	 * @return mixed
 	 */
-	public function getField( $key ) {
-		return Meta::get( $this->ID, $key, true );
+	public function getField($key)
+	{
+		return function_exists('get_field') ?
+			$value = get_field($key, $this->ID) : Meta::get($this->ID, $key, true);
 	}
 
 	/**
