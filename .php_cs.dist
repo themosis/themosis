@@ -16,7 +16,7 @@ $finder = Finder::create()
         'app',
         'bootstrap',
         'config',
-        'tests'
+        'tests',
     ]);
 
 return Config::create()

@@ -3,15 +3,16 @@
 namespace App\Hooks;
 
 use Themosis\Asset\AssetException;
+use Themosis\Core\Support\WordPressUrl;
 use Themosis\Hook\Hookable;
 use Themosis\Support\Facades\Action;
 use Themosis\Support\Facades\Asset;
+use Themosis\Support\Facades\Filter;
 
 class Application extends Hookable
 {
-    /**
-     * Set application main logic.
-     */
+    use WordPressUrl;
+
     public function register()
     {
         /*
@@ -30,6 +31,72 @@ class Application extends Hookable
 
         /*
         |--------------------------------------------------------------------------
+        | Filter WordPress URLs
+        |--------------------------------------------------------------------------
+        |
+        | The following lines fix core WordPress URLs issues on a multisite
+        | installation.
+        |
+        */
+        Filter::add('network_admin_url', function ($url) {
+            return $this->formatUrl($url);
+        });
+
+        Filter::add('admin_url', function ($url) {
+            return $this->formatUrl($url);
+        });
+
+        Filter::add('includes_url', function ($url) {
+            return $this->formatUrl($url, WPINC);
+        });
+
+        /*
+        |--------------------------------------------------------------------------
+        | Framework global JS
+        |--------------------------------------------------------------------------
+        |
+        | Setup framework global JS variables. Developers can find a global
+        | variable "themosisGlobal" in the footer of the WordPress administration.
+        | This global variable is always loaded before any registered assets in
+        | the footer. A front-end global variable is also available and developers
+        | can manage the its name through the "assets" config file.
+        |
+        */
+        Action::add('admin_footer', function () {
+            echo $this->app->outputJavascriptGlobal(
+                'themosisGlobal',
+                apply_filters('themosis_admin_global', [
+                    'api' => [
+                        'base_url' => home_url('wp-api/themosis/v1/')
+                    ]
+                ])
+            );
+        });
+
+        Action::add('wp_head', function () {
+            echo $this->app->outputJavascriptGlobal(
+                config('assets.ajax.front', 'themosis'),
+                apply_filters('themosis_front_global', [
+                    'ajaxurl' => admin_url('admin-ajax.php')
+                ])
+            );
+        });
+
+        /*
+        |--------------------------------------------------------------------------
+        | WordPress Core Assets
+        |--------------------------------------------------------------------------
+        |
+        | Load WordPress core assets. We enqueue the assets in order to create
+        | the WordPress TinyMCE editor in administration screens.
+        |
+        */
+        Action::add('admin_enqueue_scripts', function () {
+            wp_enqueue_editor();
+        });
+
+        /*
+        |--------------------------------------------------------------------------
         | Framework core assets
         |--------------------------------------------------------------------------
         |
@@ -40,9 +107,12 @@ class Application extends Hookable
         |
         */
         try {
-            Asset::add('themosis_core_js', 'js/themosis.core.js', false, $this->app->version())->to('admin');
+            Asset::add('themosis_core_js', 'js/themosis.core.js', ['lodash'], $this->app->version())
+                ->to('admin');
+            Asset::add('themosis_post_status', 'js/themosis.poststatus.js', ['jquery', 'lodash'], $this->app->version())
+                ->to('admin');
         } catch (AssetException $e) {
-            logger('Themosis Core assets are not published.');
+            logger($e->getMessage());
         }
     }
 }

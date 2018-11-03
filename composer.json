@@ -1,6 +1,6 @@
 {
   "name": "themosis/themosis",
-  "description": "A WordPress framework for building enterprise solutions.",
+  "description": "The Themosis framework. A WordPress framework.",
   "keywords": ["themosis", "framework", "wordpress"],
   "license": "GPL-2.0-or-later",
   "support": {
@@ -33,29 +33,9 @@
   },
   "require": {
     "php": ">=7.1.0",
-    "filp/whoops": "^2.1",
-    "illuminate/auth": "^5.6",
-    "illuminate/bus": "^5.6",
-    "illuminate/cache": "^5.6",
-    "illuminate/config": "5.6.*",
-    "illuminate/console": "5.6.*",
-    "illuminate/container": "5.6.*",
-    "illuminate/database": "5.6.*",
-    "illuminate/events": "5.6.*",
-    "illuminate/filesystem": "5.6.*",
-    "illuminate/http": "5.6.*",
-    "illuminate/log": "5.6.*",
-    "illuminate/pagination": "^5.6",
-    "illuminate/queue": "^5.6",
-    "illuminate/routing": "5.6.*",
-    "illuminate/validation": "^5.6",
-    "illuminate/view": "5.6.*",
     "johnpbloch/wordpress-core": "^4.9.8",
     "johnpbloch/wordpress-core-installer": "^1.0",
-    "league/flysystem": "^1.0",
-    "league/fractal": "^0.17.0",
-    "themosis/framework": "dev-develop",
-    "vlucas/phpdotenv": "^2.4"
+    "themosis/framework": "dev-master"
   },
   "require-dev": {
     "laravel/homestead": "^7.0",

@@ -14,4 +14,17 @@ return [
     'paths' => [
         web_path('dist') => rtrim(config('app.url'), '\/').'/dist'
     ],
+
+    /*
+    |--------------------------------------------------------------------------
+    | Ajax
+    |--------------------------------------------------------------------------
+    |
+    | This value defines the global JS variable name used for the
+    | front-end scripts.
+    |
+    */
+    'ajax' => [
+        'front' => 'themosis'
+    ]
 ];

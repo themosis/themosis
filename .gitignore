@@ -3,17 +3,22 @@
 Thumbs.db
 
 ### Vagrant
-.vagrant/
+/.vagrant
 
 ### Composer
-vendor/
+/vendor/
 
 ### IDE
-.idea/
+/.idea
 
 ### PHPCS
 cs_fixer*
 .php_cs.cache
+
+### WordPress
+/htdocs/cms/
+/htdocs/content/uploads/
+/htdocs/content/upgrade/
 
 ### Environment Credentials
 .env

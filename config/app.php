@@ -93,22 +93,29 @@ return [
         Themosis\Core\Providers\ConsoleCoreServiceProvider::class,
         Illuminate\Filesystem\FilesystemServiceProvider::class,
         Illuminate\Auth\Passwords\PasswordResetServiceProvider::class,
+        Illuminate\Hashing\HashServiceProvider::class,
+        Illuminate\Session\SessionServiceProvider::class,
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
-        Illuminate\View\ViewServiceProvider::class,
+        Themosis\View\ViewServiceProvider::class,
+        Themosis\Ajax\AjaxServiceProvider::class,
         Themosis\Asset\AssetServiceProvider::class,
+        Themosis\View\BladeServiceProvider::class,
         Themosis\Core\Providers\CoreServiceProvider::class,
         Themosis\Html\HtmlServiceProvider::class,
         Themosis\Hook\HookServiceProvider::class,
         Themosis\Field\FieldServiceProvider::class,
         Themosis\Forms\FormServiceProvider::class,
         Themosis\Metabox\MetaboxServiceProvider::class,
+        Themosis\Metabox\MetaboxRoutingServiceProvider::class,
         Themosis\Page\PageServiceProvider::class,
+        Themosis\PostType\PostTypeServiceProvider::class,
+        Themosis\Taxonomy\TaxonomyServiceProvider::class,
 
         // Application providers
         App\Providers\AppServiceProvider::class,
         App\Providers\AuthServiceProvider::class,
-        App\Providers\RouteServiceProvider::class
+        App\Providers\RouteServiceProvider::class,
     ],
 
     /*
@@ -123,6 +130,7 @@ return [
     */
     'hooks' => [
         App\Hooks\Application::class,
+        App\Hooks\Widgets::class,
     ],
 
     /*
@@ -137,9 +145,11 @@ return [
     */
     'aliases' => [
         'Action' => Themosis\Support\Facades\Action::class,
+        'Ajax' => Themosis\Support\Facades\Ajax::class,
         'App' => Illuminate\Support\Facades\App::class,
         'Asset' => Themosis\Support\Facades\Asset::class,
         'Auth' => Illuminate\Support\Facades\Auth::class,
+        'Blade' => Illuminate\Support\Facades\Blade::class,
         'Bus' => Illuminate\Support\Facades\Bus::class,
         'Cache' => Illuminate\Support\Facades\Cache::class,
         'Console' => Themosis\Core\Support\Facades\Console::class,
@@ -149,10 +159,13 @@ return [
         'Filter' => Themosis\Support\Facades\Filter::class,
         'Gate' => Illuminate\Support\Facades\Gate::class,
         'Html' => Themosis\Support\Facades\Html::class,
+        'Loop' => Themosis\Support\Facades\Loop::class,
         'Metabox' => Themosis\Support\Facades\Metabox::class,
         'Page' => Themosis\Support\Facades\Page::class,
+        'PostType' => Themosis\Support\Facades\PostType::class,
         'Route' => Themosis\Support\Facades\Route::class,
         'Storage' => Illuminate\Support\Facades\Storage::class,
+        'Taxonomy' => Themosis\Support\Facades\Taxonomy::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class
     ],

@@ -2,6 +2,17 @@
 
 /*
 |--------------------------------------------------------------------------
+| Notes - README
+|--------------------------------------------------------------------------
+|
+| You can add as many WordPress constants as you want here. Just make sure
+| to add them at the end of the file or at least after the "WordPress
+| authentication keys and salts" section.
+|
+*/
+
+/*
+|--------------------------------------------------------------------------
 | WordPress authentication keys and salts
 |--------------------------------------------------------------------------
 |
@@ -36,6 +47,7 @@ define('DB_COLLATE', config('database.connections.mysql.collation'));
 */
 define('WP_HOME', config('app.url'));
 define('WP_SITEURL', config('app.wp'));
+define('WP_CONTENT_URL', WP_HOME.'/'.CONTENT_DIR);
 
 /*
 |--------------------------------------------------------------------------
