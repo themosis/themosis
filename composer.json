@@ -54,7 +54,7 @@
   "prefer-stable": true,
   "scripts": {
     "post-create-project-cmd": [
-      "php console theme:install"
+      "@php console theme:install"
     ]
   }
 }
