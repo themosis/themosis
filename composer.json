@@ -44,7 +44,6 @@
   "extra":{
     "installer-paths": {
       "htdocs/content/plugins/{$name}/": ["type:wordpress-plugin"],
-      "htdocs/content/themes/themosis-{$name}/": ["themosis/theme"],
       "htdocs/content/themes/{$name}/": ["type:wordpress-theme"]
     },
     "wordpress-install-dir": {
