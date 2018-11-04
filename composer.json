@@ -54,7 +54,8 @@
   "prefer-stable": true,
   "scripts": {
     "post-create-project-cmd": [
-      "@php -r \"rename('.env.sample', '.env');\""
+      "@php -r \"rename('.env.sample', '.env');\"",
+      "@php console vendor:publish --tag=themosis --force"
     ]
   }
 }
