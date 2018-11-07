@@ -47,11 +47,14 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | WordPress URL
+    | WordPress
     |--------------------------------------------------------------------------
     |
     */
-    'wp' => env('WP_URL', 'http://localhost/cms'),
+    'wp' => [
+        'url' => env('WP_URL', 'http://localhost/cms'),
+        'dir' => env('WP_DIR', 'cms')
+    ],
 
     /*
     |--------------------------------------------------------------------------
@@ -91,9 +94,12 @@ return [
         Illuminate\Bus\BusServiceProvider::class,
         Illuminate\Cache\CacheServiceProvider::class,
         Themosis\Core\Providers\ConsoleCoreServiceProvider::class,
+        Illuminate\Cookie\CookieServiceProvider::class,
+        Illuminate\Database\DatabaseServiceProvider::class,
         Illuminate\Filesystem\FilesystemServiceProvider::class,
         Illuminate\Auth\Passwords\PasswordResetServiceProvider::class,
         Illuminate\Hashing\HashServiceProvider::class,
+        Illuminate\Mail\MailServiceProvider::class,
         Illuminate\Session\SessionServiceProvider::class,
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
@@ -130,7 +136,8 @@ return [
     */
     'hooks' => [
         App\Hooks\Application::class,
-        App\Hooks\Widgets::class,
+        App\Hooks\Mail::class,
+        App\Hooks\Widgets::class
     ],
 
     /*
@@ -153,19 +160,27 @@ return [
         'Bus' => Illuminate\Support\Facades\Bus::class,
         'Cache' => Illuminate\Support\Facades\Cache::class,
         'Console' => Themosis\Core\Support\Facades\Console::class,
+        'DB' => Illuminate\Support\Facades\DB::class,
+        'Eloquent' => Illuminate\Database\Eloquent\Model::class,
         'Field' => Themosis\Support\Facades\Field::class,
         'File' => Illuminate\Support\Facades\File::class,
         'Form' => Themosis\Support\Facades\Form::class,
         'Filter' => Themosis\Support\Facades\Filter::class,
         'Gate' => Illuminate\Support\Facades\Gate::class,
+        'Hash' => Illuminate\Support\Facades\Hash::class,
         'Html' => Themosis\Support\Facades\Html::class,
         'Loop' => Themosis\Support\Facades\Loop::class,
+        'Mail' => Illuminate\Support\Facades\Mail::class,
         'Metabox' => Themosis\Support\Facades\Metabox::class,
         'Page' => Themosis\Support\Facades\Page::class,
         'PostType' => Themosis\Support\Facades\PostType::class,
         'Route' => Themosis\Support\Facades\Route::class,
+        'Schema' => Illuminate\Support\Facades\Schema::class,
+        'Session' => Illuminate\Support\Facades\Session::class,
         'Storage' => Illuminate\Support\Facades\Storage::class,
         'Taxonomy' => Themosis\Support\Facades\Taxonomy::class,
+        'Twig' => Themosis\Support\Facades\Twig::class,
+        'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class
     ],

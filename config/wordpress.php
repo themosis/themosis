@@ -46,7 +46,7 @@ define('DB_COLLATE', config('database.connections.mysql.collation'));
 |--------------------------------------------------------------------------
 */
 define('WP_HOME', config('app.url'));
-define('WP_SITEURL', config('app.wp'));
+define('WP_SITEURL', config('app.wp.url'));
 define('WP_CONTENT_URL', WP_HOME.'/'.CONTENT_DIR);
 
 /*
@@ -79,13 +79,6 @@ define('DISALLOW_FILE_EDIT', true);
 |--------------------------------------------------------------------------
 */
 define('WP_DEFAULT_THEME', 'themosis');
-
-/*
-|--------------------------------------------------------------------------
-| WordPress Cron
-|--------------------------------------------------------------------------
-*/
-define('DISABLE_WP_CRON', true);
 
 /*
 |--------------------------------------------------------------------------
