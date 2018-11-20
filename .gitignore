@@ -20,8 +20,8 @@ cs_fixer*
 /htdocs/content/upgrade/
 
 ### Built files
-/htdocs/content/themes/boilerplate-theme/node_modules
-/htdocs/content/themes/boilerplate-theme/vendor
+node_modules
+vendor
 
 ### Environment Credentials
 .env
