@@ -1,46 +1,46 @@
-$fontSizeBP: 576;
+$fontSizeBP: 620;
 
-body {
-	font-size: 16px;
+html {
+	font-size: 100%;
 
 	@include width-down($fontSizeBP) {
-		font-size: 13px;
+		font-size: 85%;
 	}
 }
 
-h1, h2, h3, h4, h5 {
+body {
+	font-family: $body-font;
+}
+
+h1, h2, h3, h4, h5, p {
 	font-family: $title-font;
 	font-weight: normal;
 	line-height: 1;
+	margin-bottom: rem(20);
 
 	@include width-down($fontSizeBP) {
-		margin: 0 0 1rem;
+		margin-bottom: rem(16);
 	}
 }
 
-h1 {
+h1, .h5-styles {
 	font-size: 3.975rem;
-	margin: 0 0 1.25rem;
 }
 
-h2 {
+h2, .h5-styles {
 	font-size: 3.25rem;
-	margin: 0 0 1.25rem;
 }
 
-h3 {
+h3, .h5-styles {
 	font-size: 2.375rem;
-	margin: 0 0 1.25rem;
 }
 
-h4 {
+h4, .h5-styles {
 	font-size: 1.875rem;
-	margin: 0 0 1.25rem;
 }
 
-h5 {
+h5, .h5-styles {
 	font-size: 1.375rem;
-	margin: 0 0 1.25rem;
 }
 
 p,
@@ -48,7 +48,6 @@ p,
 	font-size: 1rem;
 	line-height: 1.5;
 	font-family: $body-font;
-	margin: 0 0 1rem 0;
 }
 
 a,
