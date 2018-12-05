@@ -22,10 +22,13 @@ class Kernel extends HttpKernel
      */
     protected $middlewareGroups = [
         'web' => [
-            'wp.bindings'
+            'wp.bindings',
+            'bindings',
+            \Illuminate\Session\Middleware\StartSession::class
         ],
         'wpapi' => [
-            'wp.can:edit_posts'
+            'wp.can:edit_posts',
+            'bindings'
         ]
     ];
 
@@ -37,6 +40,7 @@ class Kernel extends HttpKernel
      */
     protected $routeMiddleware = [
         'wp.bindings' => \Themosis\Route\Middleware\WordPressBindings::class,
-        'wp.can' => \Themosis\Route\Middleware\WordPressAuthorize::class
+        'wp.can' => \Themosis\Route\Middleware\WordPressAuthorize::class,
+        'bindings' => \Illuminate\Routing\Middleware\SubstituteBindings::class
     ];
 }

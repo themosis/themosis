@@ -37,7 +37,7 @@ return [
     |
     | This option allows you to easily specify that all of your session data
     | should be encrypted before it is stored. All encryption will be run
-    | automatically by Laravel and you can use the Session like normal.
+    | automatically by the framework and you can use the Session like normal.
     |
     */
     'encrypt' => false,
@@ -114,7 +114,7 @@ return [
     */
     'cookie' => env(
         'SESSION_COOKIE',
-        str_slug(env('APP_NAME', 'laravel'), '_').'_session'
+        str_slug(env('APP_NAME', 'themosis'), '_').'_session'
     ),
 
     /*
