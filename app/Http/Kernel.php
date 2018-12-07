@@ -26,7 +26,7 @@ class Kernel extends HttpKernel
             'bindings',
             \Illuminate\Session\Middleware\StartSession::class
         ],
-        'wpapi' => [
+        'api' => [
             'wp.can:edit_posts',
             'bindings'
         ]
