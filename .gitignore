@@ -3,7 +3,6 @@
 Thumbs.db
 
 ### Composer
-composer.lock
 vendor/
 
 ### IDE
