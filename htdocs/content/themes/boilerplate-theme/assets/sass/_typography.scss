@@ -3,6 +3,14 @@ $fontSizeBP: 620;
 html {
 	font-size: 100%;
 
+	@include width-up(2400) {
+		font-size: 125%;
+	}
+
+	@include width-up(2000) {
+		font-size: 110%;
+	}
+
 	@include width-down($fontSizeBP) {
 		font-size: 85%;
 	}
