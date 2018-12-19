@@ -14,6 +14,7 @@ return [
      * @param bool|string $media Add to media selection dropdown. Make it also available to media custom field. If string, used as display name ;)
      */
     'themosis' => [200, 150, true, true],
-	'full-screen' => [2000, 2000, true, true],
+	'xl' => [1800, 1800, true, true],
+	'full-screen' => [2560, 2560, true, true],
 
 ];
