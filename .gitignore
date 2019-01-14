@@ -14,7 +14,8 @@ cs_fixer*
 ### Wordpress
 /htdocs/cms/*
 !/htdocs/cms/.gitkeep
-/htdocs/content/mu-plugins/themosis-framework/
+/htdocs/content/mu-plugins/*
+!/htdocs/content/mu-plugins/load.php
 /htdocs/content/themes/themosis-theme
 /htdocs/content/uploads/
 /htdocs/content/upgrade/
