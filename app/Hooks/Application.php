@@ -93,6 +93,7 @@ class Application extends Hookable
         */
         Action::add('admin_enqueue_scripts', function () {
             wp_enqueue_editor();
+            wp_enqueue_media();
         });
 
         /*
