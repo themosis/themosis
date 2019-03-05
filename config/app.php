@@ -78,6 +78,20 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | Encryption Key
+    |--------------------------------------------------------------------------
+    |
+    | This key is used by the Illuminate encrypter service and should be set
+    | to a random, 32 character string, otherwise these encrypted strings
+    | will not be safe. Please do this before deploying an application!
+    |
+    */
+    'key' => env('APP_KEY'),
+
+    'cipher' => 'AES-256-CBC',
+
+    /*
+    |--------------------------------------------------------------------------
     | Autoloaded Service Providers
     |--------------------------------------------------------------------------
     |
@@ -96,10 +110,12 @@ return [
         Themosis\Core\Providers\ConsoleCoreServiceProvider::class,
         Illuminate\Cookie\CookieServiceProvider::class,
         Illuminate\Database\DatabaseServiceProvider::class,
+        Illuminate\Encryption\EncryptionServiceProvider::class,
         Illuminate\Filesystem\FilesystemServiceProvider::class,
         Illuminate\Auth\Passwords\PasswordResetServiceProvider::class,
         Illuminate\Hashing\HashServiceProvider::class,
         Illuminate\Mail\MailServiceProvider::class,
+        Illuminate\Notifications\NotificationServiceProvider::class,
         Illuminate\Session\SessionServiceProvider::class,
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
@@ -117,6 +133,7 @@ return [
         Themosis\Page\PageServiceProvider::class,
         Themosis\PostType\PostTypeServiceProvider::class,
         Themosis\Taxonomy\TaxonomyServiceProvider::class,
+        Themosis\User\UserServiceProvider::class,
 
         // Application providers
         App\Providers\AppServiceProvider::class,
@@ -174,15 +191,20 @@ return [
         'Loop' => Themosis\Support\Facades\Loop::class,
         'Mail' => Illuminate\Support\Facades\Mail::class,
         'Metabox' => Themosis\Support\Facades\Metabox::class,
+        'Notification' => Illuminate\Support\Facades\Notification::class,
         'Page' => Themosis\Support\Facades\Page::class,
         'PostType' => Themosis\Support\Facades\PostType::class,
+        'Request' => Illuminate\Support\Facades\Request::class,
         'Route' => Themosis\Support\Facades\Route::class,
         'Schema' => Illuminate\Support\Facades\Schema::class,
         'Session' => Illuminate\Support\Facades\Session::class,
         'Storage' => Illuminate\Support\Facades\Storage::class,
         'Taxonomy' => Themosis\Support\Facades\Taxonomy::class,
+        'TaxonomyField' => Themosis\Support\Facades\TaxonomyField::class,
         'Twig' => Themosis\Support\Facades\Twig::class,
         'URL' => Illuminate\Support\Facades\URL::class,
+        'User' => Themosis\Support\Facades\User::class,
+        'UserField' => Themosis\Support\Facades\UserField::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class
     ],
@@ -216,6 +238,7 @@ return [
         'is_single' => 'single',
         'is_singular' => 'singular',
         'is_sticky' => 'sticky',
+        'is_subpage' => ['subpage', 'subpageof'],
         'is_tag' => 'tag',
         'is_tax' => 'tax',
         'is_time' => 'time',
