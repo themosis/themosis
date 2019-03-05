@@ -21,12 +21,20 @@ class Kernel extends HttpKernel
      * @var array
      */
     protected $middlewareGroups = [
+        'admin' => [
+            \Illuminate\Session\Middleware\StartSession::class,
+            \Illuminate\View\Middleware\ShareErrorsFromSession::class
+        ],
         'web' => [
             'wp.bindings',
             'bindings',
-            \Illuminate\Session\Middleware\StartSession::class
+            \Illuminate\Session\Middleware\StartSession::class,
+            \Illuminate\View\Middleware\ShareErrorsFromSession::class,
+            'csrf',
+            \Themosis\Route\Middleware\WordPressBodyClass::class
         ],
         'api' => [
+            'throttle:60,1',
             'wp.can:edit_posts',
             'bindings'
         ]
@@ -39,8 +47,14 @@ class Kernel extends HttpKernel
      * @var array
      */
     protected $routeMiddleware = [
+        'auth' => \App\Http\Middleware\Authenticate::class,
+        'bindings' => \Illuminate\Routing\Middleware\SubstituteBindings::class,
+        'csrf' => \App\Http\Middleware\VerifyCsrfToken::class,
+        'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
+        'signed' => \Illuminate\Routing\Middleware\ValidateSignature::class,
+        'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
+        'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         'wp.bindings' => \Themosis\Route\Middleware\WordPressBindings::class,
-        'wp.can' => \Themosis\Route\Middleware\WordPressAuthorize::class,
-        'bindings' => \Illuminate\Routing\Middleware\SubstituteBindings::class
+        'wp.can' => \Themosis\Route\Middleware\WordPressAuthorize::class
     ];
 }
