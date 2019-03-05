@@ -33,9 +33,9 @@
   },
   "require": {
     "php": ">=7.1.0",
-    "johnpbloch/wordpress-core": "^5.0.0",
+    "johnpbloch/wordpress-core": "^5.1.0",
     "johnpbloch/wordpress-core-installer": "^1.0",
-    "themosis/framework": "2.0-beta3"
+    "themosis/framework": "2.0-beta4"
   },
   "require-dev": {
     "laravel/homestead": "^7.0",
@@ -53,9 +53,12 @@
   "minimum-stability": "dev",
   "prefer-stable": true,
   "scripts": {
+    "post-root-package-install": [
+      "@php -r \"rename('.env.sample', '.env');\""
+    ],
     "post-create-project-cmd": [
-      "@php -r \"rename('.env.sample', '.env');\"",
-      "@php console vendor:publish --tag=themosis --force"
+      "@php console vendor:publish --tag=themosis --force",
+      "@php console key:generate --ansi"
     ]
   }
 }
