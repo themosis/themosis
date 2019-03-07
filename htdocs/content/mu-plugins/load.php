@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Kernel;
 use Themosis\Core\Application;
 
 /**
@@ -16,6 +17,9 @@ if (! class_exists('Themosis\Core\Application')) {
 }
 
 $app = Application::getInstance();
+
+// WordPress Administration middleware support.
+$app->manageAdmin(Kernel::class, $app['request']);
 
 // Load application mu-plugins.
 $app->loadPlugins(__DIR__);
