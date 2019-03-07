@@ -26,7 +26,7 @@ class Application extends Hookable
         |
         */
         Action::add('setup_theme', function () {
-            $this->app->setLocale(get_locale());
+            $this->app->setLocale(determine_locale());
         });
 
         /*
@@ -38,7 +38,7 @@ class Application extends Hookable
         | configuration.
         |
         */
-        load_application_textdomain(APP_TD, get_locale());
+        load_application_textdomain(APP_TD, determine_locale());
 
         /*
         |--------------------------------------------------------------------------
