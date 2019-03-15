@@ -39,7 +39,8 @@
   },
   "require-dev": {
     "laravel/homestead": "^7.0",
-    "phpunit/phpunit": "^7.0"
+    "phpunit/phpunit": "^7.0",
+    "symfony/var-dumper": "^4.2"
   },
   "extra":{
     "installer-paths": {
