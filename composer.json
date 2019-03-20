@@ -45,6 +45,7 @@
   "extra":{
     "installer-paths": {
       "htdocs/content/plugins/{$name}/": ["type:wordpress-plugin"],
+      "htdocs/content/mu-plugins/{$name}/": ["type:wordpress-muplugin"],
       "htdocs/content/themes/{$name}/": ["type:wordpress-theme"]
     },
     "wordpress-install-dir": {
