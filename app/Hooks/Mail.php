@@ -23,10 +23,6 @@ class Mail extends Hookable
             $phpmailer->SMTPSecure = false;
         });
 
-        Filter::add('wp_mail_content_type', function () {
-            return 'text/html';
-        });
-
         Filter::add('wp_mail_from', function () {
             return config('mail.from.address');
         });
