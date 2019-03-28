@@ -35,7 +35,7 @@
     "php": ">=7.1.0",
     "johnpbloch/wordpress-core": "^5.1.0",
     "johnpbloch/wordpress-core-installer": "^1.0",
-    "themosis/framework": "2.0-RC1"
+    "themosis/framework": "^2.0.0"
   },
   "require-dev": {
     "laravel/homestead": "^7.0",
