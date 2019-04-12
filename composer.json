@@ -56,7 +56,7 @@
   "prefer-stable": true,
   "scripts": {
     "post-root-package-install": [
-      "@php -r \"rename('.env.sample', '.env');\""
+      "@php -r \"file_exists('.env') || copy('.env.sample', '.env');\""
     ],
     "post-create-project-cmd": [
       "@php console vendor:publish --tag=themosis --force",
