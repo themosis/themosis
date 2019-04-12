@@ -26,6 +26,7 @@ class Kernel extends HttpKernel
             \Illuminate\View\Middleware\ShareErrorsFromSession::class
         ],
         'web' => [
+            'wp.headers',
             'wp.bindings',
             'bindings',
             \Illuminate\Session\Middleware\StartSession::class,
@@ -55,6 +56,7 @@ class Kernel extends HttpKernel
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         'wp.bindings' => \Themosis\Route\Middleware\WordPressBindings::class,
-        'wp.can' => \Themosis\Route\Middleware\WordPressAuthorize::class
+        'wp.can' => \Themosis\Route\Middleware\WordPressAuthorize::class,
+        'wp.headers' => \Themosis\Route\Middleware\WordPressHeaders::class
     ];
 }
