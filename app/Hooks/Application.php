@@ -54,7 +54,7 @@ class Application extends Hookable
         });
 
         Filter::add('option_siteurl', function ($url) {
-            return $this->fixMultisiteUrl($url, true);
+            return $this->fixMultisiteUrl($url);
         });
 
         Filter::add('network_site_url', function ($url, $path, $scheme) {
