@@ -49,47 +49,16 @@ class Application extends Hookable
         | installation.
         |
         */
-        /**
-         * Ensure that home URL does not contain the /cms subdirectory.
-         *
-         * @param string $value the unchecked home URL
-         * @return string the verified home URL
-         */
-        Filter::add('option_home', function ($value) {
-            if (substr($value, -4) === '/cms') {
-                $value = substr($value, 0, -4);
-            }
-            return $value;
+        Filter::add('option_home', function ($url) {
+            return $this->fixMultisiteUrl($url, false);
         });
 
-        /**
-         * Ensure that site URL contains the /cms subdirectory.
-         *
-         * @param string $url the unchecked site URL
-         * @return string the verified site URL
-         */
         Filter::add('option_siteurl', function ($url) {
-            if (substr($url, -4) !== '/cms' && (is_main_site() || is_subdomain_install())) {
-                $url .= '/cms';
-            }
-            return $url;
+            return $this->fixMultisiteUrl($url, true);
         });
 
-        /**
-         * Ensure that the network site URL contains the /cms subdirectory.
-         *
-         * @param string $url    the unchecked network site URL with path appended
-         * @param string $path   the path for the URL
-         * @param string $scheme the URL scheme
-         * @return string the verified network site URL
-         */
         Filter::add('network_site_url', function ($url, $path, $scheme) {
-            $path = ltrim($path, '/');
-            $url = substr($url, 0, strlen($url) - strlen($path));
-            if (substr($url, -4) !== 'cms/') {
-                $url .= 'cms/';
-            }
-            return $url . $path;
+            return $this->fixMultisiteUrl($url, true, 'wp-admin');
         });
 
         /*
