@@ -49,16 +49,16 @@ class Application extends Hookable
         | installation.
         |
         */
-        Filter::add('network_admin_url', function ($url) {
-            return $this->formatUrl($url);
+        Filter::add('option_home', function ($url) {
+            return $this->formatHomeUrl($url);
         });
 
-        Filter::add('admin_url', function ($url) {
-            return $this->formatUrl($url);
+        Filter::add('option_siteurl', function ($url) {
+            return $this->formatSiteUrl($url);
         });
 
-        Filter::add('includes_url', function ($url) {
-            return $this->formatUrl($url, WPINC);
+        Filter::add('network_site_url', function ($url, $path, $scheme) {
+            return $this->formatNetworkUrl($url);
         });
 
         /*
