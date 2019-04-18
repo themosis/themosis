@@ -50,15 +50,15 @@ class Application extends Hookable
         |
         */
         Filter::add('option_home', function ($url) {
-            return $this->fixMultisiteUrl($url, false);
+            return $this->formatHomeUrl($url);
         });
 
         Filter::add('option_siteurl', function ($url) {
-            return $this->fixMultisiteUrl($url);
+            return $this->formatSiteUrl($url);
         });
 
         Filter::add('network_site_url', function ($url, $path, $scheme) {
-            return $this->fixMultisiteUrl($url, true, 'wp-admin');
+            return $this->formatNetworkUrl($url);
         });
 
         /*
