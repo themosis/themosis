@@ -55,6 +55,10 @@
   "minimum-stability": "dev",
   "prefer-stable": true,
   "scripts": {
+    "post-autoload-dump": [
+      "Themosis\\Core\\ComposerScripts::postAutoloadDump",
+      "@php console package:discover --ansi"
+    ],
     "post-root-package-install": [
       "@php -r \"file_exists('.env') || copy('.env.sample', '.env');\""
     ],
