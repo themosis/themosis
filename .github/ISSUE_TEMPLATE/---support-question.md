@@ -1,6 +1,7 @@
 ---
 name: "\U0001F9D0 Support question"
-about: This repository is only for reporting bugs or problems.
+about: 'This repository is only for reporting bugs or problems. If you need help,
+  see: https://support.themosis.com'
 title: ''
 labels: ''
 assignees: ''
