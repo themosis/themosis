@@ -36,7 +36,7 @@
     "optimize-autoloader": true
   },
   "require": {
-    "php": ">=7.1.0",
+    "php": ">=7.3.0",
     "johnpbloch/wordpress-core": "^5.1.0",
     "johnpbloch/wordpress-core-installer": "^1.0",
     "themosis/framework": "*"
