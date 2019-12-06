@@ -2,6 +2,12 @@
 .DS_Store
 Thumbs.db
 
+### Homestead
+after.sh
+aliases
+Homestead.yaml
+Vagrantfile
+
 ### Vagrant
 /.vagrant
 
