@@ -5,8 +5,9 @@ namespace App\Providers;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
 use Illuminate\Support\Facades\Event;
+use Themosis\Core\Support\Providers\EventServiceProvider as ServiceProvider;
 
-class EventServiceProvider
+class EventServiceProvider extends ServiceProvider
 {
     /**
      * The event listener mappings for the application.
