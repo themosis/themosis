@@ -266,5 +266,39 @@ return [
         'is_tax' => 'tax',
         'is_time' => 'time',
         'is_year' => 'year'
+    ],
+
+    /*
+    |--------------------------------------------------------------------------
+    | Debug blacklist
+    |--------------------------------------------------------------------------
+    |
+    | This array of keys ensure that sensitive access code are not visible
+    | for users in case of an app crash. Many users forgot to disable the 
+    | APP_DEBUG key in their .env file in production.
+    |
+    */
+    'debug_blacklist' => [
+        '_ENV' => [
+            'APP_KEY',
+            'DATABASE_HOST',
+            'DATABASE_NAME',
+            'DATABASE_USER',
+            'DATABASE_PREFIX',
+            'DATABASE_PASSWORD',
+            'MAIL_PASSWORD',
+        ],
+        '_SERVER' => [
+            'APP_KEY',
+            'DATABASE_HOST',
+            'DATABASE_NAME',
+            'DATABASE_USER',
+            'DATABASE_PREFIX',
+            'DATABASE_PASSWORD',
+            'MAIL_PASSWORD',
+        ],
+        '_POST' => [
+            'password',
+        ],
     ]
 ];
