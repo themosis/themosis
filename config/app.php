@@ -78,6 +78,18 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | Application Timezone
+    |--------------------------------------------------------------------------
+    |
+    | Here you may specify the default timezone for your application, which
+    | will be used by the PHP date and date-time functions. We have gone
+    | ahead and set this to a sensible default for you out of the box.
+    |
+    */
+    'timezone' => 'UTC',
+
+    /*
+    |--------------------------------------------------------------------------
     | Encryption Key
     |--------------------------------------------------------------------------
     |
@@ -105,6 +117,7 @@ return [
     'providers' => [
         // Illuminate + Themosis providers
         Illuminate\Auth\AuthServiceProvider::class,
+        Illuminate\Broadcasting\BroadcastServiceProvider::class,
         Illuminate\Bus\BusServiceProvider::class,
         Illuminate\Cache\CacheServiceProvider::class,
         Themosis\Core\Providers\ConsoleCoreServiceProvider::class,
@@ -117,6 +130,8 @@ return [
         Illuminate\Mail\MailServiceProvider::class,
         Illuminate\Notifications\NotificationServiceProvider::class,
         Illuminate\Pagination\PaginationServiceProvider::class,
+        Illuminate\Pipeline\PipelineServiceProvider::class,
+        Illuminate\Queue\QueueServiceProvider::class,
         Illuminate\Redis\RedisServiceProvider::class,
         Illuminate\Session\SessionServiceProvider::class,
         Illuminate\Translation\TranslationServiceProvider::class,
@@ -140,6 +155,8 @@ return [
         // Application providers
         App\Providers\AppServiceProvider::class,
         App\Providers\AuthServiceProvider::class,
+        // App\Providers\BroadcastServiceProvider::class,
+        App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
     ],
 
@@ -174,13 +191,14 @@ return [
         'Action' => Themosis\Support\Facades\Action::class,
         'Ajax' => Themosis\Support\Facades\Ajax::class,
         'App' => Illuminate\Support\Facades\App::class,
+        'Artisan' => Themosis\Support\Facades\Artisan::class,
         'Asset' => Themosis\Support\Facades\Asset::class,
         'Auth' => Illuminate\Support\Facades\Auth::class,
         'Blade' => Illuminate\Support\Facades\Blade::class,
+        'Broadcast' => Illuminate\Support\Facades\Broadcast::class,
         'Bus' => Illuminate\Support\Facades\Bus::class,
         'Cache' => Illuminate\Support\Facades\Cache::class,
         'Config' => Illuminate\Support\Facades\Config::class,
-        'Console' => Themosis\Core\Support\Facades\Console::class,
         'Crypt' => Illuminate\Support\Facades\Crypt::class,
         'DB' => Illuminate\Support\Facades\DB::class,
         'Eloquent' => Illuminate\Database\Eloquent\Model::class,
@@ -197,6 +215,7 @@ return [
         'Notification' => Illuminate\Support\Facades\Notification::class,
         'Page' => Themosis\Support\Facades\Page::class,
         'PostType' => Themosis\Support\Facades\PostType::class,
+        'Queue' => Illuminate\Support\Facades\Queue::class,
         'Redis' => Illuminate\Support\Facades\Redis::class,
         'Request' => Illuminate\Support\Facades\Request::class,
         'Route' => Themosis\Support\Facades\Route::class,
@@ -247,5 +266,39 @@ return [
         'is_tax' => 'tax',
         'is_time' => 'time',
         'is_year' => 'year'
+    ],
+
+    /*
+    |--------------------------------------------------------------------------
+    | Debug blacklist
+    |--------------------------------------------------------------------------
+    |
+    | This array of keys ensure that sensitive access code are not visible
+    | for users in case of an app crash. Many users forgot to disable the 
+    | APP_DEBUG key in their .env file in production.
+    |
+    */
+    'debug_blacklist' => [
+        '_ENV' => [
+            'APP_KEY',
+            'DATABASE_HOST',
+            'DATABASE_NAME',
+            'DATABASE_USER',
+            'DATABASE_PREFIX',
+            'DATABASE_PASSWORD',
+            'MAIL_PASSWORD',
+        ],
+        '_SERVER' => [
+            'APP_KEY',
+            'DATABASE_HOST',
+            'DATABASE_NAME',
+            'DATABASE_USER',
+            'DATABASE_PREFIX',
+            'DATABASE_PASSWORD',
+            'MAIL_PASSWORD',
+        ],
+        '_POST' => [
+            'password',
+        ],
     ]
 ];

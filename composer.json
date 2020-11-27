@@ -19,6 +19,10 @@
     {
       "type": "composer",
       "url": "https://wpackagist.org"
+    },
+    {
+      "type": "path",
+      "url": "../framework"
     }
   ],
   "autoload": {
@@ -32,13 +36,13 @@
     "optimize-autoloader": true
   },
   "require": {
-    "php": ">=7.1.0",
+    "php": ">=7.3.0",
     "johnpbloch/wordpress-core": "^5.1.0",
     "johnpbloch/wordpress-core-installer": "^1.0",
-    "themosis/framework": "^2.0.0"
+    "themosis/framework": "*"
   },
   "require-dev": {
-    "laravel/homestead": "^7.0",
+    "laravel/homestead": "^10.0",
     "phpunit/phpunit": "^7.0",
     "symfony/var-dumper": "^4.2"
   },
@@ -57,7 +61,7 @@
   "scripts": {
     "post-autoload-dump": [
       "Themosis\\Core\\ComposerScripts::postAutoloadDump",
-      "@php console package:discover --ansi"
+      "@php artisan package:discover --ansi"
     ],
     "post-root-package-install": [
       "@php -r \"file_exists('.env') || copy('.env.sample', '.env');\""
