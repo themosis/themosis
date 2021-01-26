@@ -34,7 +34,7 @@
   "require": {
     "php": ">=7.1.0",
     "johnpbloch/wordpress-core": "^5.1.0",
-    "johnpbloch/wordpress-core-installer": "^1.0",
+    "johnpbloch/wordpress-core-installer": "^2.0",
     "themosis/framework": "^2.0.0"
   },
   "require-dev": {
