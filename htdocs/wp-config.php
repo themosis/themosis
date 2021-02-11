@@ -21,6 +21,9 @@ if (file_exists($autoload = THEMOSIS_ROOT.'/vendor/autoload.php')) {
 }
 
 $app = require_once __DIR__.'/../bootstrap/app.php';
+if ($app === true) {
+    $app = app();
+}
 
 /*
 |--------------------------------------------------------------------------
