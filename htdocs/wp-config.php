@@ -20,7 +20,7 @@ if (file_exists($autoload = THEMOSIS_ROOT.'/vendor/autoload.php')) {
     require $autoload;
 }
 
-$app = require_once __DIR__.'/../bootstrap/app.php';
+$app = require __DIR__.'/../bootstrap/app.php';
 
 /*
 |--------------------------------------------------------------------------
