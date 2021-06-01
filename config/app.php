@@ -104,6 +104,28 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | Authentication Unique Keys and Salts
+    |--------------------------------------------------------------------------
+    |
+    | Change these to different unique phrases!
+    | You can generate these using the {@link https://api.wordpress.org/secret-key/1.1/salt/}
+    | WordPress.org secret-key service. You can change these at any point in time to invalidate all existing cookies.
+    | This will force all users to have to log in again.
+    |
+    */
+    'salts' => [
+        'auth_key' => env('AUTH_KEY'),
+        'secure_auth_key' => env('SECURE_AUTH_KEY'),
+        'logged_in_key' => env('LOGGED_IN_KEY'),
+        'nonce_key' => env('NONCE_KEY'),
+        'auth_salt' => env('AUTH_SALT'),
+        'secure_auth_salt' => env('SECURE_AUTH_SALT'),
+        'logged_in_salt' => env('LOGGED_IN_SALT'),
+        'nonce_salt' => env('NONCE_SALT')
+    ],
+
+    /*
+    |--------------------------------------------------------------------------
     | Autoloaded Service Providers
     |--------------------------------------------------------------------------
     |
