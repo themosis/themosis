@@ -43,7 +43,8 @@
     "johnpbloch/wordpress-core": "^5.7.0",
     "johnpbloch/wordpress-core-installer": "^2.0",
     "themosis/framework": "dev-master",
-    "fideloper/proxy": "^4.4"
+    "fideloper/proxy": "^4.4",
+    "fruitcake/laravel-cors": "^2.0"
   },
   "require-dev": {
     "phpunit/phpunit": "^9.0"
