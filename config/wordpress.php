@@ -19,14 +19,14 @@
 | @link https://api.wordpress.org/secret-key/1.1/salt/
 |
 */
-define('AUTH_KEY', 'put your unique phrase here');
-define('SECURE_AUTH_KEY', 'put your unique phrase here');
-define('LOGGED_IN_KEY', 'put your unique phrase here');
-define('NONCE_KEY', 'put your unique phrase here');
-define('AUTH_SALT', 'put your unique phrase here');
-define('SECURE_AUTH_SALT', 'put your unique phrase here');
-define('LOGGED_IN_SALT', 'put your unique phrase here');
-define('NONCE_SALT', 'put your unique phrase here');
+define('AUTH_KEY', config('app.salts.auth_key'));
+define('SECURE_AUTH_KEY', config('app.salts.secure_auth_key'));
+define('LOGGED_IN_KEY', config('app.salts.logged_in_key'));
+define('NONCE_KEY', config('app.salts.nonce_key'));
+define('AUTH_SALT', config('app.salts.auth_salt'));
+define('SECURE_AUTH_SALT', config('app.salts.secure_auth_salt'));
+define('LOGGED_IN_SALT', config('app.salts.logged_in_salt'));
+define('NONCE_SALT', config('app.salts.nonce_salt'));
 
 /*
 |--------------------------------------------------------------------------
