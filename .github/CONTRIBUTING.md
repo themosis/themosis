@@ -27,8 +27,31 @@ We also need help on the documentation. If you see grammar typos or think the do
 
 ## Reporting Issues
 
+Regarding code issues, please submit your code with the request and give detailed explanations about what you're trying to achieve.
 
+We highly encourage you to send pull requests with the bug fix. Make sure to work on the latest stable release and not the `main` branch. The framework version 2.0.* has a `2.0` branch from which you have to write your pull request for. 
+
+> A pull request **must have unit tests** along your code.
 
 ## New Features
+
+You can make feature proposal on the [themosis/framework](https://github.com/themosis/framework) repository by opening a new issue and by assigning it the `feature` tag. 
+
+> Please make sure to add the `feature` tag to your request or we won't look at it.
+
+If your proposal is a good fit, you can submit a pull request with the new functionality and its unit tests:
+
+1. **Minor** features or enhancements should be sent to the latest stable branch.
+2. **Major** features should always be sent to the `main` branch which contains the code for the next release.
+
 ## Which Branch?
+
+All bug fixes should be sent to the latest stable branch. Bug fixes should never be sent to the `main` branch unless they fix features that exist only in the upcoming release.
+
+**Minor** features, that are fully backwards compatible with the current release, must be sent to the latest stable branch.
+
+**Major** features should always be sent to the `main` branch, which contains the upcoming release.
+
 ## Security Vulnerabilities
+
+If you discover a security vulnerability within the Themosis framework, please send an e-mail at [support@themosis.com](mailto:support@themosis.com). All security vulnerabilities will be promptly addressed.
