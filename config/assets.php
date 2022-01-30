@@ -12,7 +12,7 @@ return [
     |
     */
     'paths' => [
-        web_path('dist') => rtrim(config('app.url'), '\/').'/dist'
+        //web_path('dist') => rtrim(config('app.url'), '\/').'/dist'
     ],
 
     /*

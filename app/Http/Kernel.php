@@ -2,7 +2,7 @@
 
 namespace App\Http;
 
-use Themosis\Core\Http\Kernel as HttpKernel;
+use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
 class Kernel extends HttpKernel
 {
@@ -26,8 +26,8 @@ class Kernel extends HttpKernel
             \Illuminate\View\Middleware\ShareErrorsFromSession::class
         ],
         'web' => [
-            'wp.headers',
-            'wp.bindings',
+            //'wp.headers',
+            //'wp.bindings',
             'bindings',
             \Illuminate\Session\Middleware\StartSession::class,
             \Illuminate\View\Middleware\ShareErrorsFromSession::class,
@@ -36,7 +36,7 @@ class Kernel extends HttpKernel
         ],
         'api' => [
             'throttle:60,1',
-            'wp.can:edit_posts',
+            //'wp.can:edit_posts',
             'bindings'
         ]
     ];
@@ -55,8 +55,8 @@ class Kernel extends HttpKernel
         'signed' => \Illuminate\Routing\Middleware\ValidateSignature::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
-        'wp.bindings' => \Themosis\Route\Middleware\WordPressBindings::class,
-        'wp.can' => \Themosis\Route\Middleware\WordPressAuthorize::class,
-        'wp.headers' => \Themosis\Route\Middleware\WordPressHeaders::class
+        //'wp.bindings' => \Themosis\Route\Middleware\WordPressBindings::class,
+        //'wp.can' => \Themosis\Route\Middleware\WordPressAuthorize::class,
+        //'wp.headers' => \Themosis\Route\Middleware\WordPressHeaders::class
     ];
 }

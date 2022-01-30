@@ -19,6 +19,10 @@
     {
       "type": "composer",
       "url": "https://wpackagist.org"
+    },
+    {
+      "type": "path",
+      "url": "../framework"
     }
   ],
   "autoload": {
@@ -42,9 +46,7 @@
     "php": "^7.3|^8.0",
     "johnpbloch/wordpress-core": "^5.7.0",
     "johnpbloch/wordpress-core-installer": "^2.0",
-    "themosis/framework": "dev-master",
-    "fideloper/proxy": "^4.4",
-    "fruitcake/laravel-cors": "^2.0"
+    "themosis/framework": "*"
   },
   "require-dev": {
     "phpunit/phpunit": "^9.0"
@@ -56,14 +58,13 @@
       "htdocs/content/themes/{$name}/": ["type:wordpress-theme"]
     },
     "wordpress-install-dir": {
-      "johnpbloch/wordpress-core": "htdocs/cms"
+      "johnpbloch/wordpress-core": "public/cms"
     }
   },
   "minimum-stability": "dev",
   "prefer-stable": true,
   "scripts": {
     "post-autoload-dump": [
-      "Themosis\\Core\\ComposerScripts::postAutoloadDump",
       "@php artisan package:discover --ansi"
     ],
     "post-root-package-install": [

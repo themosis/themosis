@@ -2,9 +2,7 @@
 
 namespace App\Providers;
 
-use Themosis\Core\Support\Providers\AuthServiceProvider as ServiceProvider;
-
-class AuthServiceProvider extends ServiceProvider
+class AuthServiceProvider extends \Illuminate\Foundation\Support\Providers\AuthServiceProvider
 {
     /**
      * @var array

@@ -8,7 +8,7 @@ defined('DS') ? DS : define('DS', DIRECTORY_SEPARATOR);
 /*----------------------------------------------------*/
 // Application paths
 /*----------------------------------------------------*/
-define('THEMOSIS_PUBLIC_DIR', 'htdocs');
+define('THEMOSIS_PUBLIC_DIR', 'public');
 define('THEMOSIS_ROOT', realpath(__DIR__.'/../'));
 define('CONTENT_DIR', 'content');
 define('WP_CONTENT_DIR', realpath(THEMOSIS_ROOT.DS.THEMOSIS_PUBLIC_DIR.DS.CONTENT_DIR));
@@ -34,7 +34,7 @@ $app = require __DIR__.'/../bootstrap/app.php';
 |
 */
 $kernel = $app->make(Illuminate\Contracts\Http\Kernel::class);
-$kernel->init(
+$kernel->handle(
     Illuminate\Http\Request::capture()
 );
 

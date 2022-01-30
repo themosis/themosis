@@ -25,9 +25,9 @@ cs_fixer*
 node_modules/
 
 ### WordPress
-/htdocs/cms/
-/htdocs/content/uploads/
-/htdocs/content/upgrade/
+/public/cms/
+/public/content/uploads/
+/public/content/upgrade/
 
 ### Environment Credentials
 .env

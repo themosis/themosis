@@ -1,6 +1,6 @@
 <?php
 
-use Themosis\Core\Application;
+use Illuminate\Foundation\Application;
 
 $app = new Application(THEMOSIS_ROOT);
 

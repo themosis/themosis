@@ -5,10 +5,9 @@ namespace App\Providers;
 use Illuminate\Cache\RateLimiting\Limit;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\RateLimiter;
-use Themosis\Core\Support\Providers\RouteServiceProvider as ServiceProvider;
-use Themosis\Support\Facades\Route;
+use Illuminate\Support\Facades\Route;
 
-class RouteServiceProvider extends ServiceProvider
+class RouteServiceProvider extends \Illuminate\Foundation\Support\Providers\RouteServiceProvider
 {
     /**
      * The path to the "home" route for your application.
