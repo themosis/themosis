@@ -34,9 +34,12 @@ $app = require __DIR__.'/../bootstrap/app.php';
 |
 */
 $kernel = $app->make(Illuminate\Contracts\Http\Kernel::class);
-$kernel->handle(
+
+$kernel->boot(
     Illuminate\Http\Request::capture()
 );
+
+exit("Themosis");
 
 /*----------------------------------------------------*/
 // Database prefix (WordPress)

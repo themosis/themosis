@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "28eb3d6deeb6fddeb1cdebd7a11c6cb1",
+    "content-hash": "a68e4d59f4cce121885bef2cb597d27b",
     "packages": [
         {
             "name": "brick/math",
@@ -5149,7 +5149,7 @@
             "dist": {
                 "type": "path",
                 "url": "../framework",
-                "reference": "a27bcfadc5e0b8a8db519d166b35f3e3d6a6fa55"
+                "reference": "f2fb784187dbe856595ca0240c1d702000ef2dfc"
             },
             "require": {
                 "composer/installers": "^1.9",
@@ -5176,7 +5176,7 @@
                     "Themosis\\": "src/"
                 },
                 "files": [
-                    "src/Core/helpers.php"
+                    "src/Foundation/helpers.php"
                 ]
             },
             "autoload-dev": {
