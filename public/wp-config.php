@@ -39,8 +39,6 @@ $kernel->boot(
     Illuminate\Http\Request::capture()
 );
 
-exit("Themosis");
-
 /*----------------------------------------------------*/
 // Database prefix (WordPress)
 /*----------------------------------------------------*/

@@ -40,10 +40,15 @@
   "config": {
     "preferred-install": "dist",
     "sort-packages": true,
-    "optimize-autoloader": true
+    "optimize-autoloader": true,
+    "allow-plugins": {
+      "composer/installers": true,
+      "johnpbloch/wordpress-core-installer": true,
+      "themosis/composer-exclude-files": true
+    }
   },
   "require": {
-    "php": "^7.3|^8.0",
+    "php": "^8.0",
     "johnpbloch/wordpress-core": "^5.7.0",
     "johnpbloch/wordpress-core-installer": "^2.0",
     "themosis/framework": "*"
@@ -59,6 +64,11 @@
     },
     "wordpress-install-dir": {
       "johnpbloch/wordpress-core": "public/cms"
+    },
+    "exclude-from-files": {
+      "laravel/framework": [
+        "src/Illuminate/Foundation/helpers.php"
+      ]
     }
   },
   "minimum-stability": "dev",
