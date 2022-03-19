@@ -26,7 +26,5 @@ class EventServiceProvider extends \Illuminate\Foundation\Support\Providers\Even
     public function boot()
     {
         parent::boot();
-
-        //
     }
 }

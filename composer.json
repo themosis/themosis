@@ -44,7 +44,7 @@
     "allow-plugins": {
       "composer/installers": true,
       "johnpbloch/wordpress-core-installer": true,
-      "themosis/composer-exclude-files": true
+      "themosis/*": true
     }
   },
   "require": {
@@ -58,17 +58,12 @@
   },
   "extra":{
     "installer-paths": {
-      "htdocs/content/plugins/{$name}/": ["type:wordpress-plugin"],
-      "htdocs/content/mu-plugins/{$name}/": ["type:wordpress-muplugin"],
-      "htdocs/content/themes/{$name}/": ["type:wordpress-theme"]
+      "public/content/plugins/{$name}/": ["type:wordpress-plugin"],
+      "public/content/mu-plugins/{$name}/": ["type:wordpress-muplugin"],
+      "public/content/themes/{$name}/": ["type:wordpress-theme"]
     },
     "wordpress-install-dir": {
       "johnpbloch/wordpress-core": "public/cms"
-    },
-    "exclude-from-files": {
-      "laravel/framework": [
-        "src/Illuminate/Foundation/helpers.php"
-      ]
     }
   },
   "minimum-stability": "dev",
