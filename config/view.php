@@ -24,16 +24,8 @@ return [
     | directory. However, as usual, you are free to change this value.
     |
     */
-    'compiled' => storage_path('framework/views/blade'),
-
-    /*
-    |--------------------------------------------------------------------------
-    | Compiled Twig Path
-    |--------------------------------------------------------------------------
-    |
-    | This option determines where all the compiled Twig templates will be
-    | stored for your application.
-    |
-    */
-    'twig' => storage_path('framework/views/twig')
+    'compiled' => env(
+        'VIEW_COMPILED_PATH',
+        realpath(storage_path('framework/views'))
+    ),
 ];
