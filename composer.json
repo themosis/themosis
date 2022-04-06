@@ -23,6 +23,10 @@
     {
       "type": "path",
       "url": "../framework"
+    },
+    {
+      "type": "path",
+      "url": "../theme"
     }
   ],
   "autoload": {
@@ -51,11 +55,13 @@
     "php": "^8.0",
     "johnpbloch/wordpress-core": "^5.7.0",
     "johnpbloch/wordpress-core-installer": "^2.0",
-    "themosis/framework": "*"
+    "themosis/framework": "*",
+    "themosis/theme": "*"
   },
   "require-dev": {
     "beyondcode/laravel-dump-server": "^1.8",
-    "phpunit/phpunit": "^9.0"
+    "phpunit/phpunit": "^9.0",
+    "spatie/laravel-ignition": "^1.2"
   },
   "extra":{
     "installer-paths": {
