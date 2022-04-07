@@ -160,6 +160,8 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
 
+        Themosis\Foundation\Providers\CoreServiceProvider::class,
+
         /*
          * Package Service Providers...
          */
