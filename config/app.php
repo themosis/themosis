@@ -161,6 +161,7 @@ return [
         Illuminate\View\ViewServiceProvider::class,
 
         Themosis\Foundation\Providers\CoreServiceProvider::class,
+        Themosis\Hook\HookServiceProvider::class,
 
         /*
          * Package Service Providers...
@@ -171,7 +172,6 @@ return [
 //        Themosis\Asset\AssetServiceProvider::class,
 //        Themosis\View\BladeServiceProvider::class,
 //        Themosis\Html\HtmlServiceProvider::class,
-//        Themosis\Hook\HookServiceProvider::class,
 //        Themosis\Field\FieldServiceProvider::class,
 //        Themosis\Forms\FormServiceProvider::class,
 //        Themosis\Metabox\MetaboxServiceProvider::class,
