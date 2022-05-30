@@ -162,16 +162,16 @@ return [
 
         Themosis\Foundation\Providers\CoreServiceProvider::class,
         Themosis\Hook\HookServiceProvider::class,
+        Themosis\Html\HtmlServiceProvider::class,
+        Themosis\Asset\AssetServiceProvider::class,
 
         /*
          * Package Service Providers...
          */
-
 //        Themosis\View\ViewServiceProvider::class,
 //        Themosis\Ajax\AjaxServiceProvider::class,
 //        Themosis\Asset\AssetServiceProvider::class,
 //        Themosis\View\BladeServiceProvider::class,
-//        Themosis\Html\HtmlServiceProvider::class,
 //        Themosis\Field\FieldServiceProvider::class,
 //        Themosis\Forms\FormServiceProvider::class,
 //        Themosis\Metabox\MetaboxServiceProvider::class,
