@@ -53,7 +53,7 @@ return [
     */
     'wp' => [
         'url' => env('WP_URL', 'http://localhost/cms'),
-        'dir' => env('WP_DIR', 'cms')
+        'dir' => env('WP_DIR', 'cms'),
     ],
 
     /*
@@ -121,7 +121,7 @@ return [
         'auth_salt' => env('AUTH_SALT'),
         'secure_auth_salt' => env('SECURE_AUTH_SALT'),
         'logged_in_salt' => env('LOGGED_IN_SALT'),
-        'nonce_salt' => env('NONCE_SALT')
+        'nonce_salt' => env('NONCE_SALT'),
     ],
 
     /*
@@ -196,7 +196,7 @@ return [
         App\Hooks\Application::class,
         App\Hooks\Compat::class,
         App\Hooks\Mail::class,
-        App\Hooks\Widgets::class
+        App\Hooks\Widgets::class,
     ],
 
     /*
@@ -251,7 +251,7 @@ return [
         'User' => Themosis\Support\Facades\User::class,
         'UserField' => Themosis\Support\Facades\UserField::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
-        'View' => Illuminate\Support\Facades\View::class
+        'View' => Illuminate\Support\Facades\View::class,
     ],
 
     /*
@@ -287,6 +287,6 @@ return [
         'is_tag' => 'tag',
         'is_tax' => 'tax',
         'is_time' => 'time',
-        'is_year' => 'year'
-    ]
+        'is_year' => 'year',
+    ],
 ];

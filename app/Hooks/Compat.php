@@ -17,7 +17,7 @@ class Compat extends Hookable
      */
     protected $deprecated = [
         'edit_form_after_title',
-        'edit_form_advanced'
+        'edit_form_advanced',
     ];
 
     /**

@@ -11,7 +11,7 @@ return [
     |
     */
     'paths' => [
-        resource_path('views')
+        resource_path('views'),
     ],
 
     /*
@@ -35,5 +35,5 @@ return [
     | stored for your application.
     |
     */
-    'twig' => storage_path('framework/views/twig')
+    'twig' => storage_path('framework/views/twig'),
 ];

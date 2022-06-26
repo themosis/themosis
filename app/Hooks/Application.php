@@ -78,8 +78,8 @@ class Application extends Hookable
                 'themosisGlobal',
                 apply_filters('themosis_admin_global', [
                     'api' => [
-                        'base_url' => home_url('wp-api/themosis/v1/')
-                    ]
+                        'base_url' => home_url('wp-api/themosis/v1/'),
+                    ],
                 ])
             );
         });
@@ -88,7 +88,7 @@ class Application extends Hookable
             echo $this->app->outputJavascriptGlobal(
                 config('assets.ajax.front', 'themosis'),
                 apply_filters('themosis_front_global', [
-                    'ajaxurl' => admin_url('admin-ajax.php')
+                    'ajaxurl' => admin_url('admin-ajax.php'),
                 ])
             );
 

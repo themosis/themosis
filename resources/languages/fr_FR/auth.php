@@ -12,5 +12,5 @@
 */
 return [
     'failed' => 'Ces accès ne correspondent pas à nos références.',
-    'throttle' => 'Trop de tentatives de connexion. Veuillez réessayer dans :seconds secondes.'
+    'throttle' => 'Trop de tentatives de connexion. Veuillez réessayer dans :seconds secondes.',
 ];
