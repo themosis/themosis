@@ -51,6 +51,7 @@
     "fruitcake/laravel-cors": "^2.0"
   },
   "require-dev": {
+    "laravel/pint": "^0.2.0",
     "phpunit/phpunit": "^9.0"
   },
   "extra":{
