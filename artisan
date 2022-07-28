@@ -17,6 +17,7 @@ define('THEMOSIS_ROOT', realpath(__DIR__));
 define('THEMOSIS_PUBLIC_DIR', 'htdocs');
 define('CONTENT_DIR', 'content');
 define('WP_CONTENT_DIR', realpath(THEMOSIS_ROOT.DS.THEMOSIS_PUBLIC_DIR.DS.CONTENT_DIR));
+define('ABSPATH', THEMOSIS_ROOT . '/' . THEMOSIS_PUBLIC_DIR . '/cms/');
 
 /*
 |--------------------------------------------------------------------------
