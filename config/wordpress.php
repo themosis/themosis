@@ -36,7 +36,7 @@ define('NONCE_SALT', config('app.salts.nonce_salt'));
 define('DB_NAME', config('database.connections.mysql.database'));
 define('DB_USER', config('database.connections.mysql.username'));
 define('DB_PASSWORD', config('database.connections.mysql.password'));
-define('DB_HOST', config('database.connections.mysql.host'));
+define('DB_HOST', implode(':', [config('database.connections.mysql.host'), config('database.connections.mysql.port')]));
 define('DB_CHARSET', config('database.connections.mysql.charset'));
 define('DB_COLLATE', config('database.connections.mysql.collation'));
 
