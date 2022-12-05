@@ -63,6 +63,11 @@ return [
             'days' => 7,
         ],
 
+        'deprecations' => [
+            'driver' => 'single',
+            'path' => storage_path('logs/themosis-deprecations.log'),
+        ],
+
         'slack' => [
             'driver' => 'slack',
             'url' => env('LOG_SLACK_WEBHOOK_URL'),
