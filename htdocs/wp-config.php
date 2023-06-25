@@ -41,7 +41,7 @@ $kernel->init(
 /*----------------------------------------------------*/
 // Database prefix (WordPress)
 /*----------------------------------------------------*/
-$table_prefix = env('DATABASE_PREFIX', 'wp_');
+$table_prefix = config('database.connections.mysql.prefix', 'wp_');
 
 /* That's all, stop editing! Happy blogging. */
 require_once ABSPATH.'/wp-settings.php';

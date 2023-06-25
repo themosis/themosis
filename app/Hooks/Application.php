@@ -115,7 +115,7 @@ class Application extends Hookable
                 wp_enqueue_media();
                 wp_enqueue_style('wp-components');
             });
-            Asset::add('themosis_core_js', 'js/themosis.core.js', ['lodash'], $this->app->version())
+            Asset::add('themosis_core_js', 'js/themosis.core.js', ['lodash', 'wp-tinymce'], $this->app->version())
                 ->to('admin');
             Asset::add('themosis_post_status', 'js/themosis.poststatus.js', ['jquery', 'lodash'], $this->app->version())
                 ->to('admin');
