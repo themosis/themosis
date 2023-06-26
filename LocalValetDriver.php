@@ -5,10 +5,9 @@ class LocalValetDriver extends LaravelValetDriver
     /**
      * Determine if the driver serves the request.
      *
-     * @param string $sitePath
-     * @param string $siteName
-     * @param string $uri
-     *
+     * @param  string  $sitePath
+     * @param  string  $siteName
+     * @param  string  $uri
      * @return bool
      */
     public function serves($sitePath, $siteName, $uri)
@@ -19,10 +18,9 @@ class LocalValetDriver extends LaravelValetDriver
     /**
      * Determine if the incoming request is for a static file.
      *
-     * @param string $sitePath
-     * @param string $siteName
-     * @param string $uri
-     *
+     * @param  string  $sitePath
+     * @param  string  $siteName
+     * @param  string  $uri
      * @return false|string
      */
     public function isStaticFile($sitePath, $siteName, $uri)
@@ -39,10 +37,9 @@ class LocalValetDriver extends LaravelValetDriver
     /**
      * Get the fully resolved path to the application's front controller.
      *
-     * @param string $sitePath
-     * @param string $siteName
-     * @param string $uri
-     *
+     * @param  string  $sitePath
+     * @param  string  $siteName
+     * @param  string  $uri
      * @return string
      */
     public function frontControllerPath($sitePath, $siteName, $uri)
@@ -66,15 +63,14 @@ class LocalValetDriver extends LaravelValetDriver
     /**
      * Redirect to uri with trailing slash.
      *
-     * @param  string $uri
-     *
+     * @param  string  $uri
      * @return string
      */
     private function forceTrailingSlash($uri)
     {
         if (substr($uri, -1 * strlen('/cms/wp-admin')) == '/cms/wp-admin') {
             header('Location: '.$uri.'/');
-            die;
+            exit;
         }
 
         return $uri;

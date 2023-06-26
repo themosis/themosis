@@ -23,7 +23,7 @@ class Kernel extends HttpKernel
     protected $middlewareGroups = [
         'admin' => [
             \Illuminate\Session\Middleware\StartSession::class,
-            \Illuminate\View\Middleware\ShareErrorsFromSession::class
+            \Illuminate\View\Middleware\ShareErrorsFromSession::class,
         ],
         'web' => [
             'wp.headers',
@@ -32,13 +32,13 @@ class Kernel extends HttpKernel
             \Illuminate\Session\Middleware\StartSession::class,
             \Illuminate\View\Middleware\ShareErrorsFromSession::class,
             'csrf',
-            \Themosis\Route\Middleware\WordPressBodyClass::class
+            \Themosis\Route\Middleware\WordPressBodyClass::class,
         ],
         'api' => [
             'throttle:60,1',
             'wp.can:edit_posts',
-            'bindings'
-        ]
+            'bindings',
+        ],
     ];
 
     /**
@@ -57,6 +57,6 @@ class Kernel extends HttpKernel
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         'wp.bindings' => \Themosis\Route\Middleware\WordPressBindings::class,
         'wp.can' => \Themosis\Route\Middleware\WordPressAuthorize::class,
-        'wp.headers' => \Themosis\Route\Middleware\WordPressHeaders::class
+        'wp.headers' => \Themosis\Route\Middleware\WordPressHeaders::class,
     ];
 }

@@ -12,7 +12,7 @@ return [
     |
     */
     'paths' => [
-        web_path('dist') => rtrim(config('app.url'), '\/').'/dist'
+        web_path('dist') => rtrim(config('app.url'), '\/').'/dist',
     ],
 
     /*
@@ -25,6 +25,6 @@ return [
     |
     */
     'ajax' => [
-        'front' => 'themosis'
-    ]
+        'front' => 'themosis',
+    ],
 ];
